@@ -1,0 +1,2410 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ustozlar Bayrami — Oripov Ma'rufxon Isroilovich</title>
+    <meta name="description" content="Ustozlar bayrami munosabati bilan Oripov Ma'rufxon Isroilovich ustozga tabrik">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════════
+           CSS CUSTOM PROPERTIES & RESET
+           ═══════════════════════════════════════════ */
+        :root {
+            --color-bg-deep: #0a0a0f;
+            --color-bg-dark: #0f0f1a;
+            --color-bg-card: rgba(18, 18, 35, 0.6);
+            --color-gold: #d4a853;
+            --color-gold-light: #f0d78c;
+            --color-gold-dark: #a67c2e;
+            --color-accent-blue: #4a9eff;
+            --color-accent-cyan: #00d4ff;
+            --color-accent-purple: #8b5cf6;
+            --color-accent-pink: #ec4899;
+            --color-accent-green: #10b981;
+            --color-text-primary: #f0f0f5;
+            --color-text-secondary: #a0a0b8;
+            --color-text-muted: #6b6b85;
+            --color-border: rgba(212, 168, 83, 0.15);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-gold-dark) var(--color-bg-deep);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg-deep);
+            color: var(--color-text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ═══════════════════════════════════════════
+           LOADING SCREEN
+           ═══════════════════════════════════════════ */
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: var(--color-bg-deep);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-orbit {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+
+        .loading-orbit .electron {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--color-gold);
+        }
+
+        .loading-orbit .electron:nth-child(1) {
+            animation: orbit1 1.5s linear infinite;
+        }
+
+        .loading-orbit .electron:nth-child(2) {
+            animation: orbit2 1.5s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        .loading-orbit .electron:nth-child(3) {
+            animation: orbit3 1.5s linear infinite;
+            animation-delay: 1s;
+        }
+
+        .loading-orbit .nucleus {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--color-gold-light), var(--color-gold));
+            box-shadow: 0 0 20px var(--color-gold), 0 0 40px rgba(212, 168, 83, 0.3);
+        }
+
+        @keyframes orbit1 {
+            0% {
+                top: 0;
+                left: 50%;
+            }
+
+            25% {
+                top: 50%;
+                left: 100%;
+            }
+
+            50% {
+                top: 100%;
+                left: 50%;
+            }
+
+            75% {
+                top: 50%;
+                left: 0;
+            }
+
+            100% {
+                top: 0;
+                left: 50%;
+            }
+        }
+
+        @keyframes orbit2 {
+            0% {
+                top: 15%;
+                left: 15%;
+            }
+
+            25% {
+                top: 15%;
+                left: 85%;
+            }
+
+            50% {
+                top: 85%;
+                left: 85%;
+            }
+
+            75% {
+                top: 85%;
+                left: 15%;
+            }
+
+            100% {
+                top: 15%;
+                left: 15%;
+            }
+        }
+
+        @keyframes orbit3 {
+            0% {
+                top: 50%;
+                left: 0;
+            }
+
+            25% {
+                top: 0;
+                left: 50%;
+            }
+
+            50% {
+                top: 50%;
+                left: 100%;
+            }
+
+            75% {
+                top: 100%;
+                left: 50%;
+            }
+
+            100% {
+                top: 50%;
+                left: 0;
+            }
+        }
+
+        .loading-text {
+            margin-top: 30px;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--color-gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            animation: loadPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes loadPulse {
+
+            0%,
+            100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .welcome-enter-btn {
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--color-gold);
+            border-radius: 100px;
+            background: linear-gradient(135deg, rgba(212, 168, 83, 0.1), rgba(212, 168, 83, 0.05));
+            color: var(--color-gold-light);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease 1s forwards;
+            opacity: 0;
+        }
+
+        .welcome-enter-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 100px;
+        }
+
+        .welcome-enter-btn:hover::before {
+            opacity: 1;
+        }
+
+        .welcome-enter-btn:hover {
+            color: var(--color-bg-deep);
+            box-shadow: 0 0 40px rgba(212, 168, 83, 0.4);
+            transform: scale(1.05);
+        }
+
+        .welcome-enter-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-enter-btn .play-icon {
+            font-size: 0.9rem;
+            animation: playPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes playPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        /* ═══════════════════════════════════════════
+           GLOBAL CANVAS (particles, formulas, neural net)
+           ═══════════════════════════════════════════ */
+        #bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ═══════════════════════════════════════════
+           FLOATING MATH FORMULAS (CSS decorative layer)
+           ═══════════════════════════════════════════ */
+        .math-formulas {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .math-formula {
+            position: absolute;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: rgba(212, 168, 83, 0.06);
+            white-space: nowrap;
+            animation: floatFormula 25s linear infinite;
+            user-select: none;
+        }
+
+        @keyframes floatFormula {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(15deg);
+                opacity: 0;
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           NAVIGATION
+           ═══════════════════════════════════════════ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            transform: translateY(-100%);
+            animation: slideNavDown 0.8s var(--ease-out-expo) 2.5s forwards;
+        }
+
+        @keyframes slideNavDown {
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .nav-link {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-accent-cyan));
+            border-radius: 1px;
+            transition: width 0.3s var(--ease-out-expo);
+        }
+
+        .nav-link:hover {
+            color: var(--color-gold-light);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* ═══════════════════════════════════════════
+           HERO SECTION
+           ═══════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--color-border);
+            border-radius: 100px;
+            background: rgba(212, 168, 83, 0.05);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s var(--ease-out-expo) 2.8s forwards;
+        }
+
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-gold);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        .hero-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--color-accent-cyan);
+            letter-spacing: 4px;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s var(--ease-out-expo) 3s forwards;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s var(--ease-out-expo) 3.2s forwards;
+        }
+
+        .hero-title .line1 {
+            display: block;
+            background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold), var(--color-gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title .line2 {
+            display: block;
+            font-size: 0.5em;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--color-text-secondary);
+            -webkit-text-fill-color: var(--color-text-secondary);
+            margin-top: 0.3em;
+        }
+
+        .hero-name {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s var(--ease-out-expo) 3.5s forwards;
+            position: relative;
+        }
+
+        .hero-name::before,
+        .hero-name::after {
+            content: '✦';
+            font-size: 0.4em;
+            color: var(--color-gold);
+            vertical-align: middle;
+            margin: 0 0.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--color-text-secondary);
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: fadeInUp 1s var(--ease-out-expo) 3.7s forwards;
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s var(--ease-out-expo) 4s forwards;
+        }
+
+        .hero-scroll-indicator span {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--color-gold), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scaleY(1.5);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           SECTION COMMON
+           ═══════════════════════════════════════════ */
+        .section {
+            position: relative;
+            z-index: 2;
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-label .label-line {
+            width: 30px;
+            height: 1px;
+            background: var(--color-gold);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-primary);
+        }
+
+        /* reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══════════════════════════════════════════
+           EXPERTISE ICONS SECTION (visual, no text desc)
+           ═══════════════════════════════════════════ */
+        .expertise-section {
+            padding: 4rem 2rem 6rem;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .expertise-card {
+            position: relative;
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-card);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            overflow: hidden;
+            transition: all 0.5s var(--ease-out-expo);
+            cursor: default;
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: radial-gradient(circle at 50% 0%, var(--card-glow, rgba(212, 168, 83, 0.08)), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .expertise-card:hover::before {
+            opacity: 1;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 168, 83, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .expertise-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.2rem;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .expertise-card:nth-child(1) .expertise-icon {
+            background: linear-gradient(135deg, rgba(74, 158, 255, 0.15), rgba(0, 212, 255, 0.1));
+            box-shadow: 0 0 30px rgba(74, 158, 255, 0.1);
+        }
+
+        .expertise-card:nth-child(2) .expertise-icon {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.1));
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);
+        }
+
+        .expertise-card:nth-child(3) .expertise-icon {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(0, 212, 255, 0.1));
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+        }
+
+        .expertise-card:nth-child(4) .expertise-icon {
+            background: linear-gradient(135deg, rgba(212, 168, 83, 0.15), rgba(240, 215, 140, 0.1));
+            box-shadow: 0 0 30px rgba(212, 168, 83, 0.1);
+        }
+
+        .expertise-card-title {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .expertise-card-decoration {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            font-family: var(--font-mono);
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.02);
+            z-index: 0;
+            user-select: none;
+        }
+
+        /* ═══════════════════════════════════════════
+           TRIBUTE / CONGRATULATION MESSAGE
+           ═══════════════════════════════════════════ */
+        .tribute-section {
+            background: linear-gradient(180deg, transparent, rgba(212, 168, 83, 0.03), transparent);
+        }
+
+        .tribute-content {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .tribute-quote {
+            position: relative;
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-card);
+            backdrop-filter: blur(20px);
+        }
+
+        .tribute-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-family: var(--font-display);
+            font-size: 6rem;
+            line-height: 1;
+            color: var(--color-gold);
+            opacity: 0.2;
+        }
+
+        .tribute-text {
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 400;
+            line-height: 2;
+            color: var(--color-text-primary);
+            font-style: italic;
+        }
+
+        .tribute-text p {
+            margin-bottom: 1.2rem;
+        }
+
+        .tribute-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tribute-signature {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tribute-signature .sig-line {
+            width: 50px;
+            height: 1px;
+            background: var(--color-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .tribute-signature .sig-label {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+        }
+
+        .tribute-signature .sig-name {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-gold);
+            font-style: italic;
+        }
+
+        /* ═══════════════════════════════════════════
+           IMPACT STATS (visual counters)
+           ═══════════════════════════════════════════ */
+        .stats-section {
+            padding: 4rem 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-card);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .stat-item:hover {
+            border-color: rgba(212, 168, 83, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* ═══════════════════════════════════════════
+           QUOTE CAROUSEL
+           ═══════════════════════════════════════════ */
+        .quotes-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.02), transparent);
+        }
+
+        .wisdom-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            min-height: 200px;
+        }
+
+        .wisdom-quote {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(20px);
+        }
+
+        .wisdom-quote.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .wisdom-text {
+            font-family: var(--font-display);
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--color-text-primary);
+        }
+
+        .wisdom-author {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-gold);
+        }
+
+        .wisdom-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .wisdom-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid var(--color-gold);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .wisdom-dot.active {
+            background: var(--color-gold);
+            box-shadow: 0 0 10px rgba(212, 168, 83, 0.4);
+        }
+
+        /* ═══════════════════════════════════════════
+           GOLDEN LINE TIMELINE
+           ═══════════════════════════════════════════ */
+        .timeline-section {
+            padding: 5rem 2rem;
+        }
+
+        .timeline {
+            max-width: 700px;
+            margin: 2rem auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--color-gold), var(--color-accent-purple), var(--color-accent-cyan), var(--color-gold));
+            border-radius: 1px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            padding-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 12px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--color-bg-deep);
+            border: 2px solid var(--color-gold);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background: var(--color-gold);
+            box-shadow: 0 0 15px rgba(212, 168, 83, 0.5);
+        }
+
+        .timeline-year {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--color-gold);
+            letter-spacing: 2px;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════
+           WISHES / FINAL CTA SECTION
+           ═══════════════════════════════════════════ */
+        .wishes-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, transparent, rgba(212, 168, 83, 0.05), transparent);
+        }
+
+        .wishes-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold), var(--color-accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .wishes-text {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+        }
+
+        .flower-rain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .flower {
+            position: absolute;
+            top: -60px;
+            font-size: 1.5rem;
+            animation: fallFlower linear forwards;
+            opacity: 0;
+        }
+
+        @keyframes fallFlower {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg);
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .wish-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--color-gold);
+            border-radius: 100px;
+            background: linear-gradient(135deg, rgba(212, 168, 83, 0.1), rgba(212, 168, 83, 0.05));
+            color: var(--color-gold-light);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wish-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 100px;
+        }
+
+        .wish-btn:hover::before {
+            opacity: 1;
+        }
+
+        .wish-btn:hover {
+            color: var(--color-bg-deep);
+            box-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .wish-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ═══════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════ */
+        .footer {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-text {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            letter-spacing: 1px;
+        }
+
+        .footer-heart {
+            color: var(--color-accent-pink);
+            display: inline-block;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           LIGHT BEAMS
+           ═══════════════════════════════════════════ */
+        .light-beams {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .beam {
+            position: absolute;
+            width: 2px;
+            height: 200vh;
+            background: linear-gradient(to bottom, transparent, rgba(212, 168, 83, 0.03), transparent);
+            transform: rotate(25deg);
+            animation: beamShift 15s ease-in-out infinite;
+        }
+
+        .beam:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .beam:nth-child(2) {
+            left: 30%;
+            animation-delay: 3s;
+        }
+
+        .beam:nth-child(3) {
+            left: 50%;
+            animation-delay: 6s;
+        }
+
+        .beam:nth-child(4) {
+            left: 70%;
+            animation-delay: 9s;
+        }
+
+        .beam:nth-child(5) {
+            left: 90%;
+            animation-delay: 12s;
+        }
+
+        @keyframes beamShift {
+
+            0%,
+            100% {
+                transform: rotate(25deg) translateY(-20%);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: rotate(25deg) translateY(20%);
+                opacity: 1;
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem 1rem;
+                gap: 0.5rem;
+                flex-wrap: wrap;
+            }
+
+            .nav-link {
+                font-size: 0.65rem;
+                padding: 0.4rem 0.6rem;
+                letter-spacing: 1px;
+            }
+
+            .section {
+                padding: 4rem 1.2rem;
+            }
+
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .expertise-card {
+                padding: 1.8rem 1rem;
+            }
+
+            .tribute-quote {
+                padding: 2rem 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .timeline::before {
+                left: 12px;
+            }
+
+            .timeline-item {
+                padding-left: 45px;
+            }
+
+            .timeline-dot {
+                left: 4px;
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           AUDIO TOGGLE
+           ═══════════════════════════════════════════ */
+        .audio-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-card);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--color-gold);
+            font-size: 1.2rem;
+        }
+
+        .audio-toggle:hover {
+            border-color: var(--color-gold);
+            box-shadow: 0 0 20px rgba(212, 168, 83, 0.2);
+        }
+
+        .audio-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 2px;
+            height: 18px;
+        }
+
+        .audio-bars .bar {
+            width: 3px;
+            background: var(--color-gold);
+            border-radius: 1px;
+            transition: height 0.3s ease;
+        }
+
+        .audio-bars.playing .bar {
+            animation: audioBar 0.8s ease-in-out infinite alternate;
+        }
+
+        .audio-bars .bar:nth-child(1) {
+            height: 6px;
+            animation-delay: 0s;
+        }
+
+        .audio-bars .bar:nth-child(2) {
+            height: 12px;
+            animation-delay: 0.15s;
+        }
+
+        .audio-bars .bar:nth-child(3) {
+            height: 8px;
+            animation-delay: 0.3s;
+        }
+
+        .audio-bars .bar:nth-child(4) {
+            height: 14px;
+            animation-delay: 0.45s;
+        }
+
+        .audio-bars:not(.playing) .bar {
+            height: 3px !important;
+        }
+
+        @keyframes audioBar {
+            0% {
+                height: 4px;
+            }
+
+            100% {
+                height: 18px;
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           PARTICLE BURST ON CLICK
+           ═══════════════════════════════════════════ */
+        .click-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: burstParticle 0.8s ease-out forwards;
+        }
+
+        @keyframes burstParticle {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0);
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           GOLDEN GLOW ORB (Hero background)
+           ═══════════════════════════════════════════ */
+        .hero-orb {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 168, 83, 0.06), transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: orbFloat 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.15);
+            }
+        }
+
+        .hero-orb-2 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(74, 158, 255, 0.04), transparent 70%);
+            top: 30%;
+            left: 30%;
+            animation: orbFloat2 12s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes orbFloat2 {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            33% {
+                transform: translate(50px, -30px);
+            }
+
+            66% {
+                transform: translate(-30px, 50px);
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           PHOTO SHOWCASE SECTION
+           ═══════════════════════════════════════════ */
+        .photo-section {
+            padding: 5rem 2rem 6rem;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            overflow: visible;
+        }
+
+        .photo-showcase {
+            position: relative;
+            max-width: 480px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo-frame {
+            position: relative;
+            width: 100%;
+            border-radius: 24px;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-accent-cyan), var(--color-accent-purple), var(--color-gold));
+            background-size: 300% 300%;
+            animation: borderGradient 6s ease infinite;
+            box-shadow:
+                0 0 40px rgba(212, 168, 83, 0.15),
+                0 0 80px rgba(212, 168, 83, 0.08),
+                0 30px 60px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .photo-frame:hover {
+            box-shadow:
+                0 0 60px rgba(212, 168, 83, 0.25),
+                0 0 120px rgba(212, 168, 83, 0.12),
+                0 40px 80px rgba(0, 0, 0, 0.6);
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        @keyframes borderGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .photo-inner {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--color-bg-deep);
+        }
+
+        .photo-inner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+            transition: transform 0.8s var(--ease-out-expo), filter 0.8s ease;
+            filter: saturate(1.05) contrast(1.05);
+        }
+
+        .photo-frame:hover .photo-inner img {
+            transform: scale(1.03);
+            filter: saturate(1.15) contrast(1.08);
+        }
+
+        .photo-inner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: linear-gradient(180deg, transparent 50%, rgba(10, 10, 15, 0.7) 100%);
+            pointer-events: none;
+        }
+
+        .photo-overlay-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .photo-overlay-badge .badge-names {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            white-space: nowrap;
+        }
+
+        .photo-overlay-badge .badge-sub {
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-gold-light);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Corner decorations */
+        .photo-corner {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            z-index: 3;
+        }
+
+        .photo-corner::before,
+        .photo-corner::after {
+            content: '';
+            position: absolute;
+            background: var(--color-gold);
+        }
+
+        .photo-corner.tl { top: -8px; left: -8px; }
+        .photo-corner.tr { top: -8px; right: -8px; }
+        .photo-corner.bl { bottom: -8px; left: -8px; }
+        .photo-corner.br { bottom: -8px; right: -8px; }
+
+        .photo-corner.tl::before, .photo-corner.tr::before,
+        .photo-corner.bl::before, .photo-corner.br::before {
+            width: 30px;
+            height: 2px;
+        }
+
+        .photo-corner.tl::after, .photo-corner.tr::after,
+        .photo-corner.bl::after, .photo-corner.br::after {
+            width: 2px;
+            height: 30px;
+        }
+
+        .photo-corner.tl::before, .photo-corner.tl::after { top: 0; left: 0; }
+        .photo-corner.tr::before { top: 0; right: 0; }
+        .photo-corner.tr::after { top: 0; right: 0; }
+        .photo-corner.bl::before { bottom: 0; left: 0; }
+        .photo-corner.bl::after { bottom: 0; left: 0; }
+        .photo-corner.br::before { bottom: 0; right: 0; }
+        .photo-corner.br::after { bottom: 0; right: 0; }
+
+        .photo-caption {
+            margin-top: 1.5rem;
+            text-align: center;
+            padding: 1.2rem 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-card);
+            backdrop-filter: blur(15px);
+        }
+
+        .photo-caption-text {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .photo-caption-text .gold {
+            color: var(--color-gold);
+            font-weight: 600;
+        }
+
+        /* Floating sparkles around photo */
+        .photo-sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--color-gold);
+            animation: sparkleFloat 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .photo-sparkle:nth-child(1) { top: 10%; left: -20px; animation-delay: 0s; }
+        .photo-sparkle:nth-child(2) { top: 30%; right: -25px; animation-delay: 0.8s; }
+        .photo-sparkle:nth-child(3) { bottom: 20%; left: -15px; animation-delay: 1.6s; }
+        .photo-sparkle:nth-child(4) { top: 5%; right: -10px; animation-delay: 0.4s; }
+        .photo-sparkle:nth-child(5) { bottom: 35%; right: -20px; animation-delay: 1.2s; }
+
+        @keyframes sparkleFloat {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) translateY(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) translateY(-10px);
+            }
+        }
+
+        /* Glow orb behind photo */
+        .photo-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 168, 83, 0.06), transparent 70%);
+            z-index: -1;
+            animation: glowPulse 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .photo-showcase {
+                max-width: 340px;
+            }
+
+            .photo-caption {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        /* Photo Fallback / Placeholder */
+        .photo-placeholder {
+            width: 100%;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, rgba(20, 20, 38, 0.95), rgba(10, 10, 18, 0.98));
+            padding: 3rem 1.5rem 4.5rem;
+            text-align: center;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .placeholder-icon {
+            font-size: 4rem;
+            margin-bottom: 1.2rem;
+            filter: drop-shadow(0 0 25px rgba(212, 168, 83, 0.6));
+            animation: placeholderFloat 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes placeholderFloat {
+            from { transform: translateY(0) scale(1); }
+            to { transform: translateY(-8px) scale(1.04); }
+        }
+
+        .placeholder-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-gold-light);
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+
+        .placeholder-sub {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+            max-width: 290px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Welcome Screen (click to enter + start music) -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-orbit">
+            <div class="nucleus"></div>
+            <div class="electron"></div>
+            <div class="electron"></div>
+            <div class="electron"></div>
+        </div>
+        <div class="loading-text" style="margin-top: 30px;">Ustozlar Bayrami</div>
+        <button class="welcome-enter-btn" id="welcomeBtn">
+            <span class="play-icon">▶</span>
+            <span>Kirish</span>
+        </button>
+        <div class="loading-text" style="font-size: 0.65rem; margin-top: 12px; letter-spacing: 2px; opacity: 0.5;">🎵 Musiqa bilan</div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" preload="auto" loop>
+        <source src="./music.m4a" type="audio/mp4">
+    </audio>
+
+    <!-- Background Canvas for particles + neural net -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Light Beams -->
+    <div class="light-beams">
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+    </div>
+
+    <!-- Floating Math Formulas -->
+    <div class="math-formulas" id="mathFormulas"></div>
+
+    <!-- Flower Rain Container -->
+    <div class="flower-rain" id="flowerRain"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="nav-link">Bosh sahifa</a>
+        <a href="#photo" class="nav-link">Suratlar</a>
+        <a href="#tribute" class="nav-link">Tabrik</a>
+        <a href="#stats" class="nav-link">Natijalar</a>
+        <a href="#wisdom" class="nav-link">Hikmatlar</a>
+        <a href="#journey" class="nav-link">Yo'l</a>
+        <a href="#wishes" class="nav-link">Tilaklar</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-orb"></div>
+        <div class="hero-orb-2"></div>
+
+        <div class="hero-badge">
+            <span class="dot"></span>
+            <span>1-Oktyabr — Ustozlar va Murabbiylar Kuni</span>
+        </div>
+
+        <div class="hero-date">01 . 10 . 2026</div>
+
+        <h1 class="hero-title">
+            <span class="line1">Ustozlar Bayrami<br>Muborak!</span>
+            <span class="line2">Ilm chirog'ini yoqib, kelajak avlodlarni nurlantirayotgan</span>
+        </h1>
+
+        <div class="hero-name">Oripov Ma'rufxon Isroilovich</div>
+        <p class="hero-subtitle">Hurmatli Ustozimizga chuqur ehtirom bilan</p>
+
+        <div class="hero-scroll-indicator">
+            <span>Pastga suring</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Photo Showcase Section -->
+    <section class="section photo-section" id="photo">
+        <div class="photo-showcase reveal">
+            <div class="photo-glow"></div>
+
+            <div class="photo-sparkle"></div>
+            <div class="photo-sparkle"></div>
+            <div class="photo-sparkle"></div>
+            <div class="photo-sparkle"></div>
+            <div class="photo-sparkle"></div>
+
+            <div class="photo-frame">
+                <div class="photo-corner tl"></div>
+                <div class="photo-corner tr"></div>
+                <div class="photo-corner bl"></div>
+                <div class="photo-corner br"></div>
+
+                <div class="photo-inner">
+                    <img src="./ustoz-photo.jpg" alt="Oripov Ma'rufxon Isroilovich" id="ustozImg" loading="eager" onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';" onload="this.style.display='block'; document.getElementById('photoFallback').style.display='none';">
+                    <div id="photoFallback" class="photo-placeholder" style="display: none;">
+                        <div class="placeholder-icon">🎓</div>
+                        <div class="placeholder-title">Oripov Ma'rufxon Isroilovich</div>
+                        <div class="placeholder-sub">Ilm va hikmat ziyosi sohibi bo'lgan aziz Ustozimizga cheksiz ehtirom bilan</div>
+                    </div>
+                    <div class="photo-overlay-badge">
+                        <span class="badge-names">Oripov Ma'rufxon Isroilovich</span>
+                        <span class="badge-sub">✦ Aziz va Muhtaram Ustozimiz ✦</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-caption">
+                <p class="photo-caption-text">
+                    <span class="gold">Bilim</span> dars xonasida tug'iladi,
+                    <span class="gold">ilhom</span> esa — ustozning ko'zlarida.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Tribute / Congratulation Message -->
+    <section class="section tribute-section" id="tribute">
+        <div class="section-container">
+            <div class="tribute-content reveal">
+                <div class="section-label" style="justify-content: center;">
+                    <span class="label-line"></span>
+                    <span>Samimiy Tabrik</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title" style="text-align: center;">Yurakdan Kelgan So'zlar</h2>
+
+                <div class="tribute-quote">
+                    <div class="tribute-text">
+                        <p>Hurmatli Ma'rufxon Isroilovich!</p>
+                        <p>Ustozlar va Murabbiylar kunida Sizni chin qalbimdan samimiy muborakbod etaman!</p>
+                        <p>Siz faqat bilim beruvchi emas — Siz hayotga to'g'ri yo'l ko'rsatuvchi, ilhom manbai va haqiqiy
+                            murabbiysiz. Sizning har bir darsingiz, har bir purma'no so'zingiz va bebaho maslahatlaringiz biz
+                            shogirdlaringiz uchun bitmas-tuganmas xazina bo'lib qoldi.</p>
+                        <p>Sizning sabrli va mehribon qalbingiz, ilmga bo'lgan cheksiz muhabbatingiz barchamiz uchun
+                            ibrat maktabi. Siz menga nafaqat chuqur bilim — balki hayotni anglashni, fikrlashni va yuksak marralarni
+                            orzu qilishni o'rgatdingiz.</p>
+                        <p>Sizga mustahkam sog'lik, oilaviy baxt-saodat, uzoq umr va barcha ezgu niyatlaringizning
+                            ijobatini tilayman. Ilmingiz ziyoda bo'lsin, shogirdlaringiz yutuqlari bilan doimo faxrlanib yuring!</p>
+                        <p>Chuqur ehtirom va samimiyat bilan — Sizning shogirdingiz 🙏</p>
+                    </div>
+
+                    <div class="tribute-signature">
+                        <div class="sig-line"></div>
+                        <span class="sig-label">Shogirdingiz</span>
+                        <span class="sig-name">Orifxon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats-section" id="stats">
+        <div class="section-container reveal">
+            <div class="section-label" style="justify-content: center;">
+                <span class="label-line"></span>
+                <span>Fidokorona Mehnat</span>
+                <span class="label-line"></span>
+            </div>
+            <h2 class="section-title" style="text-align: center;">Ilm Yo'lidagi Yutuqlar</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="25" data-suffix="+">0</div>
+                    <div class="stat-label">Yillik Ilmiy Tajriba</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1000" data-suffix="+">0</div>
+                    <div class="stat-label">Minnatdor Shogirdlar</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100" data-suffix="+">0</div>
+                    <div class="stat-label">Ilmiy Maqola va Darslar</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1" data-suffix="">0</div>
+                    <div class="stat-label">Cheksiz Mehr va Ehtirom</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wisdom Quotes Carousel -->
+    <section class="section quotes-section" id="wisdom">
+        <div class="section-container">
+            <div class="reveal">
+                <div class="section-label" style="justify-content: center;">
+                    <span class="label-line"></span>
+                    <span>Hikmatlar</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title" style="text-align: center;">Ta'lim Haqida Hikmatlar</h2>
+            </div>
+
+            <div class="wisdom-container reveal">
+                <div class="wisdom-quote active">
+                    <div class="wisdom-text">"Ustoz — millatning kelajagini shakllantiruvchi me'mor."</div>
+                    <div class="wisdom-author">— Sharq Hikmati</div>
+                </div>
+                <div class="wisdom-quote">
+                    <div class="wisdom-text">"O'qituvchi — sham singari o'zini yoqib, boshqalarni yoritadi."</div>
+                    <div class="wisdom-author">— Xalq Maqoli</div>
+                </div>
+                <div class="wisdom-quote">
+                    <div class="wisdom-text">"Ilm olish beshikdan to qabrgacha. Ammo ustozsiz bu yo'l zulmat."</div>
+                    <div class="wisdom-author">— Sharq Donishmandi</div>
+                </div>
+                <div class="wisdom-quote">
+                    <div class="wisdom-text">"Yaxshi ustoz — bir umrlik yo'ldosh, bir umrlik ilhom manbai."</div>
+                    <div class="wisdom-author">— Buyuk So'z</div>
+                </div>
+            </div>
+
+            <div class="wisdom-dots reveal" id="wisdomDots">
+                <div class="wisdom-dot active" data-index="0"></div>
+                <div class="wisdom-dot" data-index="1"></div>
+                <div class="wisdom-dot" data-index="2"></div>
+                <div class="wisdom-dot" data-index="3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey / Timeline -->
+    <section class="section timeline-section" id="journey">
+        <div class="section-container">
+            <div class="reveal">
+                <div class="section-label">
+                    <span class="label-line"></span>
+                    <span>Ilm Sayohati</span>
+                </div>
+                <h2 class="section-title">Bilim Yo'lidagi Bosqichlar</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">Boshlanishi</div>
+                    <div class="timeline-title">Ilm Sari Birinchi Qadamlar</div>
+                    <div class="timeline-desc">Bilimga bo'lgan ishtiyoq bilan ta'lim olamiga kirib kelish va o'z yo'lini
+                        topish.</div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">Rivojlanish</div>
+                    <div class="timeline-title">Tabiat Qonunlarini O'rganish</div>
+                    <div class="timeline-desc">Koinotning eng chuqur sirlarini kashf etish va ilmiy izlanishlar olib
+                        borish.</div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">Yuksalish</div>
+                    <div class="timeline-title">Raqamlar Olamini Zabt Etish</div>
+                    <div class="timeline-desc">Matematikaning go'zal dunyosida yangi ufqlarni ochish va kashfiyotlar
+                        qilish.</div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">Innovatsiya</div>
+                    <div class="timeline-title">Sun'iy Intellekt Sari</div>
+                    <div class="timeline-desc">Zamonaviy texnologiyalar va sun'iy intellekt sohasida ilmiy
+                        muvaffaqiyatlarga erishish.</div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">Bugungi Kun</div>
+                    <div class="timeline-title">Ustozlar Ustozi</div>
+                    <div class="timeline-desc">Butun O'zbekiston bo'ylab minglab ta'lim fidoyilariga ilhom bag'ishlab
+                        kelmoqda.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Wishes Section -->
+    <section class="section wishes-section" id="wishes">
+        <div class="section-container reveal">
+            <h2 class="wishes-title">Baxtli Bayram,<br>Aziz Ustozim!</h2>
+            <p class="wishes-text">
+                Sizning ilmingiz — bizning kelajagimiz. Sizning mehr-muhabbatingiz — bizning kuchimiz.
+                Bu bayramda Sizga eng yaxshi tilaklar yo'llayman. Umringiz uzoq, ilmingiz ziyoda bo'lsin!
+            </p>
+            <button class="wish-btn" id="wishBtn" onclick="launchFlowers()">
+                <span>🌸 Gul Yomg'iri Yog'dirish</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">
+            <span class="footer-heart">❤️</span> bilan yaratildi — Ustozlar Bayrami 2026
+        </p>
+    </footer>
+
+    <!-- Audio Toggle -->
+    <div class="audio-toggle" id="audioToggle" title="Musiqa">
+        <div class="audio-bars" id="audioBars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <script>
+        /* ═══════════════════════════════════════════
+           WELCOME SCREEN + MUSIC START
+           ═══════════════════════════════════════════ */
+        const bgMusic = document.getElementById('bgMusic');
+        let musicPlaying = false;
+
+        document.getElementById('welcomeBtn').addEventListener('click', () => {
+            // Start music from 40 seconds
+            bgMusic.currentTime = 40;
+            bgMusic.volume = 0.5;
+            bgMusic.play().catch(() => {});
+            musicPlaying = true;
+            document.getElementById('audioBars').classList.add('playing');
+
+            // Hide welcome screen
+            document.getElementById('loadingScreen').classList.add('hidden');
+        });
+
+        /* ═══════════════════════════════════════════
+           FLOATING MATH FORMULAS
+           ═══════════════════════════════════════════ */
+        const formulas = [
+            'E = mc²', '∫₀^∞ e^(-x²) dx = √π/2', '∇ × E = -∂B/∂t',
+            'F = ma', 'ΔxΔp ≥ ℏ/2', 'iℏ∂ψ/∂t = Ĥψ',
+            '∑ F = dp/dt', 'S = k_B ln Ω', 'λ = h/p',
+            'e^(iπ) + 1 = 0', '∂²u/∂t² = c²∇²u', 'P(A|B) = P(B|A)P(A)/P(B)',
+            '∮ E·dA = Q/ε₀', '∇·B = 0', 'a² + b² = c²',
+            'sigmoid(x) = 1/(1+e^(-x))', 'ReLU(x) = max(0, x)',
+            'L = -∑yᵢlog(ŷᵢ)', 'W ← W - η∇L', 'softmax(zᵢ) = e^zᵢ/∑e^zⱼ',
+            'f(x) = ax² + bx + c', 'det(A) ≠ 0', 'lim(x→∞) (1+1/x)^x = e'
+        ];
+
+        const mathContainer = document.getElementById('mathFormulas');
+
+        function createFormula() {
+            const el = document.createElement('div');
+            el.className = 'math-formula';
+            el.textContent = formulas[Math.floor(Math.random() * formulas.length)];
+            el.style.left = Math.random() * 100 + '%';
+            el.style.animationDuration = (20 + Math.random() * 20) + 's';
+            el.style.animationDelay = Math.random() * 5 + 's';
+            el.style.fontSize = (0.6 + Math.random() * 0.4) + 'rem';
+            mathContainer.appendChild(el);
+
+            el.addEventListener('animationend', () => el.remove());
+        }
+
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createFormula, i * 800);
+        }
+        setInterval(createFormula, 3000);
+
+        /* ═══════════════════════════════════════════
+           BACKGROUND CANVAS — Particles + Neural Network
+           ═══════════════════════════════════════════ */
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: -1000, y: -1000 };
+        const CONNECTION_DIST = 150;
+        const PARTICLE_COUNT = window.innerWidth < 768 ? 40 : 80;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        document.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2 + 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+
+                const colors = [
+                    '212, 168, 83',
+                    '74, 158, 255',
+                    '139, 92, 246',
+                    '0, 212, 255'
+                ];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            update() {
+                // Mouse interaction
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < 200) {
+                    const force = (200 - dist) / 200 * 0.01;
+                    this.vx += dx * force;
+                    this.vy += dy * force;
+                }
+
+                // Damping
+                this.vx *= 0.99;
+                this.vy *= 0.99;
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Bounce off edges
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+                this.x = Math.max(0, Math.min(canvas.width, this.x));
+                this.y = Math.max(0, Math.min(canvas.height, this.y));
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+                ctx.fill();
+
+                // Glow
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius * 3, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.color}, ${this.opacity * 0.1})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            particles.push(new Particle());
+        }
+
+        function drawConnections() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < CONNECTION_DIST) {
+                        const opacity = (1 - dist / CONNECTION_DIST) * 0.15;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(212, 168, 83, ${opacity})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            drawConnections();
+            requestAnimationFrame(animateCanvas);
+        }
+
+        animateCanvas();
+
+        /* ═══════════════════════════════════════════
+           SCROLL REVEAL
+           ═══════════════════════════════════════════ */
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        /* ═══════════════════════════════════════════
+           COUNTER ANIMATION
+           ═══════════════════════════════════════════ */
+        const statNumbers = document.querySelectorAll('.stat-number');
+
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+
+            if (target === 1 && suffix === '') {
+                el.textContent = '∞';
+                return;
+            }
+
+            let current = 0;
+            const increment = target / 60;
+            const duration = 2000;
+            const stepTime = duration / 60;
+
+            function step() {
+                current += increment;
+                if (current >= target) {
+                    el.textContent = target + suffix;
+                    return;
+                }
+                el.textContent = Math.floor(current) + suffix;
+                setTimeout(step, stepTime);
+            }
+
+            step();
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const nums = entry.target.querySelectorAll('.stat-number');
+                    nums.forEach(n => animateCounter(n));
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.stats-grid').forEach(g => counterObserver.observe(g));
+
+        /* ═══════════════════════════════════════════
+           WISDOM QUOTES CAROUSEL
+           ═══════════════════════════════════════════ */
+        const wisdomQuotes = document.querySelectorAll('.wisdom-quote');
+        const wisdomDots = document.querySelectorAll('.wisdom-dot');
+        let currentQuote = 0;
+
+        function showQuote(index) {
+            wisdomQuotes.forEach(q => q.classList.remove('active'));
+            wisdomDots.forEach(d => d.classList.remove('active'));
+            wisdomQuotes[index].classList.add('active');
+            wisdomDots[index].classList.add('active');
+            currentQuote = index;
+        }
+
+        wisdomDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                showQuote(parseInt(dot.dataset.index));
+            });
+        });
+
+        setInterval(() => {
+            showQuote((currentQuote + 1) % wisdomQuotes.length);
+        }, 5000);
+
+        /* ═══════════════════════════════════════════
+           FLOWER RAIN
+           ═══════════════════════════════════════════ */
+        const flowers = ['🌸', '🌺', '🌹', '🌷', '🌻', '💐', '🌼', '✨', '⭐', '🌟'];
+
+        function launchFlowers() {
+            const container = document.getElementById('flowerRain');
+
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const flower = document.createElement('div');
+                    flower.className = 'flower';
+                    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+                    flower.style.left = Math.random() * 100 + '%';
+                    flower.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+                    flower.style.animationDuration = (3 + Math.random() * 4) + 's';
+                    flower.style.animationDelay = '0s';
+                    container.appendChild(flower);
+
+                    flower.addEventListener('animationend', () => flower.remove());
+                }, i * 80);
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           CLICK PARTICLE BURST
+           ═══════════════════════════════════════════ */
+        document.addEventListener('click', (e) => {
+            const colors = ['#d4a853', '#4a9eff', '#8b5cf6', '#00d4ff', '#ec4899'];
+
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'click-particle';
+                particle.style.left = e.clientX + 'px';
+                particle.style.top = e.clientY + 'px';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+                const angle = (Math.PI * 2 / 8) * i;
+                const distance = 30 + Math.random() * 40;
+                particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                particle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+
+                document.body.appendChild(particle);
+                particle.addEventListener('animationend', () => particle.remove());
+            }
+        });
+
+        /* ═══════════════════════════════════════════
+           SMOOTH SCROLL FOR NAV LINKS
+           ═══════════════════════════════════════════ */
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        /* ═══════════════════════════════════════════
+           NAVBAR HIDE/SHOW ON SCROLL
+           ═══════════════════════════════════════════ */
+        let lastScrollY = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        /* ═══════════════════════════════════════════
+           MUSIC TOGGLE (Play/Pause real MP3)
+           ═══════════════════════════════════════════ */
+        function toggleAudio() {
+            if (!musicPlaying) {
+                if (bgMusic.currentTime === 0) bgMusic.currentTime = 40;
+                bgMusic.play().catch(() => {});
+                musicPlaying = true;
+                document.getElementById('audioBars').classList.add('playing');
+            } else {
+                bgMusic.pause();
+                musicPlaying = false;
+                document.getElementById('audioBars').classList.remove('playing');
+            }
+        }
+
+        document.getElementById('audioToggle').addEventListener('click', toggleAudio);
+
+        /* ═══════════════════════════════════════════
+           AUTO FLOWER RAIN ON LOAD (subtle)
+           ═══════════════════════════════════════════ */
+        setTimeout(() => {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const container = document.getElementById('flowerRain');
+                    const flower = document.createElement('div');
+                    flower.className = 'flower';
+                    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+                    flower.style.left = Math.random() * 100 + '%';
+                    flower.style.fontSize = (1 + Math.random()) + 'rem';
+                    flower.style.animationDuration = (5 + Math.random() * 5) + 's';
+                    container.appendChild(flower);
+                    flower.addEventListener('animationend', () => flower.remove());
+                }, i * 300);
+            }
+        }, 3500);
+
+        /* ═══════════════════════════════════════════
+           PHOTO FALLBACK CHECK
+           ═══════════════════════════════════════════ */
+        const ustozImg = document.getElementById('ustozImg');
+        const photoFallback = document.getElementById('photoFallback');
+        if (ustozImg && photoFallback) {
+            if (!ustozImg.complete || ustozImg.naturalWidth === 0) {
+                ustozImg.style.display = 'none';
+                photoFallback.style.display = 'flex';
+            }
+            ustozImg.addEventListener('error', () => {
+                ustozImg.style.display = 'none';
+                photoFallback.style.display = 'flex';
+            });
+            ustozImg.addEventListener('load', () => {
+                ustozImg.style.display = 'block';
+                photoFallback.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+
+</html>
