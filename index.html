@@ -1,2460 +1,949 @@
 <!DOCTYPE html>
 <html lang="uz">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ustozlar Bayrami — Aziz Bobom Oripov Ma'rufxon Isroilovich</title>
-    <meta name="description" content="Ustozlar bayrami munosabati bilan sobiq o'qituvchi, aziz bobomiz Oripov Ma'rufxon Isroilovichga nevarasidan tabrik">
-    <meta name="theme-color" content="#0a0a0f">
-    <!-- Ulashish (Telegram / WhatsApp) uchun. Sayt joylangach og:image ga to'liq manzil yozing,
-         masalan: https://sizning-sayt.uz/ustoz-photo.jpg -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Ustozlar Bayrami Muborak, Aziz Bobojon! — Oripov Ma'rufxon Isroilovich">
-    <meta property="og:description" content="Sobiq o'qituvchi, aziz bobomizga nevarasidan samimiy tabrik">
-    <meta property="og:image" content="./ustoz-photo.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <noscript><style>.reveal{opacity:1!important;transform:none!important}.loading-screen{display:none!important}.navbar{transform:none!important;animation:none!important}.hero-badge,.hero-date,.hero-title{opacity:1!important}</style></noscript>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <style>
-        /* ═══════════════════════════════════════════
-           CSS CUSTOM PROPERTIES & RESET
-           ═══════════════════════════════════════════ */
-        :root {
-            --color-bg-deep: #0a0a0f;
-            --color-bg-dark: #0f0f1a;
-            --color-bg-card: rgba(18, 18, 35, 0.6);
-            --color-gold: #d4a853;
-            --color-gold-light: #f0d78c;
-            --color-gold-dark: #a67c2e;
-            --color-accent-blue: #4a9eff;
-            --color-accent-cyan: #00d4ff;
-            --color-accent-purple: #8b5cf6;
-            --color-accent-pink: #ec4899;
-            --color-accent-green: #10b981;
-            --color-text-primary: #f0f0f5;
-            --color-text-secondary: #a0a0b8;
-            --color-text-muted: #6b6b85;
-            --color-border: rgba(212, 168, 83, 0.15);
-            --font-display: 'Playfair Display', Georgia, serif;
-            --font-body: 'Inter', -apple-system, sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-            --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
-        }
-
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scrollbar-width: thin;
-            scrollbar-color: var(--color-gold-dark) var(--color-bg-deep);
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--color-bg-deep);
-            color: var(--color-text-primary);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* ═══════════════════════════════════════════
-           LOADING SCREEN
-           ═══════════════════════════════════════════ */
-        .loading-screen {
-            position: fixed;
-            inset: 0;
-            z-index: 10000;
-            background: var(--color-bg-deep);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        .loading-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loading-orbit {
-            width: 80px;
-            height: 80px;
-            position: relative;
-        }
-
-        .loading-orbit .electron {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--color-gold);
-        }
-
-        .loading-orbit .electron:nth-child(1) {
-            animation: orbit1 1.5s linear infinite;
-        }
-
-        .loading-orbit .electron:nth-child(2) {
-            animation: orbit2 1.5s linear infinite;
-            animation-delay: 0.5s;
-        }
-
-        .loading-orbit .electron:nth-child(3) {
-            animation: orbit3 1.5s linear infinite;
-            animation-delay: 1s;
-        }
-
-        .loading-orbit .nucleus {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--color-gold-light), var(--color-gold));
-            box-shadow: 0 0 20px var(--color-gold), 0 0 40px rgba(212, 168, 83, 0.3);
-        }
-
-        @keyframes orbit1 {
-            0% {
-                top: 0;
-                left: 50%;
-            }
-
-            25% {
-                top: 50%;
-                left: 100%;
-            }
-
-            50% {
-                top: 100%;
-                left: 50%;
-            }
-
-            75% {
-                top: 50%;
-                left: 0;
-            }
-
-            100% {
-                top: 0;
-                left: 50%;
-            }
-        }
-
-        @keyframes orbit2 {
-            0% {
-                top: 15%;
-                left: 15%;
-            }
-
-            25% {
-                top: 15%;
-                left: 85%;
-            }
-
-            50% {
-                top: 85%;
-                left: 85%;
-            }
-
-            75% {
-                top: 85%;
-                left: 15%;
-            }
-
-            100% {
-                top: 15%;
-                left: 15%;
-            }
-        }
-
-        @keyframes orbit3 {
-            0% {
-                top: 50%;
-                left: 0;
-            }
-
-            25% {
-                top: 0;
-                left: 50%;
-            }
-
-            50% {
-                top: 50%;
-                left: 100%;
-            }
-
-            75% {
-                top: 100%;
-                left: 50%;
-            }
-
-            100% {
-                top: 50%;
-                left: 0;
-            }
-        }
-
-        .loading-text {
-            margin-top: 30px;
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            color: var(--color-gold);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            animation: loadPulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes loadPulse {
-
-            0%,
-            100% {
-                opacity: 0.4;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
-
-        .welcome-enter-btn {
-            margin-top: 2rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2.5rem;
-            border: 2px solid var(--color-gold);
-            border-radius: 100px;
-            background: linear-gradient(135deg, rgba(212, 168, 83, 0.1), rgba(212, 168, 83, 0.05));
-            color: var(--color-gold-light);
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s var(--ease-out-expo);
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 1s ease 1s forwards;
-            opacity: 0;
-        }
-
-        .welcome-enter-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            border-radius: 100px;
-        }
-
-        .welcome-enter-btn:hover::before {
-            opacity: 1;
-        }
-
-        .welcome-enter-btn:hover {
-            color: var(--color-bg-deep);
-            box-shadow: 0 0 40px rgba(212, 168, 83, 0.4);
-            transform: scale(1.05);
-        }
-
-        .welcome-enter-btn span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .welcome-enter-btn .play-icon {
-            font-size: 0.9rem;
-            animation: playPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes playPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-        }
-
-        /* ═══════════════════════════════════════════
-           GLOBAL CANVAS (particles, formulas, neural net)
-           ═══════════════════════════════════════════ */
-        #bg-canvas {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* ═══════════════════════════════════════════
-           FLOATING MATH FORMULAS (CSS decorative layer)
-           ═══════════════════════════════════════════ */
-        .math-formulas {
-            position: fixed;
-            inset: 0;
-            z-index: 1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .math-formula {
-            position: absolute;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: rgba(212, 168, 83, 0.09);
-            white-space: nowrap;
-            animation: floatFormula 25s linear infinite;
-            user-select: none;
-        }
-
-        @keyframes floatFormula {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            90% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-100vh) rotate(15deg);
-                opacity: 0;
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           NAVIGATION
-           ═══════════════════════════════════════════ */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            background: rgba(10, 10, 15, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--color-border);
-            transform: translateY(-100%);
-            animation: slideNavDown 0.8s var(--ease-out-expo) 2.5s forwards;
-        }
-
-        @keyframes slideNavDown {
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        .nav-link {
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--color-text-secondary);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--color-gold), var(--color-accent-cyan));
-            border-radius: 1px;
-            transition: width 0.3s var(--ease-out-expo);
-        }
-
-        .nav-link:hover {
-            color: var(--color-gold-light);
-        }
-
-        .nav-link:hover::after {
-            width: 80%;
-        }
-
-        /* ═══════════════════════════════════════════
-           HERO SECTION
-           ═══════════════════════════════════════════ */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.5rem;
-            border: 1px solid var(--color-border);
-            border-radius: 100px;
-            background: rgba(212, 168, 83, 0.05);
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--color-gold);
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-out-expo) 2.8s forwards;
-        }
-
-        .hero-badge .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--color-gold);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 0.4;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 1;
-                transform: scale(1.3);
-            }
-        }
-
-        .hero-date {
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            color: var(--color-accent-cyan);
-            letter-spacing: 4px;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-out-expo) 3s forwards;
-        }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-out-expo) 3.2s forwards;
-        }
-
-        .hero-title .line1 {
-            display: block;
-            background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold), var(--color-gold-dark));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-title .line2 {
-            display: block;
-            font-size: 0.5em;
-            font-weight: 400;
-            font-style: italic;
-            color: var(--color-text-secondary);
-            -webkit-text-fill-color: var(--color-text-secondary);
-            margin-top: 0.3em;
-        }
-
-        .hero-name {
-            font-family: var(--font-display);
-            font-size: clamp(1.5rem, 4vw, 3rem);
-            font-weight: 600;
-            color: var(--color-text-primary);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-out-expo) 3.5s forwards;
-            position: relative;
-        }
-
-        .hero-name::before,
-        .hero-name::after {
-            content: '✦';
-            font-size: 0.4em;
-            color: var(--color-gold);
-            vertical-align: middle;
-            margin: 0 0.5em;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: var(--color-text-secondary);
-            letter-spacing: 1px;
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-out-expo) 3.7s forwards;
-        }
-
-        .hero-scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-out-expo) 4s forwards;
-        }
-
-        .hero-scroll-indicator span {
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--color-text-muted);
-        }
-
-        .scroll-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--color-gold), transparent);
-            animation: scrollPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes scrollPulse {
-
-            0%,
-            100% {
-                transform: scaleY(1);
-                opacity: 0.5;
-            }
-
-            50% {
-                transform: scaleY(1.5);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           SECTION COMMON
-           ═══════════════════════════════════════════ */
-        .section {
-            position: relative;
-            z-index: 2;
-            padding: 6rem 2rem;
-        }
-
-        .section-container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--color-gold);
-            margin-bottom: 1rem;
-        }
-
-        .section-label .label-line {
-            width: 30px;
-            height: 1px;
-            background: var(--color-gold);
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1.5rem;
-            color: var(--color-text-primary);
-        }
-
-        /* reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ═══════════════════════════════════════════
-           EXPERTISE ICONS SECTION (visual, no text desc)
-           ═══════════════════════════════════════════ */
-        .expertise-section {
-            padding: 4rem 2rem 6rem;
-        }
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .expertise-card {
-            position: relative;
-            padding: 2.5rem 1.5rem;
-            border-radius: 20px;
-            border: 1px solid var(--color-border);
-            background: var(--color-bg-card);
-            backdrop-filter: blur(10px);
-            text-align: center;
-            overflow: hidden;
-            transition: all 0.5s var(--ease-out-expo);
-            cursor: default;
-        }
-
-        .expertise-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            background: radial-gradient(circle at 50% 0%, var(--card-glow, rgba(212, 168, 83, 0.08)), transparent 70%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .expertise-card:hover::before {
-            opacity: 1;
-        }
-
-        .expertise-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(212, 168, 83, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .expertise-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 1.2rem;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .expertise-card:nth-child(1) .expertise-icon {
-            background: linear-gradient(135deg, rgba(74, 158, 255, 0.15), rgba(0, 212, 255, 0.1));
-            box-shadow: 0 0 30px rgba(74, 158, 255, 0.1);
-        }
-
-        .expertise-card:nth-child(2) .expertise-icon {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.1));
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);
-        }
-
-        .expertise-card:nth-child(3) .expertise-icon {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(0, 212, 255, 0.1));
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
-        }
-
-        .expertise-card:nth-child(4) .expertise-icon {
-            background: linear-gradient(135deg, rgba(212, 168, 83, 0.15), rgba(240, 215, 140, 0.1));
-            box-shadow: 0 0 30px rgba(212, 168, 83, 0.1);
-        }
-
-        .expertise-card-title {
-            font-family: var(--font-display);
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--color-text-primary);
-            position: relative;
-            z-index: 1;
-        }
-
-        .expertise-card-decoration {
-            position: absolute;
-            bottom: -10px;
-            right: -10px;
-            font-family: var(--font-mono);
-            font-size: 4rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.02);
-            z-index: 0;
-            user-select: none;
-        }
-
-        /* ═══════════════════════════════════════════
-           TRIBUTE / CONGRATULATION MESSAGE
-           ═══════════════════════════════════════════ */
-        .tribute-section {
-            background: linear-gradient(180deg, transparent, rgba(212, 168, 83, 0.03), transparent);
-        }
-
-        .tribute-content {
-            max-width: 750px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .tribute-quote {
-            position: relative;
-            padding: 3rem;
-            border-radius: 24px;
-            border: 1px solid var(--color-border);
-            background: var(--color-bg-card);
-            backdrop-filter: blur(20px);
-        }
-
-        .tribute-quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 30px;
-            font-family: var(--font-display);
-            font-size: 6rem;
-            line-height: 1;
-            color: var(--color-gold);
-            opacity: 0.2;
-        }
-
-        .tribute-text {
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            font-weight: 400;
-            line-height: 2;
-            color: var(--color-text-primary);
-            font-style: italic;
-        }
-
-        .tribute-text p {
-            margin-bottom: 1.2rem;
-        }
-
-        .tribute-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .tribute-signature {
-            margin-top: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .tribute-signature .sig-line {
-            width: 50px;
-            height: 1px;
-            background: var(--color-gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .tribute-signature .sig-label {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--color-text-muted);
-        }
-
-        .tribute-signature .sig-name {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--color-gold);
-            font-style: italic;
-        }
-
-        /* ═══════════════════════════════════════════
-           IMPACT STATS (visual counters)
-           ═══════════════════════════════════════════ */
-        .stats-section {
-            padding: 4rem 2rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--color-border);
-            background: var(--color-bg-card);
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-        }
-
-        .stat-item:hover {
-            border-color: rgba(212, 168, 83, 0.3);
-            transform: translateY(-4px);
-        }
-
-        .stat-number {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--color-text-secondary);
-            margin-top: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        /* ═══════════════════════════════════════════
-           QUOTE CAROUSEL
-           ═══════════════════════════════════════════ */
-        .quotes-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.02), transparent);
-        }
-
-        .wisdom-container {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            min-height: 200px;
-        }
-
-        .wisdom-quote {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            transform: translateY(20px);
-        }
-
-        .wisdom-quote.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .wisdom-text {
-            font-family: var(--font-display);
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            font-weight: 400;
-            font-style: italic;
-            line-height: 1.8;
-            color: var(--color-text-primary);
-        }
-
-        .wisdom-author {
-            margin-top: 1.5rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--color-gold);
-        }
-
-        .wisdom-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 2rem;
-        }
-
-        .wisdom-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            border: 1px solid var(--color-gold);
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .wisdom-dot.active {
-            background: var(--color-gold);
-            box-shadow: 0 0 10px rgba(212, 168, 83, 0.4);
-        }
-
-        /* ═══════════════════════════════════════════
-           GOLDEN LINE TIMELINE
-           ═══════════════════════════════════════════ */
-        .timeline-section {
-            padding: 5rem 2rem;
-        }
-
-        .timeline {
-            max-width: 700px;
-            margin: 2rem auto 0;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20px;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--color-gold), var(--color-accent-purple), var(--color-accent-cyan), var(--color-gold));
-            border-radius: 1px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 60px;
-            padding-bottom: 3rem;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 12px;
-            top: 5px;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: var(--color-bg-deep);
-            border: 2px solid var(--color-gold);
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:hover .timeline-dot {
-            background: var(--color-gold);
-            box-shadow: 0 0 15px rgba(212, 168, 83, 0.5);
-        }
-
-        .timeline-year {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--color-gold);
-            letter-spacing: 2px;
-            margin-bottom: 0.4rem;
-        }
-
-        .timeline-title {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--color-text-primary);
-            margin-bottom: 0.4rem;
-        }
-
-        .timeline-desc {
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            line-height: 1.6;
-        }
-
-        /* ═══════════════════════════════════════════
-           WISHES / FINAL CTA SECTION
-           ═══════════════════════════════════════════ */
-        .wishes-section {
-            padding: 6rem 2rem;
-            text-align: center;
-            background: linear-gradient(180deg, transparent, rgba(212, 168, 83, 0.05), transparent);
-        }
-
-        .wishes-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold), var(--color-accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .wishes-text {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--color-text-secondary);
-        }
-
-        .flower-rain {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 9999;
-            overflow: hidden;
-        }
-
-        .flower {
-            position: absolute;
-            top: -60px;
-            font-size: 1.5rem;
-            animation: fallFlower linear forwards;
-            opacity: 0;
-        }
-
-        @keyframes fallFlower {
-            0% {
-                opacity: 0;
-                transform: translateY(0) rotate(0deg);
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            90% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        .wish-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2.5rem;
-            border: 1px solid var(--color-gold);
-            border-radius: 100px;
-            background: linear-gradient(135deg, rgba(212, 168, 83, 0.1), rgba(212, 168, 83, 0.05));
-            color: var(--color-gold-light);
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s var(--ease-out-expo);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .wish-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            border-radius: 100px;
-        }
-
-        .wish-btn:hover::before {
-            opacity: 1;
-        }
-
-        .wish-btn:hover {
-            color: var(--color-bg-deep);
-            box-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .wish-btn span {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ═══════════════════════════════════════════
-           FOOTER
-           ═══════════════════════════════════════════ */
-        .footer {
-            position: relative;
-            z-index: 2;
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid var(--color-border);
-        }
-
-        .footer-text {
-            font-size: 0.75rem;
-            color: var(--color-text-muted);
-            letter-spacing: 1px;
-        }
-
-        .footer-heart {
-            color: var(--color-accent-pink);
-            display: inline-block;
-            animation: heartbeat 1.5s ease-in-out infinite;
-        }
-
-        @keyframes heartbeat {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           LIGHT BEAMS
-           ═══════════════════════════════════════════ */
-        .light-beams {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .beam {
-            position: absolute;
-            width: 2px;
-            height: 200vh;
-            background: linear-gradient(to bottom, transparent, rgba(212, 168, 83, 0.03), transparent);
-            transform: rotate(25deg);
-            animation: beamShift 15s ease-in-out infinite;
-        }
-
-        .beam:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .beam:nth-child(2) {
-            left: 30%;
-            animation-delay: 3s;
-        }
-
-        .beam:nth-child(3) {
-            left: 50%;
-            animation-delay: 6s;
-        }
-
-        .beam:nth-child(4) {
-            left: 70%;
-            animation-delay: 9s;
-        }
-
-        .beam:nth-child(5) {
-            left: 90%;
-            animation-delay: 12s;
-        }
-
-        @keyframes beamShift {
-
-            0%,
-            100% {
-                transform: rotate(25deg) translateY(-20%);
-                opacity: 0.3;
-            }
-
-            50% {
-                transform: rotate(25deg) translateY(20%);
-                opacity: 1;
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           RESPONSIVE
-           ═══════════════════════════════════════════ */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0.8rem 1rem;
-                gap: 0.5rem;
-                flex-wrap: wrap;
-            }
-
-            .nav-link {
-                font-size: 0.65rem;
-                padding: 0.4rem 0.6rem;
-                letter-spacing: 1px;
-            }
-
-            .section {
-                padding: 4rem 1.2rem;
-            }
-
-            .expertise-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .expertise-card {
-                padding: 1.8rem 1rem;
-            }
-
-            .tribute-quote {
-                padding: 2rem 1.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .timeline::before {
-                left: 12px;
-            }
-
-            .timeline-item {
-                padding-left: 45px;
-            }
-
-            .timeline-dot {
-                left: 4px;
-                width: 16px;
-                height: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .expertise-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           AUDIO TOGGLE
-           ═══════════════════════════════════════════ */
-        .audio-toggle {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 1001;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 1px solid var(--color-border);
-            background: var(--color-bg-card);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: var(--color-gold);
-            font-size: 1.2rem;
-        }
-
-        .audio-toggle:hover {
-            border-color: var(--color-gold);
-            box-shadow: 0 0 20px rgba(212, 168, 83, 0.2);
-        }
-
-        .audio-bars {
-            display: flex;
-            align-items: flex-end;
-            gap: 2px;
-            height: 18px;
-        }
-
-        .audio-bars .bar {
-            width: 3px;
-            background: var(--color-gold);
-            border-radius: 1px;
-            transition: height 0.3s ease;
-        }
-
-        .audio-bars.playing .bar {
-            animation: audioBar 0.8s ease-in-out infinite alternate;
-        }
-
-        .audio-bars .bar:nth-child(1) {
-            height: 6px;
-            animation-delay: 0s;
-        }
-
-        .audio-bars .bar:nth-child(2) {
-            height: 12px;
-            animation-delay: 0.15s;
-        }
-
-        .audio-bars .bar:nth-child(3) {
-            height: 8px;
-            animation-delay: 0.3s;
-        }
-
-        .audio-bars .bar:nth-child(4) {
-            height: 14px;
-            animation-delay: 0.45s;
-        }
-
-        .audio-bars:not(.playing) .bar {
-            height: 3px !important;
-        }
-
-        @keyframes audioBar {
-            0% {
-                height: 4px;
-            }
-
-            100% {
-                height: 18px;
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           PARTICLE BURST ON CLICK
-           ═══════════════════════════════════════════ */
-        .click-particle {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            animation: burstParticle 0.8s ease-out forwards;
-        }
-
-        @keyframes burstParticle {
-            0% {
-                opacity: 1;
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translate(var(--tx), var(--ty)) scale(0);
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           GOLDEN GLOW ORB (Hero background)
-           ═══════════════════════════════════════════ */
-        .hero-orb {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 168, 83, 0.06), transparent 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: orbFloat 8s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes orbFloat {
-
-            0%,
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-
-            50% {
-                transform: translate(-50%, -50%) scale(1.15);
-            }
-        }
-
-        .hero-orb-2 {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(74, 158, 255, 0.04), transparent 70%);
-            top: 30%;
-            left: 30%;
-            animation: orbFloat2 12s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes orbFloat2 {
-
-            0%,
-            100% {
-                transform: translate(0, 0);
-            }
-
-            33% {
-                transform: translate(50px, -30px);
-            }
-
-            66% {
-                transform: translate(-30px, 50px);
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           PHOTO SHOWCASE SECTION
-           ═══════════════════════════════════════════ */
-        .photo-section {
-            padding: 5rem 2rem 6rem;
-            display: flex;
-            justify-content: center;
-            position: relative;
-            overflow: visible;
-        }
-
-        .photo-showcase {
-            position: relative;
-            max-width: 480px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .photo-frame {
-            position: relative;
-            width: 100%;
-            border-radius: 24px;
-            padding: 5px;
-            background: linear-gradient(135deg, var(--color-gold), var(--color-accent-cyan), var(--color-accent-purple), var(--color-gold));
-            background-size: 300% 300%;
-            animation: borderGradient 6s ease infinite;
-            box-shadow:
-                0 0 40px rgba(212, 168, 83, 0.15),
-                0 0 80px rgba(212, 168, 83, 0.08),
-                0 30px 60px rgba(0, 0, 0, 0.5);
-            transition: all 0.5s var(--ease-out-expo);
-        }
-
-        .photo-frame:hover {
-            box-shadow:
-                0 0 60px rgba(212, 168, 83, 0.25),
-                0 0 120px rgba(212, 168, 83, 0.12),
-                0 40px 80px rgba(0, 0, 0, 0.6);
-            transform: translateY(-8px) scale(1.02);
-        }
-
-        @keyframes borderGradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .photo-inner {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            background: var(--color-bg-deep);
-        }
-
-        .photo-inner img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 20px;
-            transition: transform 0.8s var(--ease-out-expo), filter 0.8s ease;
-            filter: saturate(1.05) contrast(1.05);
-        }
-
-        .photo-frame:hover .photo-inner img {
-            transform: scale(1.03);
-            filter: saturate(1.15) contrast(1.08);
-        }
-
-        .photo-inner::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            background: linear-gradient(180deg, transparent 50%, rgba(10, 10, 15, 0.7) 100%);
-            pointer-events: none;
-        }
-
-        .photo-overlay-badge {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .photo-overlay-badge .badge-names {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 600;
-            color: #fff;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-            white-space: nowrap;
-        }
-
-        .photo-overlay-badge .badge-sub {
-            font-size: 0.7rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--color-gold-light);
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-        }
-
-        /* Corner decorations */
-        .photo-corner {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            z-index: 3;
-        }
-
-        .photo-corner::before,
-        .photo-corner::after {
-            content: '';
-            position: absolute;
-            background: var(--color-gold);
-        }
-
-        .photo-corner.tl { top: -8px; left: -8px; }
-        .photo-corner.tr { top: -8px; right: -8px; }
-        .photo-corner.bl { bottom: -8px; left: -8px; }
-        .photo-corner.br { bottom: -8px; right: -8px; }
-
-        .photo-corner.tl::before, .photo-corner.tr::before,
-        .photo-corner.bl::before, .photo-corner.br::before {
-            width: 30px;
-            height: 2px;
-        }
-
-        .photo-corner.tl::after, .photo-corner.tr::after,
-        .photo-corner.bl::after, .photo-corner.br::after {
-            width: 2px;
-            height: 30px;
-        }
-
-        .photo-corner.tl::before, .photo-corner.tl::after { top: 0; left: 0; }
-        .photo-corner.tr::before { top: 0; right: 0; }
-        .photo-corner.tr::after { top: 0; right: 0; }
-        .photo-corner.bl::before { bottom: 0; left: 0; }
-        .photo-corner.bl::after { bottom: 0; left: 0; }
-        .photo-corner.br::before { bottom: 0; right: 0; }
-        .photo-corner.br::after { bottom: 0; right: 0; }
-
-        .photo-caption {
-            margin-top: 1.5rem;
-            text-align: center;
-            padding: 1.2rem 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--color-border);
-            background: var(--color-bg-card);
-            backdrop-filter: blur(15px);
-        }
-
-        .photo-caption-text {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 500;
-            font-style: italic;
-            color: var(--color-text-secondary);
-            line-height: 1.6;
-        }
-
-        .photo-caption-text .gold {
-            color: var(--color-gold);
-            font-weight: 600;
-        }
-
-        /* Floating sparkles around photo */
-        .photo-sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background: var(--color-gold);
-            animation: sparkleFloat 3s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .photo-sparkle:nth-child(1) { top: 10%; left: -20px; animation-delay: 0s; }
-        .photo-sparkle:nth-child(2) { top: 30%; right: -25px; animation-delay: 0.8s; }
-        .photo-sparkle:nth-child(3) { bottom: 20%; left: -15px; animation-delay: 1.6s; }
-        .photo-sparkle:nth-child(4) { top: 5%; right: -10px; animation-delay: 0.4s; }
-        .photo-sparkle:nth-child(5) { bottom: 35%; right: -20px; animation-delay: 1.2s; }
-
-        @keyframes sparkleFloat {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0) translateY(0);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1) translateY(-10px);
-            }
-        }
-
-        /* Glow orb behind photo */
-        .photo-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 120%;
-            height: 120%;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 168, 83, 0.06), transparent 70%);
-            z-index: -1;
-            animation: glowPulse 4s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes glowPulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
-        }
-
-        @media (max-width: 768px) {
-            .photo-showcase {
-                max-width: 340px;
-            }
-
-            .photo-caption {
-                padding: 1rem 1.2rem;
-            }
-        }
-
-        /* Photo Fallback / Placeholder */
-        .photo-placeholder {
-            width: 100%;
-            min-height: 420px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(145deg, rgba(20, 20, 38, 0.95), rgba(10, 10, 18, 0.98));
-            padding: 3rem 1.5rem 4.5rem;
-            text-align: center;
-            border-radius: 20px;
-            position: relative;
-        }
-
-        .placeholder-icon {
-            font-size: 4rem;
-            margin-bottom: 1.2rem;
-            filter: drop-shadow(0 0 25px rgba(212, 168, 83, 0.6));
-            animation: placeholderFloat 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes placeholderFloat {
-            from { transform: translateY(0) scale(1); }
-            to { transform: translateY(-8px) scale(1.04); }
-        }
-
-        .placeholder-title {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--color-gold-light);
-            letter-spacing: 1px;
-            margin-bottom: 0.6rem;
-        }
-
-        .placeholder-sub {
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            font-style: italic;
-            max-width: 290px;
-            line-height: 1.6;
-        }
-    </style>
-
-    <style>
-        /* ═══ QO'SHIMCHA: galereya, mobil menyu, kamharakat rejimi ═══ */
-        .photo-inner { aspect-ratio: 1 / 1; }
-        .photo-inner img.gallery-img {
-            position: absolute; inset: 0; width: 100%; height: 100%;
-            object-fit: cover; object-position: center 25%;
-            opacity: 0; transition: opacity 1s ease, transform 0.8s var(--ease-out-expo), filter 0.8s ease;
-        }
-        .photo-inner img.gallery-img.active { opacity: 1; }
-        .photo-inner .photo-placeholder { position: absolute; inset: 0; min-height: 0; }
-        .photo-dots { display: flex; gap: 10px; justify-content: center; margin-top: 1rem; }
-        .photo-dot {
-            width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--color-gold);
-            background: transparent; cursor: pointer; padding: 0; transition: all .3s ease;
-        }
-        .photo-dot.active { background: var(--color-gold); box-shadow: 0 0 10px rgba(212,168,83,.6); }
-
-        .wisdom-author-mark { color: var(--color-gold); letter-spacing: 6px; margin-top: 1rem; opacity: .7; }
-
-        @media (max-width: 768px) {
-            .navbar { flex-wrap: nowrap !important; justify-content: flex-start !important;
-                overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-            .navbar::-webkit-scrollbar { display: none; }
-            .nav-link { white-space: nowrap; flex: 0 0 auto; }
-            .math-formulas { display: none; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important; scroll-behavior: auto !important;
-            }
-            .reveal { opacity: 1; transform: none; }
-            .math-formulas, .flower-rain, .light-beams { display: none; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orifxon Ma'rufxonov — Bo'lajak SOC Analyst & Axborot Xavfsizligi</title>
+
+  <!-- SEO & Social OpenGraph Meta Tags -->
+  <meta name="description" content="Orifxon Ma'rufxonov — Axborot xavfsizligi talabasi (3-kurs), Bo'lajak SOC Analyst. Python avtomatlashtirish, SIEM log tahlili, tarmoq himoyasi va Telegram botlar portfolio sayti.">
+  <meta name="keywords" content="Orifxon Ma'rufxonov, SOC Analyst, Axborot xavfsizligi, Cybersecurity, Python, SIEM, Blue Team, MITRE ATT&CK, O'zbekiston xalqaro islomshunoslik akademiyasi">
+  <meta name="author" content="Orifxon Ma'rufxonov">
+  <meta name="theme-color" content="#05070c">
+
+  <!-- OpenGraph / Telegram / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Orifxon Ma'rufxonov | Bo'lajak SOC Analyst & Kiberxavfsizlik">
+  <meta property="og:description" content="Kiberxavfsizlik, SOC monitoringi, SIEM log tahlili va Python avtomatlashtirishga ixtisoslashgan mutaxassis portfoliyasi.">
+  <meta property="og:image" content="./orifxon.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300ff9d'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.67-3.13 9.04-7 10.15-3.87-1.11-7-5.48-7-10.15V6.3l7-3.12z'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Welcome Screen (click to enter + start music) -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-orbit">
-            <div class="nucleus"></div>
-            <div class="electron"></div>
-            <div class="electron"></div>
-            <div class="electron"></div>
+
+  <!-- Dynamic Canvas Background & Scanline Overlay -->
+  <canvas id="matrix-canvas"></canvas>
+  <div class="cyber-grid"></div>
+  <div class="scanlines"></div>
+
+  <!-- ==========================================================================
+       COMMAND HEADER / NAVBAR
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container nav-content">
+      <a href="#" class="nav-brand">
+        <div class="brand-badge">
+          <span class="brand-dot"></span>
+          <span>OM_SOC</span>
         </div>
-        <div class="loading-text" style="margin-top: 30px;">Ustozlar Bayrami</div>
-        <button class="welcome-enter-btn" id="welcomeBtn">
-            <span class="play-icon">▶</span>
-            <span>Kirish</span>
+        <div class="brand-title">SEC_OPS // 2026</div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">Haqida</a></li>
+          <li><a href="#soc-matrix" class="nav-link" data-i18n="nav_matrix">SOC & Xavfsizlik</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Loyihalar</a></li>
+          <li><a href="#terminal" class="nav-link" data-i18n="nav_terminal">Terminal CLI</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Ko‘nikmalar</a></li>
+          <li><a href="#timeline" class="nav-link" data-i18n="nav_timeline">Ta’lim & Tajriba</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Aloqa</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Controls: Audio, Lang Switch, CV -->
+      <div class="nav-actions">
+        <!-- Sound FX Button -->
+        <button id="sound-toggle-btn" class="btn-icon" title="Ovoz effektlarini yoqish/o'chirish">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
         </button>
-        <div class="loading-text" style="font-size: 0.65rem; margin-top: 12px; letter-spacing: 2px; opacity: 0.5;">🎵 Musiqa bilan</div>
+
+        <!-- Multi-language Toggle (UZ / EN) -->
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="uz">UZ</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <a href="Orifxon_Marufxonov_CV.pdf" download="Orifxon_Marufxonov_CV.pdf" class="btn-cyber-sm">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span data-i18n="btn_download_cv">CV Yuklab Olish</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <!-- Background Music -->
-    <audio id="bgMusic" preload="auto" loop>
-        <source src="./music.m4a" type="audio/mp4">
-        <source src="./music.mp3" type="audio/mpeg">
-    </audio>
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (COMMAND CENTER BRIEFING)
+         ========================================================================== -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <!-- Cyber Defense Status Pill -->
+          <div class="status-pill">
+            <span class="status-dot-pulse"></span>
+            <span data-i18n="hero_badge">HIMOYA TIZIMI FAOL • SOC TAYYOR</span>
+          </div>
 
-    <!-- Background Canvas for particles + neural net -->
-    <canvas id="bg-canvas"></canvas>
+          <h1 class="hero-title">
+            <span style="display: block; font-size: 1.1rem; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;" data-i18n="hero_title_prefix">Assalomu alaykum, men</span>
+            <span class="gradient-text">Orifxon Ma'rufxonov</span>
+          </h1>
 
-    <!-- Light Beams -->
-    <div class="light-beams">
-        <div class="beam"></div>
-        <div class="beam"></div>
-        <div class="beam"></div>
-        <div class="beam"></div>
-        <div class="beam"></div>
-    </div>
+          <div class="hero-subtitle">
+            <span style="color: var(--accent-green);">&gt;</span>
+            <span id="typewriter-text"></span>
+            <span class="typing-cursor"></span>
+          </div>
 
-    <!-- Floating Math Formulas -->
-    <div class="math-formulas" id="mathFormulas"></div>
+          <p class="hero-description" data-i18n="hero_desc">
+            O‘zbekiston xalqaro islomshunoslik akademiyasi Axborot xavfsizligi yo‘nalishi 3-kurs talabasi. Kiberxavfsizlik, SOC monitoringi, tarmoq xavfsizligi, SIEM log tahlili va Python avtomatlashtirishga ixtisoslashgan.
+          </p>
 
-    <!-- Flower Rain Container -->
-    <div class="flower-rain" id="flowerRain"></div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">
+              <span data-i18n="btn_view_projects">Loyihalarni Ko‘rish</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            <a href="#terminal" class="btn-secondary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <span data-i18n="btn_open_terminal">Terminalni Ochish</span>
+            </a>
+          </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <a href="#home" class="nav-link">Bosh sahifa</a>
-        <a href="#photo" class="nav-link">Suratlar</a>
-        <a href="#tribute" class="nav-link">Tabrik</a>
-        <a href="#stats" class="nav-link">Fazilatlar</a>
-        <a href="#wisdom" class="nav-link">Hikmatlar</a>
-        <a href="#journey" class="nav-link">Yo'l</a>
-        <a href="#wishes" class="nav-link">Tilaklar</a>
-    </nav>
+          <!-- Hero Social Direct Connect -->
+          <div class="hero-social-links">
+            <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="social-chip tg" title="Telegram: @Orifxon_05">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>@Orifxon_05</span>
+            </a>
+            <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="social-chip ig" title="Instagram: @_sheeyh_9">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>@_sheeyh_9</span>
+            </a>
+            <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="social-chip gh" title="GitHub: github.com/orifxon05">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+          </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-orb"></div>
-        <div class="hero-orb-2"></div>
-
-        <div class="hero-badge">
-            <span class="dot"></span>
-            <span>1-Oktyabr — Ustozlar va Murabbiylar Kuni</span>
+          <!-- Quick Metrics -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">5+</span>
+              <span class="stat-label" data-i18n="stat_projects">IT & Xavfsizlik Loyihalari</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">3-kurs</span>
+              <span class="stat-label" data-i18n="stat_year">Axborot Xavfsizligi Kursi</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">24/7</span>
+              <span class="stat-label" data-i18n="stat_monitoring">Tirishqoqlik & Intizom</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label" data-i18n="stat_readiness">Amaliyotga Tayyorlik</span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-date">01 . 10 . 2026</div>
+        <!-- Cyber Avatar HUD Card -->
+        <div class="hero-visual">
+          <div class="cyber-card">
+            <!-- Corner Brackets -->
+            <div class="corner-bracket tl"></div>
+            <div class="corner-bracket tr"></div>
+            <div class="corner-bracket bl"></div>
+            <div class="corner-bracket br"></div>
 
-        <h1 class="hero-title">
-            <span class="line1">Ustozlar Bayrami<br>Muborak!</span>
-            <span class="line2">Ilm chirog'ini yoqib, ko'plab shogirdlarga yo'l ko'rsatgan sobiq o'qituvchi</span>
-        </h1>
+            <div class="card-hud-header">
+              <span class="hud-code">SEC_ID: OM-2005</span>
+              <div class="hud-status">
+                <span class="brand-dot"></span>
+                <span>STATUS: OPERATIONAL</span>
+              </div>
+            </div>
 
-        <div class="hero-name">Oripov Ma'rufxon Isroilovich</div>
-        <p class="hero-subtitle">Aziz bobojonimga — sobiq o'qituvchimizga — chuqur ehtirom bilan</p>
+            <!-- Avatar with Radar Rings -->
+            <div class="avatar-frame">
+              <div class="avatar-radar-ring"></div>
+              <div class="avatar-radar-ring-2"></div>
+              <div class="avatar-img-wrap">
+                <img src="orifxon.png" alt="Orifxon Ma'rufxonov" class="avatar-img">
+              </div>
+            </div>
 
-        <div class="hero-scroll-indicator">
-            <span>Pastga suring</span>
-            <div class="scroll-line"></div>
+            <div class="avatar-badge">
+              <div class="avatar-name">Orifxon Ma'rufxonov</div>
+              <div class="avatar-role">BO‘LAJAK SOC ANALYST</div>
+            </div>
+
+            <div class="card-hud-footer">
+              <span>LOCATION: TASHKENT, UZ</span>
+              <span class="hud-defcon">DEFCON: 5 (SECURE)</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Photo Showcase Section -->
-    <section class="section photo-section" id="photo">
-        <div class="photo-showcase reveal">
-            <div class="photo-glow"></div>
-
-            <div class="photo-sparkle"></div>
-            <div class="photo-sparkle"></div>
-            <div class="photo-sparkle"></div>
-            <div class="photo-sparkle"></div>
-            <div class="photo-sparkle"></div>
-
-            <div class="photo-frame">
-                <div class="photo-corner tl"></div>
-                <div class="photo-corner tr"></div>
-                <div class="photo-corner bl"></div>
-                <div class="photo-corner br"></div>
-
-                <div class="photo-inner">
-                    <img class="gallery-img" src="./ustoz-photo.jpg" alt="Oripov Ma'rufxon Isroilovich" id="ustozImg" width="1000" height="1000" loading="eager" decoding="async">
-                    <img class="gallery-img" src="./ustoz-photo-2.jpg" alt="Oripov Ma'rufxon Isroilovich — ikkinchi surat" width="1000" height="1055" loading="eager" decoding="async">
-                    <img class="gallery-img" src="./ustoz-photo-3.jpg" alt="Oripov Ma'rufxon Isroilovich — uchinchi surat" width="1000" height="1157" loading="eager" decoding="async">
-                    <div id="photoFallback" class="photo-placeholder" style="display: none;">
-                        <div class="placeholder-icon">🎓</div>
-                        <div class="placeholder-title">Oripov Ma'rufxon Isroilovich</div>
-                        <div class="placeholder-sub">Sobiq o'qituvchi, aziz bobomizga cheksiz ehtirom bilan</div>
-                    </div>
-                    <div class="photo-overlay-badge">
-                        <span class="badge-names">Oripov Ma'rufxon Isroilovich</span>
-                        <span class="badge-sub">✦ Aziz Bobomiz — Sobiq O'qituvchi ✦</span>
-                    </div>
-                </div>
+    <!-- ==========================================================================
+         LIVE SOC ALERT MONITOR (UNIQUE COMMAND CENTER WIDGET)
+         ========================================================================== -->
+    <section class="soc-monitor-section">
+      <div class="container">
+        <div class="soc-monitor-card">
+          <div class="soc-header">
+            <div class="soc-header-left">
+              <div class="live-indicator">
+                <span class="brand-dot"></span>
+                <span data-i18n="soc_live_title">SOC Monitoring & Xavfsizlik Voqealari Oqimi (Live Telemetry)</span>
+              </div>
             </div>
-
-            <div class="photo-dots" id="photoDots" aria-label="Suratlarni almashtirish"></div>
-
-            <div class="photo-caption">
-                <p class="photo-caption-text">
-                    <span class="gold">Bilim</span> dars xonasida tug'iladi,
-                    <span class="gold">ilhom</span> esa — bobomning ko'zlarida.
-                </p>
+            <div class="soc-controls">
+              <button id="btn-simulate-alert" class="btn-simulate">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <span data-i18n="btn_simulate">Insident Simulyatsiya Qilish</span>
+              </button>
             </div>
+          </div>
+
+          <!-- Alert feed stream -->
+          <div class="soc-feed" id="soc-feed-container">
+            <!-- Dynamically populated via script.js -->
+          </div>
         </div>
+      </div>
     </section>
 
-
-    <!-- Tribute / Congratulation Message -->
-    <section class="section tribute-section" id="tribute">
-        <div class="section-container">
-            <div class="tribute-content reveal">
-                <div class="section-label" style="justify-content: center;">
-                    <span class="label-line"></span>
-                    <span>Samimiy Tabrik</span>
-                    <span class="label-line"></span>
-                </div>
-                <h2 class="section-title" style="text-align: center;">Yurakdan Kelgan So'zlar</h2>
-
-                <div class="tribute-quote">
-                    <div class="tribute-text">
-                        <p>Aziz bobojon!</p>
-                        <p>Ustozlar va Murabbiylar kuni munosabati bilan Sizni chin qalbimdan tabriklayman!</p>
-                        <p>Siz yillar davomida o'qituvchi bo'lib, ko'plab shogirdlarga ilm berdingiz, ularga to'g'ri yo'l ko'rsatdingiz. Hozir nafaqada bo'lsangiz ham, Siz biz uchun doimo eng hurmatli ustoz bo'lib qolasiz.</p>
-                        <p>Biz nevaralaringiz uchun Siz nafaqat mehribon bobo, balki hayotdagi birinchi ustozimizsiz. Sizning sabringiz, mehringiz va aytgan har bir so'zingiz bizga ibrat bo'lib qoladi.</p>
-                        <p>Sizga mustahkam sog'lik, oilaviy baxt-saodat, uzoq va barakali umr tilayman. Shogirdlaringiz va nevaralaringiz yutuqlari bilan doimo faxrlanib yuring!</p>
-                        <p>Chuqur ehtirom va cheksiz mehr bilan — Sizning nevarangiz 🙏</p>
-                    </div>
-
-                    <div class="tribute-signature">
-                        <div class="sig-line"></div>
-                        <span class="sig-label">Nevarangiz</span>
-                        <span class="sig-name">Orifxon</span>
-                    </div>
-                </div>
-            </div>
+    <!-- ==========================================================================
+         ABOUT / KASBIY MAQSAD & BACKGROUND
+         ========================================================================== -->
+    <section class="section-block" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag" data-i18n="sec_about_tag">KASBIY PROFIL</div>
+          <h2 class="section-title gradient-text" data-i18n="sec_about_title">Kiberxavfsizlik va SOC sari yo‘l</h2>
+          <p class="section-sub" data-i18n="sec_about_sub">Kiberxavfsizlik bo‘yicha fundamental bilimlar va amaliy dasturlash mahorati sintezi</p>
         </div>
-    </section>
 
-    <!-- Stats Section -->
-    <section class="section stats-section" id="stats">
-        <div class="section-container reveal">
-            <div class="section-label" style="justify-content: center;">
-                <span class="label-line"></span>
-                <span>Qalbdan Ehtirom</span>
-                <span class="label-line"></span>
-            </div>
-            <h2 class="section-title" style="text-align: center;">Bobomning Fazilatlari</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="1" data-suffix="">0</div>
-                    <div class="stat-label">Sabr va Matonat</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="1" data-suffix="">0</div>
-                    <div class="stat-label">Ilm va Hikmat</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="1" data-suffix="">0</div>
-                    <div class="stat-label">Oilaga Mehr</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="1" data-suffix="">0</div>
-                    <div class="stat-label">Cheksiz Ehtirom</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wisdom Quotes Carousel -->
-    <section class="section quotes-section" id="wisdom">
-        <div class="section-container">
-            <div class="reveal">
-                <div class="section-label" style="justify-content: center;">
-                    <span class="label-line"></span>
-                    <span>Hikmatlar</span>
-                    <span class="label-line"></span>
-                </div>
-                <h2 class="section-title" style="text-align: center;">Ta'lim Haqida Hikmatlar</h2>
-            </div>
-
-            <div class="wisdom-container reveal">
-                <div class="wisdom-quote active">
-                    <div class="wisdom-text">"Ustoz — millatning kelajagini shakllantiruvchi me'mor."</div>
-                    <div class="wisdom-author-mark">✦ ✦ ✦</div>
-                </div>
-                <div class="wisdom-quote">
-                    <div class="wisdom-text">"O'qituvchi — sham singari o'zini yoqib, boshqalarni yoritadi."</div>
-                    <div class="wisdom-author-mark">✦ ✦ ✦</div>
-                </div>
-                <div class="wisdom-quote">
-                    <div class="wisdom-text">"Ilm olish beshikdan to qabrgacha. Ammo ustozsiz bu yo'l zulmat."</div>
-                    <div class="wisdom-author-mark">✦ ✦ ✦</div>
-                </div>
-                <div class="wisdom-quote">
-                    <div class="wisdom-text">"Yaxshi ustoz — bir umrlik yo'ldosh, bir umrlik ilhom manbai."</div>
-                    <div class="wisdom-author-mark">✦ ✦ ✦</div>
-                </div>
-            </div>
-
-            <div class="wisdom-dots reveal" id="wisdomDots">
-                <div class="wisdom-dot active" data-index="0"></div>
-                <div class="wisdom-dot" data-index="1"></div>
-                <div class="wisdom-dot" data-index="2"></div>
-                <div class="wisdom-dot" data-index="3"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Journey / Timeline -->
-    <section class="section timeline-section" id="journey">
-        <div class="section-container">
-            <div class="reveal">
-                <div class="section-label">
-                    <span class="label-line"></span>
-                    <span>Hayot Yo'li</span>
-                </div>
-                <h2 class="section-title">Bobomning Hayot Bosqichlari</h2>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">O'qituvchilik yillari</div>
-                    <div class="timeline-title">Ustoz bo'lib ish boshlagan kunlar</div>
-                    <div class="timeline-desc">Bolalarga ilm berish va ularni hayotga tayyorlash yo'lidagi fidokorona mehnat.</div>
-                </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">Shogirdlar</div>
-                    <div class="timeline-title">Ko'plab shogirdlar ustozi</div>
-                    <div class="timeline-desc">Ma'rufxon aka tarbiyalagan shogirdlar bugun ham ustozini hurmat bilan eslaydi.</div>
-                </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">Nafaqa</div>
-                    <div class="timeline-title">Hurmatli dam olish davri</div>
-                    <div class="timeline-desc">Uzoq yillik mehnatdan so'ng, ehtirom va e'zozga munosib nafaqaga chiqish.</div>
-                </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">Bugungi kun</div>
-                    <div class="timeline-title">Oila davrasida</div>
-                    <div class="timeline-desc">Farzandlari va nevaralari orasida, mehr va duolar bilan o'tayotgan sokin kunlar.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final Wishes Section -->
-    <section class="section wishes-section" id="wishes">
-        <div class="section-container reveal">
-            <h2 class="wishes-title">Bayramingiz Muborak,<br>Aziz Bobojon!</h2>
-            <p class="wishes-text">
-                Sizning ilmingiz — bizning ibratimiz. Sizning mehringiz — bizning kuchimiz.
-                Bu bayramda Sizga sog'lik, xotirjamlik va baxt tilayman. Umringiz uzoq, dasturxoningiz to'kin bo'lsin!
+        <div class="about-grid">
+          <!-- Bio card -->
+          <div class="about-card">
+            <h3 data-i18n="about_bio_title">
+              <svg width="22" height="22" fill="none" stroke="var(--accent-green)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span>Men haqimda va kasbiy maqsadim</span>
+            </h3>
+            <p data-i18n="about_bio_p1">
+              Axborot xavfsizligi yo‘nalishida 3-kurs talabaman. Kiberxavfsizlik, xususan SOC (Security Operations Center) monitoringi, tarmoq protokollari tahlili, log tahlili va insidentlarga tezkor javob berish (Incident Response) yo‘nalishlariga qattiq qiziqaman.
             </p>
-            <button class="wish-btn" id="wishBtn" onclick="launchFlowers()">
-                <span>🌸 Gul Yomg'iri Yog'dirish</span>
-            </button>
+            <p data-i18n="about_bio_p2">
+              Hozirgi vaqtda tarmoq arxitekturasi, Linux va Windows xavfsizligi, SIEM tushunchalari hamda Python yordamida himoya va avtomatlashtirish vositalarini yaratish bo‘yicha mustaqil amaliyot olib boryapman.
+            </p>
+
+            <div class="highlight-box" data-i18n="about_quote">
+              «Maqsadim: SOC, axborot xavfsizligi monitoringi yoki incident response yo‘nalishida amaliyot / junior lavozimda tajribali jamoada ishlab, professional mutaxassisga aylanish.»
+            </div>
+          </div>
+
+          <!-- Specs card -->
+          <div class="about-card">
+            <h3>
+              <svg width="22" height="22" fill="none" stroke="var(--accent-cyan)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              <span>Asosiy Ma’lumotlar</span>
+            </h3>
+            <div class="about-specs">
+              <div class="spec-box">
+                <div class="spec-title" data-i18n="spec_degree">Ta’lim / Kurs</div>
+                <div class="spec-val" data-i18n="spec_degree_val">Bakalavr 3-kurs (Axborot xavfsizligi)</div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title">Universitet</div>
+                <div class="spec-val">O‘zbekiston xalqaro islomshunoslik akademiyasi</div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title" data-i18n="spec_city">Hudud</div>
+                <div class="spec-val" data-i18n="spec_city_val">Toshkent, O‘zbekiston</div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title" data-i18n="spec_english">Ingliz tili darajasi</div>
+                <div class="spec-val" data-i18n="spec_english_val">Pre-Intermediate (A2-B1)</div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title" data-i18n="spec_status">Ish maqomi</div>
+                <div class="spec-val text-green" data-i18n="spec_status_val">Amaliyot / Junior izlanmoqda</div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title">GitHub</div>
+                <div class="spec-val"><a href="https://github.com/orifxon05" target="_blank" class="text-cyan">github.com/orifxon05</a></div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title">Telegram</div>
+                <div class="spec-val"><a href="https://t.me/Orifxon_05" target="_blank" class="text-green">@Orifxon_05</a></div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title">Instagram</div>
+                <div class="spec-val"><a href="https://instagram.com/_sheeyh_9" target="_blank" class="text-purple">@_sheeyh_9</a></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p class="footer-text">
-            <span class="footer-heart">❤️</span> bilan yaratildi — Ustozlar Bayrami 2026
-        </p>
-    </footer>
-
-    <!-- Audio Toggle -->
-    <div class="audio-toggle" id="audioToggle" title="Musiqa">
-        <div class="audio-bars" id="audioBars">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+    <!-- ==========================================================================
+         CYBERSECURITY & BLUE TEAM MATRIX (6 PILLARS)
+         ========================================================================== -->
+    <section class="section-block" id="soc-matrix">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag" data-i18n="sec_matrix_tag">BLUE TEAM & HIMOYA ARXITEKTURASI</div>
+          <h2 class="section-title gradient-text" data-i18n="sec_matrix_title">Kiberxavfsizlik Yo‘nalishlari & Vositalar</h2>
+          <p class="section-sub" data-i18n="sec_matrix_sub">SOC mutaxassisi bilishi shart bo‘lgan asosiy yo‘nalishlar va amaliy tajriba</p>
         </div>
+
+        <div class="cyber-matrix-grid">
+          <!-- 1. Tarmoq xavfsizligi -->
+          <div class="matrix-card">
+            <div class="matrix-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3 class="matrix-title">Tarmoq Xavfsizligi</h3>
+            <p class="matrix-desc">TCP/IP protokollar to‘plami, DNS, HTTP/HTTPS tahlili, portlar konfiguratsiyasi, Firewall (UFW/IPTables) qoidalari va tarmoq trafigini tahlil qilish.</p>
+            <div class="matrix-tags">
+              <span class="cyber-tag">TCP/IP</span>
+              <span class="cyber-tag">DNS</span>
+              <span class="cyber-tag">HTTP/HTTPS</span>
+              <span class="cyber-tag">Firewall</span>
+            </div>
+          </div>
+
+          <!-- 2. SOC & SIEM Monitoring -->
+          <div class="matrix-card">
+            <div class="matrix-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <h3 class="matrix-title">SOC & SIEM Monitoring</h3>
+            <p class="matrix-desc">Xavfsizlik hodisalari loglarini tahlil qilish, shubhali alertlarni birlamchi saralash (Triage), SIEM asoslari va xavfsizlik vositalari bilan home-lab amaliyoti.</p>
+            <div class="matrix-tags">
+              <span class="cyber-tag">Log Tahlili</span>
+              <span class="cyber-tag">SIEM Asoslari</span>
+              <span class="cyber-tag">Alert Triage</span>
+              <span class="cyber-tag">Home-Lab</span>
+            </div>
+          </div>
+
+          <!-- 3. Operatsion tizimlar xavfsizligi -->
+          <div class="matrix-card">
+            <div class="matrix-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3 class="matrix-title">Linux & Windows Xavfsizligi</h3>
+            <p class="matrix-desc">Xavfsizlik operatsiyalari uchun Linux (Ubuntu/Debian) buyruqlar satri va Windows tizim jurnallari (Event Viewer, Event ID 4624/4625), xavfsiz konfiguratsiya asoslari.</p>
+            <div class="matrix-tags">
+              <span class="cyber-tag">Linux</span>
+              <span class="cyber-tag">Windows</span>
+              <span class="cyber-tag">Event Logs</span>
+              <span class="cyber-tag">Hardening</span>
+            </div>
+          </div>
+
+          <!-- 4. Incident Response & MITRE ATT&CK -->
+          <div class="matrix-card">
+            <div class="matrix-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="matrix-title">Incident Response & MITRE ATT&CK</h3>
+            <p class="matrix-desc">Xavfsizlik insidentlariga munosabat bildirish bosqichlari, xakerlik taktika va texnikalarini MITRE ATT&CK matritsasi bo‘yicha xaritalash va aniqlash.</p>
+            <div class="matrix-tags">
+              <span class="cyber-tag">MITRE ATT&CK</span>
+              <span class="cyber-tag">Incident Response</span>
+              <span class="cyber-tag">Threat TTPs</span>
+            </div>
+          </div>
+
+          <!-- 5. Autentifikatsiya & Ma'lumotlar Xavfsizligi -->
+          <div class="matrix-card">
+            <div class="matrix-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <h3 class="matrix-title">Autentifikatsiya & Himoya</h3>
+            <p class="matrix-desc">Foydalanuvchi ruxsatlarini boshqarish (RBAC), API xavfsizligi, parollarni xavfsiz xesh qilish va ma’lumotlar bazalarida ma’lumotlarni xavfsiz saqlash.</p>
+            <div class="matrix-tags">
+              <span class="cyber-tag">RBAC</span>
+              <span class="cyber-tag">API Security</span>
+              <span class="cyber-tag">Hashing</span>
+              <span class="cyber-tag">Sanitization</span>
+            </div>
+          </div>
+
+          <!-- 6. Avtomatlashtirish & Skriptlar -->
+          <div class="matrix-card">
+            <div class="matrix-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3 class="matrix-title">Python Avtomatlashtirish</h3>
+            <p class="matrix-desc">Rutina xavfsizlik vazifalarini avtomatlashtirish, loglarni saralovchi Python skriptlar, Telegram bildirishnoma botlari va API integratsiyalari.</p>
+            <div class="matrix-tags">
+              <span class="cyber-tag">Python Scripting</span>
+              <span class="cyber-tag">Telethon</span>
+              <span class="cyber-tag">Cron Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         AMALIY LOYIHALAR (PROJECTS SHOWCASE)
+         ========================================================================== -->
+    <section class="section-block" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag" data-i18n="sec_proj_tag">AMALIY LOYIHALAR</div>
+          <h2 class="section-title gradient-text" data-i18n="sec_proj_title">Yaratilgan Tizimlar & Botlar</h2>
+          <p class="section-sub" data-i18n="sec_proj_sub">Python, avtomatlashtirish, xavfsizlik va web texnologiyalari asosidagi ishlar</p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Barchasi</button>
+          <button class="filter-btn" data-filter="soc" data-i18n="filter_soc">Kiberxavfsizlik & SOC</button>
+          <button class="filter-btn" data-filter="bot" data-i18n="filter_bot">Python & AI Botlar</button>
+          <button class="filter-btn" data-filter="web" data-i18n="filter_web">Web & Ma’lumotlar Bazasi</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Telegram AI Assistant -->
+          <div class="project-card" data-category="bot">
+            <div class="project-banner">
+              <span class="project-badge-top">SECURITY & AI</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="1.5"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM4.93 4.93a2 2 0 0 1 2.83 0l1.41 1.41a2 2 0 0 1-2.83 2.83L4.93 7.76a2 2 0 0 1 0-2.83zM2 12a2 2 0 0 1 2-2h2a2 2 0 0 1 0 4H4a2 2 0 0 1-2-2zm12 0a2 2 0 0 1 2-2h2a2 2 0 0 1 0 4h-2a2 2 0 0 1-2-2zm-3 7v3m-4-3v3m8-3v3M6 18h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2z"></path></svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Shaxsiy Telegram AI Yordamchi</h3>
+              <p class="project-desc">Cheklangan kirish (Access Control), avtomatik javoblar, suhbat tarixi va shaxsiy vazifalarni boshqarishga ega avtomatlashtirish yordamchisi.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Telethon</span>
+                <span class="tech-tag">AI API</span>
+                <span class="tech-tag">RBAC</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-card-details" data-project="ai_bot">Batafsil ko‘rish</button>
+                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: SOC Home-Lab -->
+          <div class="project-card" data-category="soc">
+            <div class="project-banner">
+              <span class="project-badge-top">SOC & BLUE TEAM</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">SOC Home-Lab Monitoring Tizimi</h3>
+              <p class="project-desc">Tizim va tarmoq loglarini yig‘ish, shubhali faollikni tahlil qilish va MITRE ATT&CK taktikalari bo‘yicha alertlarni saralash amaliyoti.</p>
+              <div class="project-tech">
+                <span class="tech-tag">SIEM</span>
+                <span class="tech-tag">Log Tahlili</span>
+                <span class="tech-tag">Linux</span>
+                <span class="tech-tag">Wireshark</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-card-details" data-project="soc_lab">Batafsil ko‘rish</button>
+                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Yotoqxona Navbatchilik Boti -->
+          <div class="project-card" data-category="bot">
+            <div class="project-banner">
+              <span class="project-badge-top">AUTOMATION</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Yotoqxona Navbatchilik Telegram Boti</h3>
+              <p class="project-desc">Yotoqxona navbatchilik jadvali va eslatma bildirishnomalarini avtomatlashtiruvchi, tartibni monitoring qiluvchi Python boti.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Telegram Bot API</span>
+                <span class="tech-tag">Cron</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-card-details" data-project="dorm_bot">Batafsil ko‘rish</button>
+                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Musiqa Saqlash Boti -->
+          <div class="project-card" data-category="bot">
+            <div class="project-banner">
+              <span class="project-badge-top">MEDIA STREAM</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="1.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Musiqa va Media Saqlash Boti</h3>
+              <p class="project-desc">Musiqa va video kontentini tezkor qidirish, yuklab olish va Telegram bulutida tartibli saqlash uchun ishlab chiqilgan ochiq kodli bot.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Telegram</span>
+                <span class="tech-tag">Cloud Storage</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-card-details" data-project="music_bot">Batafsil ko‘rish</button>
+                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Ombor va do'kon web tizimlari -->
+          <div class="project-card" data-category="web">
+            <div class="project-banner">
+              <span class="project-badge-top">FULLSTACK WEB</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-amber)" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Ombor va Do‘kon Web Tizimlari</h3>
+              <p class="project-desc">Mahsulotlar katalogi, kategoriyalar, sotuvlar tahlili, QR-kod integratsiyasi va xavfsiz autentifikatsiyaga ega web boshqaruv tizimi.</p>
+              <div class="project-tech">
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">QR Code</span>
+                <span class="tech-tag">Web UI</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-card-details" data-project="store_web">Batafsil ko‘rish</button>
+                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Tug'ilgan kun tabriklash boti -->
+          <div class="project-card" data-category="bot">
+            <div class="project-banner">
+              <span class="project-badge-top">NOTIFICATION</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Tug‘ilgan Kun Tabriklash Boti</h3>
+              <p class="project-desc">Shaxsiylashtirilgan tabrik matnlari va eslatmalarni belgilangan vaqtda avtomatik jo‘natuvchi samaradorlik vositasi.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Telegram</span>
+                <span class="tech-tag">Automation</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-card-details" data-project="birthday_bot">Batafsil ko‘rish</button>
+                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE CYBER TERMINAL (CLI CONSOLE)
+         ========================================================================== -->
+    <section class="section-block" id="terminal">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag" data-i18n="sec_term_tag">INTERAKTIV BUYRUQLAR SATRI</div>
+          <h2 class="section-title gradient-text" data-i18n="sec_term_title">Cyber CLI Terminal Konsoli</h2>
+          <p class="section-sub" data-i18n="sec_term_sub">Tizimni buyruqlar orqali sinab ko‘ring yoki tezkor tugmalarni bosing</p>
+        </div>
+
+        <div class="terminal-card">
+          <!-- Terminal window top bar -->
+          <div class="terminal-topbar">
+            <div class="terminal-dots">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+            </div>
+            <div class="terminal-title">bash — visitor@soc-core: ~ (ssh-session)</div>
+            <div class="terminal-badge">INTERACTIVE_CLI</div>
+          </div>
+
+          <!-- Terminal content stream -->
+          <div class="terminal-body" id="terminal-body">
+            <div class="term-output-line text-cyan" id="term-welcome-msg">
+              Orifxon Ma'rufxonov xavfsizlik konsoliga xush kelibsiz. Mavjud buyruqlarni ko'rish uchun <span class="text-green">'help'</span> deb yozing.
+            </div>
+            <div class="term-output-line text-muted">
+              [Tizim tekshiruvi]: Himoyalangan xavfsizlik qatlami muvaffaqiyatli ishga tushirildi.
+            </div>
+          </div>
+
+          <!-- Prompt input -->
+          <div style="padding: 0 20px 14px; background: #06090f; border-top: 1px solid rgba(255,255,255,0.03);">
+            <div class="term-prompt-line">
+              <span class="term-prompt-user">visitor@soc-core</span>:<span class="term-prompt-path">~</span>$&nbsp;
+              <input type="text" id="term-input" class="term-input" placeholder="buyruq kiriting (masalan: help, whoami, skills)..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+
+          <!-- Quick click chips -->
+          <div class="terminal-helpers">
+            <span>Tezkor buyruqlar:</span>
+            <button class="cmd-chip" data-cmd="help">help</button>
+            <button class="cmd-chip" data-cmd="whoami">whoami</button>
+            <button class="cmd-chip" data-cmd="about">about</button>
+            <button class="cmd-chip" data-cmd="skills">skills</button>
+            <button class="cmd-chip" data-cmd="projects">projects</button>
+            <button class="cmd-chip" data-cmd="mitre">mitre</button>
+            <button class="cmd-chip" data-cmd="scan">scan</button>
+            <button class="cmd-chip" data-cmd="cat cv.txt">cat cv.txt</button>
+            <button class="cmd-chip" data-cmd="sudo hire">sudo hire</button>
+            <button class="cmd-chip" data-cmd="clear">clear</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS & TECHNICAL ARSENAL
+         ========================================================================== -->
+    <section class="section-block" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag" data-i18n="sec_skills_tag">TEXNIK QUROL-ASLAHA</div>
+          <h2 class="section-title gradient-text" data-i18n="sec_skills_title">Texnik Ko‘nikmalar & Stack</h2>
+          <p class="section-sub" data-i18n="sec_skills_sub">Dasturlash, ma’lumotlar bazasi, operatsion tizimlar va tillar</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Kiberxavfsizlik & SOC -->
+          <div class="skill-category">
+            <h3 class="skill-cat-title">
+              <svg width="22" height="22" fill="none" stroke="var(--accent-green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Kiberxavfsizlik & SOC Monitoringi</span>
+            </h3>
+            <div class="skill-list">
+              <div class="skill-bar-wrap">
+                <div class="skill-info"><span>Tarmoq xavfsizligi (TCP/IP, DNS, Firewalls)</span><span class="text-green">85%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="skill-bar-wrap">
+                <div class="skill-info"><span>Linux & Windows xavfsizligi (Event Logs)</span><span class="text-green">80%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 80%;"></div></div>
+              </div>
+              <div class="skill-bar-wrap">
+                <div class="skill-info"><span>Log tahlili & SIEM asoslari</span><span class="text-green">75%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 75%;"></div></div>
+              </div>
+              <div class="skill-bar-wrap">
+                <div class="skill-info"><span>Incident Response & MITRE ATT&CK</span><span class="text-green">70%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 70%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dasturlash & Vositalar -->
+          <div class="skill-category">
+            <h3 class="skill-cat-title">
+              <svg width="22" height="22" fill="none" stroke="var(--accent-cyan)" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <span>Dasturlash & Vositalar</span>
+            </h3>
+            <div class="skill-list">
+              <div class="skill-bar-wrap">
+                <div class="skill-info"><span>Python (Automation, Telethon, Async)</span><span class="text-cyan">90%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+              </div>
+              <div class="skill-bar-wrap">
+                <div class="skill-info"><span>SQL / PostgreSQL / MongoDB</span><span class="text-cyan">78%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 78%;"></div></div>
+              </div>
+              <div class="skill-bar-wrap">
+                <div class="skill-info"><span>Git, GitHub & Version Control</span><span class="text-cyan">85%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="skill-bar-wrap">
+                <div class="skill-info"><span>C++ & Bash Scripting</span><span class="text-cyan">65%</span></div>
+                <div class="skill-track"><div class="skill-fill" style="width: 65%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="languages-box">
+          <div class="lang-card">
+            <div class="lang-name">O‘zbek tili</div>
+            <div class="lang-level">Ona tili (Native)</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name">Ingliz tili</div>
+            <div class="lang-level">Pre-Intermediate (A2-B1)</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name">Turk tili</div>
+            <div class="lang-level">A2 (Boshlang‘ich)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EDUCATION & CAREER ROADMAP (TIMELINE)
+         ========================================================================== -->
+    <section class="section-block" id="timeline">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag" data-i18n="sec_time_tag">KARYERA & TA’LIM</div>
+          <h2 class="section-title gradient-text" data-i18n="sec_time_title">Ta’lim va Amaliyot Bosqichlari</h2>
+          <p class="section-sub" data-i18n="sec_time_sub">O‘sish yo‘nalishi va bosib o‘tilgan yo‘l</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Step 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2024 — HOZIRGACHA</div>
+              <h3 class="timeline-role">Bakalavr Talabasi — Axborot Xavfsizligi</h3>
+              <div class="timeline-place">O‘zbekiston xalqaro islomshunoslik akademiyasi (3-kurs)</div>
+              <p class="timeline-desc">Axborot xavfsizligi nazariyasi, kriptografiya, tarmoq xavfsizligi protokollari, himoyalangan dasturlash va operatsion tizimlar xavfsizligini chuqur o‘rganish.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">HOZIRGI VAQTDA</div>
+              <h3 class="timeline-role">Shaxsiy Kiberxavfsizlik & IT Amaliyoti</h3>
+              <div class="timeline-place">Mustaqil amaliyot | Toshkent</div>
+              <p class="timeline-desc">Python orqali avtomatlashtirish vositalari, Telegram AI assistentlari, ma'lumotlar bazasi loyihalari hamda SOC va SIEM tahlili bo‘yicha shaxsiy home-lab amaliyotlari.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot" style="border-color: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan);"></div>
+            <div class="timeline-content">
+              <div class="timeline-date text-cyan">KELAJAKDAGI MAQSAD</div>
+              <h3 class="timeline-role">Junior SOC Analyst / Incident Responder</h3>
+              <div class="timeline-place">Professional Axborot Xavfsizligi Jamoasi</div>
+              <p class="timeline-desc">Real xavfsizlik operatsiyalarida (SOC) monitoring va insidentlarni bartaraf etishda qatnashish, jamoaviy mas'uliyat bilan ishlash va malakani muntazam oshirish.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & CONNECTION HUB
+         ========================================================================== -->
+    <section class="section-block" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag" data-i18n="sec_contact_tag">ALOQA MARKAZI</div>
+          <h2 class="section-title gradient-text" data-i18n="sec_contact_title">Men bilan bog‘laning</h2>
+          <p class="section-sub" data-i18n="sec_contact_sub">Amaliyot takliflari, loyihalar va savollar uchun doim ochiqman</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Direct Info -->
+          <div class="contact-info-list">
+            <!-- Phone -->
+            <div class="contact-card">
+              <div class="contact-item-left">
+                <div class="contact-icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Telefon Raqam</div>
+                  <a href="tel:+998945711750" class="contact-value">+998 94 571 17 50</a>
+                </div>
+              </div>
+              <button class="btn-copy" data-copy="+998945711750">Nusxa olish</button>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-card">
+              <div class="contact-item-left">
+                <div class="contact-icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Email Manzil</div>
+                  <a href="mailto:orifxonmarufxonov24@gmail.com" class="contact-value">orifxonmarufxonov24@gmail.com</a>
+                </div>
+              </div>
+              <button class="btn-copy" data-copy="orifxonmarufxonov24@gmail.com">Nusxa olish</button>
+            </div>
+
+            <!-- GitHub -->
+            <div class="contact-card">
+              <div class="contact-item-left">
+                <div class="contact-icon">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">GitHub Portfolio</div>
+                  <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="contact-value">github.com/orifxon05</a>
+                </div>
+              </div>
+              <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="btn-copy">Ochish &rarr;</a>
+            </div>
+
+            <!-- Telegram -->
+            <div class="contact-card">
+              <div class="contact-item-left">
+                <div class="contact-icon" style="background: rgba(0, 240, 255, 0.1); border-color: rgba(0, 240, 255, 0.25); color: var(--accent-cyan);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Telegram Profil</div>
+                  <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="contact-value text-cyan">@Orifxon_05</a>
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn-copy" data-copy="@Orifxon_05">Nusxa</button>
+                <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="btn-copy" style="color: var(--accent-cyan); border-color: rgba(0, 240, 255, 0.3);">Yozish &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="contact-card">
+              <div class="contact-item-left">
+                <div class="contact-icon" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.25); color: var(--accent-purple);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Instagram</div>
+                  <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="contact-value text-purple">_sheeyh_9</a>
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn-copy" data-copy="_sheeyh_9">Nusxa</button>
+                <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="btn-copy" style="color: var(--accent-purple); border-color: rgba(168, 85, 247, 0.3);">Ochish &rarr;</a>
+              </div>
+            </div>
+
+            <!-- CV Download banner -->
+            <div style="background: linear-gradient(135deg, rgba(0,255,157,0.1) 0%, rgba(0,240,255,0.05) 100%); border: 1px solid var(--border-cyber); border-radius: var(--radius-md); padding: 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+              <div>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-green); margin-bottom: 4px;">[DOCUMENT_PDF]</div>
+                <div style="font-weight: 700; font-size: 1rem;">Orifxon Marufxonov CV (PDF)</div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">To'liq rezyume nusxasini saqlab oling</div>
+              </div>
+              <a href="Orifxon_Marufxonov_CV.pdf" download="Orifxon_Marufxonov_CV.pdf" class="btn-primary" style="padding: 10px 18px; font-size: 0.82rem;">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Yuklash</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-box">
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+              <svg width="20" height="20" fill="none" stroke="var(--accent-green)" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              <span>To‘g‘ridan-to‘g‘ri Xabar Yuborish</span>
+            </h3>
+
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label" data-i18n="form_name">Ismingiz</label>
+                <input type="text" id="form-name" class="form-input" placeholder="Ali Valiyev" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label" data-i18n="form_email">Email manzilingiz</label>
+                <input type="email" id="form-email" class="form-input" placeholder="ali@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label" data-i18n="form_subject">Mavzu</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="SOC Amaliyot Taklifi / Loyiha" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-msg" class="form-label" data-i18n="form_msg">Xabar matni</label>
+                <textarea id="form-msg" class="form-textarea" placeholder="Assalomu alaykum Orifxon, bizning jamoada amaliyot o'tash bo'yicha..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-bottom: 12px;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <span data-i18n="btn_send">Xabarni Yuborish</span>
+              </button>
+
+              <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="btn-secondary" style="width: 100%; justify-content: center; border-color: rgba(0, 240, 255, 0.3); color: var(--accent-cyan);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                <span>Telegram orqali tezkor yozish (@Orifxon_05)</span>
+              </a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="brand-dot"></span>
+        <span>© 2026 ORIFXON MA'RUFXONOV. <span data-i18n="footer_copy">Barcha huquqlar himoyalangan.</span></span>
+      </div>
+      <div class="footer-socials" style="display: flex; gap: 16px; align-items: center;">
+        <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="footer-icon-link" title="Telegram" style="color: var(--accent-cyan); display: flex; align-items: center; gap: 6px; text-decoration: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span>Telegram</span>
+        </a>
+        <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="footer-icon-link" title="Instagram" style="color: var(--accent-purple); display: flex; align-items: center; gap: 6px; text-decoration: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="footer-icon-link" title="GitHub" style="color: var(--text-main); display: flex; align-items: center; gap: 6px; text-decoration: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div class="footer-right">
+        <span data-i18n="footer_sec_note">Tizim: TLS 1.3 / X-Content-Type-Options: nosniff himoyalangan.</span>
+        <a href="#" class="back-to-top">
+          <span>Tepaga</span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </div>
     </div>
-
-    <script>
-        /* ═══════════════════════════════════════════
-           WELCOME SCREEN + MUSIC START
-           ═══════════════════════════════════════════ */
-        const bgMusic = document.getElementById('bgMusic');
-        let musicPlaying = false;
-
-        document.getElementById('welcomeBtn').addEventListener('click', () => {
-            // Start music from 40 seconds
-            bgMusic.currentTime = 40;
-            bgMusic.volume = 0.5;
-            bgMusic.play().catch(() => {});
-            musicPlaying = true;
-            document.getElementById('audioBars').classList.add('playing');
-
-            // Hide welcome screen
-            document.getElementById('loadingScreen').classList.add('hidden');
-        });
-
-        /* ═══════════════════════════════════════════
-           FLOATING MATH FORMULAS
-           ═══════════════════════════════════════════ */
-        const formulas = [
-            'Ilm — nur', 'Ustoz — otangdek ulug\'', 'Bilim — eng katta boylik',
-            'Ilm — chiroq', 'Mehr — eng katta boylik', 'Ustoz — ma\'rifat nuri',
-            'Ilm olish — savob', 'Sabr — tole kaliti', 'Bilimli — hurmatli',
-            'Ustozga hurmat — ilmga hurmat', 'Ilm — baxt kaliti', 'Duo — eng go\'zal sovg\'a'
-        ];
-
-        const mathContainer = document.getElementById('mathFormulas');
-
-        function createFormula() {
-            const el = document.createElement('div');
-            el.className = 'math-formula';
-            el.textContent = formulas[Math.floor(Math.random() * formulas.length)];
-            el.style.left = Math.random() * 100 + '%';
-            el.style.animationDuration = (20 + Math.random() * 20) + 's';
-            el.style.animationDelay = Math.random() * 5 + 's';
-            el.style.fontSize = (0.6 + Math.random() * 0.4) + 'rem';
-            mathContainer.appendChild(el);
-
-            el.addEventListener('animationend', () => el.remove());
-        }
-
-        for (let i = 0; i < 15; i++) {
-            setTimeout(createFormula, i * 800);
-        }
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(createFormula, 3000);
-
-        /* ═══════════════════════════════════════════
-           BACKGROUND CANVAS — Particles + Neural Network
-           ═══════════════════════════════════════════ */
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let mouse = { x: -1000, y: -1000 };
-        const CONNECTION_DIST = 150;
-        const PARTICLE_COUNT = window.innerWidth < 768 ? 25 : 70;
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        let canvasRunning = true;
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        document.addEventListener('mousemove', (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
-
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = Math.random() * 2 + 0.5;
-                this.opacity = Math.random() * 0.5 + 0.1;
-
-                const colors = [
-                    '212, 168, 83',
-                    '74, 158, 255',
-                    '139, 92, 246',
-                    '0, 212, 255'
-                ];
-                this.color = colors[Math.floor(Math.random() * colors.length)];
-            }
-
-            update() {
-                // Mouse interaction
-                const dx = mouse.x - this.x;
-                const dy = mouse.y - this.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-
-                if (dist < 200) {
-                    const force = (200 - dist) / 200 * 0.01;
-                    this.vx += dx * force;
-                    this.vy += dy * force;
-                }
-
-                // Damping
-                this.vx *= 0.99;
-                this.vy *= 0.99;
-
-                this.x += this.vx;
-                this.y += this.vy;
-
-                // Bounce off edges
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-
-                this.x = Math.max(0, Math.min(canvas.width, this.x));
-                this.y = Math.max(0, Math.min(canvas.height, this.y));
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-                ctx.fill();
-
-                // Glow
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius * 3, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${this.color}, ${this.opacity * 0.1})`;
-                ctx.fill();
-            }
-        }
-
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
-            particles.push(new Particle());
-        }
-
-        function drawConnections() {
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < CONNECTION_DIST) {
-                        const opacity = (1 - dist / CONNECTION_DIST) * 0.15;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(212, 168, 83, ${opacity})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function animateCanvas() {
-            if (document.hidden) { canvasRunning = false; return; }
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-
-            drawConnections();
-            if (!reduceMotion) requestAnimationFrame(animateCanvas);
-        }
-
-        animateCanvas();
-        document.addEventListener('visibilitychange', () => {
-            if (!document.hidden && !canvasRunning && !reduceMotion) { canvasRunning = true; animateCanvas(); }
-        });
-
-        /* ═══════════════════════════════════════════
-           SCROLL REVEAL
-           ═══════════════════════════════════════════ */
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        /* ═══════════════════════════════════════════
-           COUNTER ANIMATION
-           ═══════════════════════════════════════════ */
-        const statNumbers = document.querySelectorAll('.stat-number');
-
-        function animateCounter(el) {
-            const target = parseInt(el.dataset.target);
-            const suffix = el.dataset.suffix || '';
-
-            if (target === 1 && suffix === '') {
-                el.textContent = '∞';
-                return;
-            }
-
-            let current = 0;
-            const increment = target / 60;
-            const duration = 2000;
-            const stepTime = duration / 60;
-
-            function step() {
-                current += increment;
-                if (current >= target) {
-                    el.textContent = target + suffix;
-                    return;
-                }
-                el.textContent = Math.floor(current) + suffix;
-                setTimeout(step, stepTime);
-            }
-
-            step();
-        }
-
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const nums = entry.target.querySelectorAll('.stat-number');
-                    nums.forEach(n => animateCounter(n));
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-
-        document.querySelectorAll('.stats-grid').forEach(g => counterObserver.observe(g));
-
-        /* ═══════════════════════════════════════════
-           WISDOM QUOTES CAROUSEL
-           ═══════════════════════════════════════════ */
-        const wisdomQuotes = document.querySelectorAll('.wisdom-quote');
-        const wisdomDots = document.querySelectorAll('.wisdom-dot');
-        let currentQuote = 0;
-
-        function showQuote(index) {
-            wisdomQuotes.forEach(q => q.classList.remove('active'));
-            wisdomDots.forEach(d => d.classList.remove('active'));
-            wisdomQuotes[index].classList.add('active');
-            wisdomDots[index].classList.add('active');
-            currentQuote = index;
-        }
-
-        wisdomDots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                showQuote(parseInt(dot.dataset.index));
-            });
-        });
-
-        setInterval(() => {
-            showQuote((currentQuote + 1) % wisdomQuotes.length);
-        }, 5000);
-
-        /* ═══════════════════════════════════════════
-           FLOWER RAIN
-           ═══════════════════════════════════════════ */
-        const flowers = ['🌸', '🌺', '🌹', '🌷', '🌻', '💐', '🌼', '✨', '⭐', '🌟'];
-
-        function launchFlowers() {
-            const container = document.getElementById('flowerRain');
-
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    const flower = document.createElement('div');
-                    flower.className = 'flower';
-                    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
-                    flower.style.left = Math.random() * 100 + '%';
-                    flower.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
-                    flower.style.animationDuration = (3 + Math.random() * 4) + 's';
-                    flower.style.animationDelay = '0s';
-                    container.appendChild(flower);
-
-                    flower.addEventListener('animationend', () => flower.remove());
-                }, i * 80);
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           CLICK PARTICLE BURST
-           ═══════════════════════════════════════════ */
-        document.addEventListener('click', (e) => {
-            const colors = ['#d4a853', '#4a9eff', '#8b5cf6', '#00d4ff', '#ec4899'];
-
-            for (let i = 0; i < 8; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'click-particle';
-                particle.style.left = e.clientX + 'px';
-                particle.style.top = e.clientY + 'px';
-                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-
-                const angle = (Math.PI * 2 / 8) * i;
-                const distance = 30 + Math.random() * 40;
-                particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
-                particle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
-
-                document.body.appendChild(particle);
-                particle.addEventListener('animationend', () => particle.remove());
-            }
-        });
-
-        /* ═══════════════════════════════════════════
-           SMOOTH SCROLL FOR NAV LINKS
-           ═══════════════════════════════════════════ */
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        /* ═══════════════════════════════════════════
-           NAVBAR HIDE/SHOW ON SCROLL
-           ═══════════════════════════════════════════ */
-        let lastScrollY = 0;
-        const navbar = document.getElementById('navbar');
-
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                navbar.style.transform = 'translateY(-100%)';
-            } else {
-                navbar.style.transform = 'translateY(0)';
-            }
-
-            lastScrollY = currentScrollY;
-        });
-
-        /* ═══════════════════════════════════════════
-           MUSIC TOGGLE (Play/Pause real MP3)
-           ═══════════════════════════════════════════ */
-        function toggleAudio() {
-            if (!musicPlaying) {
-                if (bgMusic.currentTime === 0) bgMusic.currentTime = 40;
-                bgMusic.play().catch(() => {});
-                musicPlaying = true;
-                document.getElementById('audioBars').classList.add('playing');
-            } else {
-                bgMusic.pause();
-                musicPlaying = false;
-                document.getElementById('audioBars').classList.remove('playing');
-            }
-        }
-
-        document.getElementById('audioToggle').addEventListener('click', toggleAudio);
-
-        /* ═══════════════════════════════════════════
-           AUTO FLOWER RAIN ON LOAD (subtle)
-           ═══════════════════════════════════════════ */
-        setTimeout(() => {
-            for (let i = 0; i < 15; i++) {
-                setTimeout(() => {
-                    const container = document.getElementById('flowerRain');
-                    const flower = document.createElement('div');
-                    flower.className = 'flower';
-                    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
-                    flower.style.left = Math.random() * 100 + '%';
-                    flower.style.fontSize = (1 + Math.random()) + 'rem';
-                    flower.style.animationDuration = (5 + Math.random() * 5) + 's';
-                    container.appendChild(flower);
-                    flower.addEventListener('animationend', () => flower.remove());
-                }, i * 300);
-            }
-        }, 3500);
-
-        /* ═══════════════════════════════════════════
-           PHOTO GALLERY (+ zaxira belgi)
-           ═══════════════════════════════════════════ */
-        window.addEventListener('load', () => {
-            const imgs = [...document.querySelectorAll('.gallery-img')].filter(i => i.complete && i.naturalWidth > 0);
-            const fallback = document.getElementById('photoFallback');
-            const dotsBox = document.getElementById('photoDots');
-            document.querySelectorAll('.gallery-img').forEach(i => { if (!imgs.includes(i)) i.remove(); });
-
-            if (imgs.length === 0) { fallback.style.display = 'flex'; return; }
-
-            let cur = 0, timer;
-            const dots = imgs.map((_, idx) => {
-                const b = document.createElement('button');
-                b.className = 'photo-dot';
-                b.setAttribute('aria-label', 'Surat ' + (idx + 1));
-                b.addEventListener('click', () => { show(idx); restart(); });
-                if (imgs.length > 1) dotsBox.appendChild(b);
-                return b;
-            });
-            function show(n) {
-                imgs.forEach((im, k) => im.classList.toggle('active', k === n));
-                dots.forEach((d, k) => d.classList.toggle('active', k === n));
-                cur = n;
-            }
-            function restart() {
-                clearInterval(timer);
-                if (imgs.length > 1) timer = setInterval(() => show((cur + 1) % imgs.length), 5000);
-            }
-            show(0);
-            restart();
-        });
-    </script>
+  </footer>
+
+  <!-- Modal for Project Details -->
+  <div class="modal-backdrop" id="project-modal">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <div id="modal-dynamic-content"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
