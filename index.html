@@ -3,200 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orifxon Ma'rufxonov — Bo'lajak SOC Analyst & Axborot Xavfsizligi</title>
+  <title>Orifxon Ma'rufxonov | Python Developer, AI & Cybersecurity</title>
 
-  <!-- SEO & Social OpenGraph Meta Tags -->
-  <meta name="description" content="Orifxon Ma'rufxonov — Axborot xavfsizligi talabasi (3-kurs), Bo'lajak SOC Analyst. Python avtomatlashtirish, SIEM log tahlili, tarmoq himoyasi va Telegram botlar portfolio sayti.">
-  <meta name="keywords" content="Orifxon Ma'rufxonov, SOC Analyst, Axborot xavfsizligi, Cybersecurity, Python, SIEM, Blue Team, MITRE ATT&CK, O'zbekiston xalqaro islomshunoslik akademiyasi">
+  <!-- SEO & Primary Meta -->
+  <meta name="description" content="Personal portfolio of Orifxon Ma'rufxonov, an Information Security student interested in Python development, AI automation, backend technologies and cybersecurity.">
+  <meta name="keywords" content="Orifxon Ma'rufxonov, Python Developer, AI Automation, Telegram Bots, Information Security, Cybersecurity, Tashkent, Uzbekistan">
   <meta name="author" content="Orifxon Ma'rufxonov">
-  <meta name="theme-color" content="#05070c">
+  <meta name="theme-color" content="#fbfbfa">
+  <link rel="canonical" href="https://protfolio-orifxon-s-projects.vercel.app/">
 
-  <!-- OpenGraph / Telegram / LinkedIn -->
+  <!-- OpenGraph / Social Sharing -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Orifxon Ma'rufxonov | Bo'lajak SOC Analyst & Kiberxavfsizlik">
-  <meta property="og:description" content="Kiberxavfsizlik, SOC monitoringi, SIEM log tahlili va Python avtomatlashtirishga ixtisoslashgan mutaxassis portfoliyasi.">
+  <meta property="og:url" content="https://protfolio-orifxon-s-projects.vercel.app/">
+  <meta property="og:title" content="Orifxon Ma'rufxonov | Python Developer, AI & Cybersecurity">
+  <meta property="og:description" content="Building practical solutions with Python, AI and modern technologies. Information Security student at the International Islamic Academy of Uzbekistan.">
   <meta property="og:image" content="./orifxon.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orifxon Ma'rufxonov | Python Developer, AI & Cybersecurity">
+  <meta name="twitter:description" content="Building practical solutions with Python, AI and modern technologies.">
+  <meta name="twitter:image" content="./orifxon.png">
 
-  <!-- Favicon SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300ff9d'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.67-3.13 9.04-7 10.15-3.87-1.11-7-5.48-7-10.15V6.3l7-3.12z'/></svg>">
+  <!-- Tasteful Monogram Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2318181b'/><text x='16' y='21' font-family='system-ui,-apple-system,sans-serif' font-size='14' font-weight='700' fill='%23ffffff' text-anchor='middle'>OM</text></svg>">
 
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Google Fonts: Newsreader (Editorial Serif), Plus Jakarta Sans (Body), JetBrains Mono (Tech) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Dynamic Canvas Background & Scanline Overlay -->
-  <canvas id="matrix-canvas"></canvas>
-  <div class="cyber-grid"></div>
-  <div class="scanlines"></div>
-
   <!-- ==========================================================================
-       COMMAND HEADER / NAVBAR
+       SITE NAVIGATION
        ========================================================================== -->
-  <header class="site-header">
-    <div class="container nav-content">
-      <a href="#" class="nav-brand">
-        <div class="brand-badge">
-          <span class="brand-dot"></span>
-          <span>OM_SOC</span>
+  <nav class="site-nav" id="site-nav">
+    <div class="container nav-wrapper">
+      <!-- Monogram Brand -->
+      <a href="#hero" class="nav-brand" aria-label="Orifxon Ma'rufxonov Home">
+        <div class="brand-monogram">OM</div>
+        <div class="brand-info">
+          <span class="brand-name">Orifxon Ma'rufxonov</span>
+          <span class="brand-sub">Student &bull; Developer</span>
         </div>
-        <div class="brand-title">SEC_OPS // 2026</div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#about" class="nav-link" data-i18n="nav_about">Haqida</a></li>
-          <li><a href="#soc-matrix" class="nav-link" data-i18n="nav_matrix">SOC & Xavfsizlik</a></li>
-          <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Loyihalar</a></li>
-          <li><a href="#terminal" class="nav-link" data-i18n="nav_terminal">Terminal CLI</a></li>
-          <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Ko‘nikmalar</a></li>
-          <li><a href="#timeline" class="nav-link" data-i18n="nav_timeline">Ta’lim & Tajriba</a></li>
-          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Aloqa</a></li>
-        </ul>
-      </nav>
+      <!-- Desktop Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link active" data-i18n="nav_home">Bosh sahifa</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav_about">Haqimda</a></li>
+        <li><a href="#expertise" class="nav-link" data-i18n="nav_expertise">Yo‘nalishlar</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Loyihalar</a></li>
+        <li><a href="#journey" class="nav-link" data-i18n="nav_journey">Rivojlanish yo‘li</a></li>
+        <li><a href="#security" class="nav-link" data-i18n="nav_security">Xavfsizlik</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Aloqa</a></li>
+      </ul>
 
-      <!-- Action Controls: Audio, Lang Switch, CV -->
+      <!-- Nav Actions: Lang Switch, CV, Mobile Toggle -->
       <div class="nav-actions">
-        <!-- Sound FX Button -->
-        <button id="sound-toggle-btn" class="btn-icon" title="Ovoz effektlarini yoqish/o'chirish">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-        </button>
-
-        <!-- Multi-language Toggle (UZ / EN) -->
-        <div class="lang-switch">
-          <button class="lang-btn active" data-lang="uz">UZ</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+        <!-- Language Switcher -->
+        <div class="lang-toggle" role="group" aria-label="Language Selector">
+          <button class="lang-btn active" data-lang="uz" aria-label="O‘zbek tili">UZ</button>
+          <button class="lang-btn" data-lang="en" aria-label="English language">EN</button>
         </div>
 
-        <a href="Orifxon_Marufxonov_CV.pdf" download="Orifxon_Marufxonov_CV.pdf" class="btn-cyber-sm">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          <span data-i18n="btn_download_cv">CV Yuklab Olish</span>
+        <!-- Download CV -->
+        <a href="Orifxon_Marufxonov_CV.pdf" download="Orifxon_Marufxonov_CV.pdf" class="btn-nav-cv">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span data-i18n="nav_cv">CV yuklab olish</span>
         </a>
 
-        <!-- Mobile Menu Hamburger -->
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <!-- Mobile Menu Trigger -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open mobile menu">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
     </div>
-  </header>
+  </nav>
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION (COMMAND CENTER BRIEFING)
+         HERO SECTION
          ========================================================================== -->
-    <section class="hero-section">
+    <section class="hero" id="hero">
       <div class="container hero-grid">
+        <!-- Left Content -->
         <div class="hero-content">
-          <!-- Cyber Defense Status Pill -->
-          <div class="status-pill">
-            <span class="status-dot-pulse"></span>
-            <span data-i18n="hero_badge">HIMOYA TIZIMI FAOL • SOC TAYYOR</span>
+          <!-- Availability Badge -->
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span data-i18n="hero_badge">Amaliyot takliflari uchun ochiq</span>
           </div>
 
-          <h1 class="hero-title">
-            <span style="display: block; font-size: 1.1rem; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;" data-i18n="hero_title_prefix">Assalomu alaykum, men</span>
-            <span class="gradient-text">Orifxon Ma'rufxonov</span>
-          </h1>
+          <span class="hero-kicker" data-i18n="hero_kicker">AXBOROT XAVFSIZLIGI TALABASI & PYTHON DASTURCHI</span>
+          <h1 class="hero-name" data-i18n="hero_name">Salom, men Orifxon.</h1>
+          
+          <h2 class="hero-headline" data-i18n="hero_headline">
+            Python, sun’iy intellekt va zamonaviy texnologiyalar bilan amaliy yechimlar yarataman.
+          </h2>
 
-          <div class="hero-subtitle">
-            <span style="color: var(--accent-green);">&gt;</span>
-            <span id="typewriter-text"></span>
-            <span class="typing-cursor"></span>
-          </div>
-
-          <p class="hero-description" data-i18n="hero_desc">
-            O‘zbekiston xalqaro islomshunoslik akademiyasi Axborot xavfsizligi yo‘nalishi 3-kurs talabasi. Kiberxavfsizlik, SOC monitoringi, tarmoq xavfsizligi, SIEM log tahlili va Python avtomatlashtirishga ixtisoslashgan.
+          <p class="hero-bio" data-i18n="hero_bio">
+            O‘zbekiston xalqaro islomshunoslik akademiyasi Axborot xavfsizligi yo‘nalishi talabasiman. Dasturiy ta’minot yaratish, aqlli avtomatlashtirish, backend texnologiyalari va kiberxavfsizlikka qiziqaman.
           </p>
 
           <div class="hero-actions">
             <a href="#projects" class="btn-primary">
-              <span data-i18n="btn_view_projects">Loyihalarni Ko‘rish</span>
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <span data-i18n="btn_explore">Loyihalarni ko‘rish</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="#terminal" class="btn-secondary">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-              <span data-i18n="btn_open_terminal">Terminalni Ochish</span>
-            </a>
-          </div>
-
-          <!-- Hero Social Direct Connect -->
-          <div class="hero-social-links">
-            <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="social-chip tg" title="Telegram: @Orifxon_05">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-              <span>@Orifxon_05</span>
-            </a>
-            <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="social-chip ig" title="Instagram: @_sheeyh_9">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              <span>@_sheeyh_9</span>
-            </a>
-            <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="social-chip gh" title="GitHub: github.com/orifxon05">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>GitHub</span>
+            <a href="Orifxon_Marufxonov_CV.pdf" download="Orifxon_Marufxonov_CV.pdf" class="btn-secondary">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span data-i18n="btn_cv">CV (PDF) yuklash</span>
             </a>
           </div>
 
-          <!-- Quick Metrics -->
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-num">5+</span>
-              <span class="stat-label" data-i18n="stat_projects">IT & Xavfsizlik Loyihalari</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-num">3-kurs</span>
-              <span class="stat-label" data-i18n="stat_year">Axborot Xavfsizligi Kursi</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-num">24/7</span>
-              <span class="stat-label" data-i18n="stat_monitoring">Tirishqoqlik & Intizom</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-num">100%</span>
-              <span class="stat-label" data-i18n="stat_readiness">Amaliyotga Tayyorlik</span>
+          <!-- Direct Social Connections -->
+          <div class="hero-socials">
+            <span class="social-label" data-i18n="social_direct">To‘g‘ridan-to‘g‘ri aloqa:</span>
+            <div class="social-links-wrap">
+              <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="hero-social-link" title="Telegram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                <span>Telegram</span>
+              </a>
+              <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="hero-social-link" title="GitHub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="hero-social-link" title="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <span>Instagram</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Cyber Avatar HUD Card -->
-        <div class="hero-visual">
-          <div class="cyber-card">
-            <!-- Corner Brackets -->
-            <div class="corner-bracket tl"></div>
-            <div class="corner-bracket tr"></div>
-            <div class="corner-bracket bl"></div>
-            <div class="corner-bracket br"></div>
-
-            <div class="card-hud-header">
-              <span class="hud-code">SEC_ID: OM-2005</span>
-              <div class="hud-status">
-                <span class="brand-dot"></span>
-                <span>STATUS: OPERATIONAL</span>
+        <!-- Right Column: Authentic Editorial Portrait -->
+        <div class="hero-portrait-col">
+          <div class="portrait-frame">
+            <div class="portrait-image-wrapper">
+              <img src="orifxon.png" alt="Orifxon Ma'rufxonov" class="portrait-img">
+            </div>
+            <div class="portrait-caption">
+              <div>
+                <div class="caption-name">Orifxon Ma'rufxonov</div>
+                <div class="caption-meta">Tashkent, Uzbekistan</div>
               </div>
-            </div>
-
-            <!-- Avatar with Radar Rings -->
-            <div class="avatar-frame">
-              <div class="avatar-radar-ring"></div>
-              <div class="avatar-radar-ring-2"></div>
-              <div class="avatar-img-wrap">
-                <img src="orifxon.png" alt="Orifxon Ma'rufxonov" class="avatar-img">
-              </div>
-            </div>
-
-            <div class="avatar-badge">
-              <div class="avatar-name">Orifxon Ma'rufxonov</div>
-              <div class="avatar-role">BO‘LAJAK SOC ANALYST</div>
-            </div>
-
-            <div class="card-hud-footer">
-              <span>LOCATION: TASHKENT, UZ</span>
-              <span class="hud-defcon">DEFCON: 5 (SECURE)</span>
+              <span class="caption-badge">B.S. Student</span>
             </div>
           </div>
         </div>
@@ -204,548 +157,538 @@
     </section>
 
     <!-- ==========================================================================
-         LIVE SOC ALERT MONITOR (UNIQUE COMMAND CENTER WIDGET)
+         ABOUT ME SECTION
          ========================================================================== -->
-    <section class="soc-monitor-section">
+    <section class="section-wrapper subtle-bg" id="about">
       <div class="container">
-        <div class="soc-monitor-card">
-          <div class="soc-header">
-            <div class="soc-header-left">
-              <div class="live-indicator">
-                <span class="brand-dot"></span>
-                <span data-i18n="soc_live_title">SOC Monitoring & Xavfsizlik Voqealari Oqimi (Live Telemetry)</span>
-              </div>
-            </div>
-            <div class="soc-controls">
-              <button id="btn-simulate-alert" class="btn-simulate">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                <span data-i18n="btn_simulate">Insident Simulyatsiya Qilish</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Alert feed stream -->
-          <div class="soc-feed" id="soc-feed-container">
-            <!-- Dynamically populated via script.js -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         ABOUT / KASBIY MAQSAD & BACKGROUND
-         ========================================================================== -->
-    <section class="section-block" id="about">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-tag" data-i18n="sec_about_tag">KASBIY PROFIL</div>
-          <h2 class="section-title gradient-text" data-i18n="sec_about_title">Kiberxavfsizlik va SOC sari yo‘l</h2>
-          <p class="section-sub" data-i18n="sec_about_sub">Kiberxavfsizlik bo‘yicha fundamental bilimlar va amaliy dasturlash mahorati sintezi</p>
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="about_eyebrow">KASBIY TANISHUV</span>
+          <h2 class="section-title" data-i18n="about_title">O‘zim haqimda qisqacha.</h2>
+          <p class="section-lead" data-i18n="about_lead">
+            Nazariy bilimlar va amaliy loyihalar sintezi orqali professional muhandislik sari qadam tashlamoqdaman.
+          </p>
         </div>
 
         <div class="about-grid">
-          <!-- Bio card -->
-          <div class="about-card">
-            <h3 data-i18n="about_bio_title">
-              <svg width="22" height="22" fill="none" stroke="var(--accent-green)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-              <span>Men haqimda va kasbiy maqsadim</span>
-            </h3>
-            <p data-i18n="about_bio_p1">
-              Axborot xavfsizligi yo‘nalishida 3-kurs talabaman. Kiberxavfsizlik, xususan SOC (Security Operations Center) monitoringi, tarmoq protokollari tahlili, log tahlili va insidentlarga tezkor javob berish (Incident Response) yo‘nalishlariga qattiq qiziqaman.
+          <!-- Left Narrative Column -->
+          <div class="about-narrative">
+            <p data-i18n="about_p1">
+              Hozirda O‘zbekiston xalqaro islomshunoslik akademiyasida <strong>Axborot xavfsizligi</strong> yo‘nalishi bo‘yicha 3-kurs talabasiman. Mening qiziqishlarim faqat kiberxavfsizlik bilan cheklanmaydi — men Python dasturlash, jarayonlarni avtomatlashtirish, backend texnologiyalari va sun’iy intellekt (AI API) integratsiyasi ustida faol ishlayman.
             </p>
-            <p data-i18n="about_bio_p2">
-              Hozirgi vaqtda tarmoq arxitekturasi, Linux va Windows xavfsizligi, SIEM tushunchalari hamda Python yordamida himoya va avtomatlashtirish vositalarini yaratish bo‘yicha mustaqil amaliyot olib boryapman.
+            <p data-i18n="about_p2">
+              Telegram platformasi uchun aqlli botlar, tovarlar hisobi uchun kichik web tizimlar yaratish va dasturiy ta’minot sahna ortida qanday ishlashini mustaqil tahlil qilish menga katta zavq bag‘ishlaydi.
             </p>
 
-            <div class="highlight-box" data-i18n="about_quote">
-              «Maqsadim: SOC, axborot xavfsizligi monitoringi yoki incident response yo‘nalishida amaliyot / junior lavozimda tajribali jamoada ishlab, professional mutaxassisga aylanish.»
+            <div class="quote-callout">
+              <p data-i18n="about_quote">
+                «Yaxshi muhandis bo‘lish uchun qiziquvchanlik, amaliy tajriba va uzluksiz o‘rganish eng muhim omillardir.»
+              </p>
             </div>
           </div>
 
-          <!-- Specs card -->
+          <!-- Right Facts Card -->
           <div class="about-card">
-            <h3>
-              <svg width="22" height="22" fill="none" stroke="var(--accent-cyan)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-              <span>Asosiy Ma’lumotlar</span>
-            </h3>
-            <div class="about-specs">
-              <div class="spec-box">
-                <div class="spec-title" data-i18n="spec_degree">Ta’lim / Kurs</div>
-                <div class="spec-val" data-i18n="spec_degree_val">Bakalavr 3-kurs (Axborot xavfsizligi)</div>
-              </div>
-              <div class="spec-box">
-                <div class="spec-title">Universitet</div>
-                <div class="spec-val">O‘zbekiston xalqaro islomshunoslik akademiyasi</div>
-              </div>
-              <div class="spec-box">
-                <div class="spec-title" data-i18n="spec_city">Hudud</div>
-                <div class="spec-val" data-i18n="spec_city_val">Toshkent, O‘zbekiston</div>
-              </div>
-              <div class="spec-box">
-                <div class="spec-title" data-i18n="spec_english">Ingliz tili darajasi</div>
-                <div class="spec-val" data-i18n="spec_english_val">Pre-Intermediate (A2-B1)</div>
-              </div>
-              <div class="spec-box">
-                <div class="spec-title" data-i18n="spec_status">Ish maqomi</div>
-                <div class="spec-val text-green" data-i18n="spec_status_val">Amaliyot / Junior izlanmoqda</div>
-              </div>
-              <div class="spec-box">
-                <div class="spec-title">GitHub</div>
-                <div class="spec-val"><a href="https://github.com/orifxon05" target="_blank" class="text-cyan">github.com/orifxon05</a></div>
-              </div>
-              <div class="spec-box">
-                <div class="spec-title">Telegram</div>
-                <div class="spec-val"><a href="https://t.me/Orifxon_05" target="_blank" class="text-green">@Orifxon_05</a></div>
-              </div>
-              <div class="spec-box">
-                <div class="spec-title">Instagram</div>
-                <div class="spec-val"><a href="https://instagram.com/_sheeyh_9" target="_blank" class="text-purple">@_sheeyh_9</a></div>
-              </div>
-            </div>
+            <div class="about-card-title" data-i18n="about_facts_title">ASOSIY MA’LUMOTLAR</div>
+            <ul class="facts-list">
+              <li class="fact-row">
+                <span class="fact-label" data-i18n="fact_education_label">Ta’lim darajasi</span>
+                <span class="fact-value" data-i18n="fact_education_val">Bakalavr 3-kurs talabasi</span>
+              </li>
+              <li class="fact-row">
+                <span class="fact-label" data-i18n="fact_major_label">Mutaxassislik</span>
+                <span class="fact-value" data-i18n="fact_major_val">Axborot xavfsizligi</span>
+              </li>
+              <li class="fact-row">
+                <span class="fact-label" data-i18n="fact_university_label">Ta’lim muassasasi</span>
+                <span class="fact-value" data-i18n="fact_university_val">O‘zbekiston xalqaro islomshunoslik akademiyasi</span>
+              </li>
+              <li class="fact-row">
+                <span class="fact-label" data-i18n="fact_location_label">Manzil</span>
+                <span class="fact-value" data-i18n="fact_location_val">Toshkent, O‘zbekiston</span>
+              </li>
+              <li class="fact-row">
+                <span class="fact-label" data-i18n="fact_languages_label">Tillar</span>
+                <span class="fact-value" data-i18n="fact_languages_val">O‘zbek (Ona tili), Ingliz (A2-B1), Turk (A2)</span>
+              </li>
+              <li class="fact-row">
+                <span class="fact-label" data-i18n="fact_focus_label">Hozirgi asosiy e’tibor</span>
+                <span class="fact-value" data-i18n="fact_focus_val">Python, Avtomatlashtirish, AI integratsiyasi, Kiberxavfsizlik</span>
+              </li>
+              <li class="fact-row">
+                <span class="fact-label" data-i18n="fact_goal_label">Kasbiy maqsad</span>
+                <span class="fact-value emerald" data-i18n="fact_goal_val">Junior dasturchi / Amaliyotchi lavozimi</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         CYBERSECURITY & BLUE TEAM MATRIX (6 PILLARS)
+         AREAS OF EXPERTISE
          ========================================================================== -->
-    <section class="section-block" id="soc-matrix">
+    <section class="section-wrapper" id="expertise">
       <div class="container">
-        <div class="section-head">
-          <div class="section-tag" data-i18n="sec_matrix_tag">BLUE TEAM & HIMOYA ARXITEKTURASI</div>
-          <h2 class="section-title gradient-text" data-i18n="sec_matrix_title">Kiberxavfsizlik Yo‘nalishlari & Vositalar</h2>
-          <p class="section-sub" data-i18n="sec_matrix_sub">SOC mutaxassisi bilishi shart bo‘lgan asosiy yo‘nalishlar va amaliy tajriba</p>
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="expertise_eyebrow">TEXNIK BILIMLAR</span>
+          <h2 class="section-title" data-i18n="expertise_title">Asosiy yo‘nalishlar va texnik stack.</h2>
+          <p class="section-lead" data-i18n="expertise_lead">
+            O‘zlashtirgan va amaliy loyihalarda qo‘llagan texnologiyalarim. Sun’iy baholar yo‘q — faqat real tajriba va o‘rganish jarayoni.
+          </p>
         </div>
 
-        <div class="cyber-matrix-grid">
-          <!-- 1. Tarmoq xavfsizligi -->
-          <div class="matrix-card">
-            <div class="matrix-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            </div>
-            <h3 class="matrix-title">Tarmoq Xavfsizligi</h3>
-            <p class="matrix-desc">TCP/IP protokollar to‘plami, DNS, HTTP/HTTPS tahlili, portlar konfiguratsiyasi, Firewall (UFW/IPTables) qoidalari va tarmoq trafigini tahlil qilish.</p>
-            <div class="matrix-tags">
-              <span class="cyber-tag">TCP/IP</span>
-              <span class="cyber-tag">DNS</span>
-              <span class="cyber-tag">HTTP/HTTPS</span>
-              <span class="cyber-tag">Firewall</span>
-            </div>
-          </div>
-
-          <!-- 2. SOC & SIEM Monitoring -->
-          <div class="matrix-card">
-            <div class="matrix-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-            </div>
-            <h3 class="matrix-title">SOC & SIEM Monitoring</h3>
-            <p class="matrix-desc">Xavfsizlik hodisalari loglarini tahlil qilish, shubhali alertlarni birlamchi saralash (Triage), SIEM asoslari va xavfsizlik vositalari bilan home-lab amaliyoti.</p>
-            <div class="matrix-tags">
-              <span class="cyber-tag">Log Tahlili</span>
-              <span class="cyber-tag">SIEM Asoslari</span>
-              <span class="cyber-tag">Alert Triage</span>
-              <span class="cyber-tag">Home-Lab</span>
+        <div class="expertise-grid">
+          <!-- Group 1: Development -->
+          <div class="expertise-card">
+            <span class="card-number">01 / DEVELOPMENT</span>
+            <h3 class="card-title" data-i18n="exp1_title">Dasturlash & Backend</h3>
+            <p class="card-desc" data-i18n="exp1_desc">
+              Python vositalari yordamida mantiqiy algoritmlar tuzish, Telegram botlari arxitekturasi, C++ poydevori va zamonaviy web texnologiyalari.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Telegram Bot Dev</span>
+              <span class="tech-tag">Python Automation</span>
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">HTML5 / CSS3</span>
+              <span class="tech-tag">JavaScript Basics</span>
+              <span class="tech-tag">Git & GitHub</span>
             </div>
           </div>
 
-          <!-- 3. Operatsion tizimlar xavfsizligi -->
-          <div class="matrix-card">
-            <div class="matrix-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            </div>
-            <h3 class="matrix-title">Linux & Windows Xavfsizligi</h3>
-            <p class="matrix-desc">Xavfsizlik operatsiyalari uchun Linux (Ubuntu/Debian) buyruqlar satri va Windows tizim jurnallari (Event Viewer, Event ID 4624/4625), xavfsiz konfiguratsiya asoslari.</p>
-            <div class="matrix-tags">
-              <span class="cyber-tag">Linux</span>
-              <span class="cyber-tag">Windows</span>
-              <span class="cyber-tag">Event Logs</span>
-              <span class="cyber-tag">Hardening</span>
-            </div>
-          </div>
-
-          <!-- 4. Incident Response & MITRE ATT&CK -->
-          <div class="matrix-card">
-            <div class="matrix-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            </div>
-            <h3 class="matrix-title">Incident Response & MITRE ATT&CK</h3>
-            <p class="matrix-desc">Xavfsizlik insidentlariga munosabat bildirish bosqichlari, xakerlik taktika va texnikalarini MITRE ATT&CK matritsasi bo‘yicha xaritalash va aniqlash.</p>
-            <div class="matrix-tags">
-              <span class="cyber-tag">MITRE ATT&CK</span>
-              <span class="cyber-tag">Incident Response</span>
-              <span class="cyber-tag">Threat TTPs</span>
+          <!-- Group 2: AI & Automation -->
+          <div class="expertise-card">
+            <span class="card-number">02 / AUTOMATION</span>
+            <h3 class="card-title" data-i18n="exp2_title">AI & Avtomatlashtirish</h3>
+            <p class="card-desc" data-i18n="exp2_desc">
+              Katta til modellari (LLM API) bilan ishlash, shaxsiy virtual assistentlar, muntazam vazifalarni rejalashtirish (scheduling) va API integratsiyasi.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">AI API Integration</span>
+              <span class="tech-tag">Telegram AI Assistants</span>
+              <span class="tech-tag">Workflow Automation</span>
+              <span class="tech-tag">Telethon (MTProto)</span>
+              <span class="tech-tag">Python Scripting</span>
+              <span class="tech-tag">API Integration</span>
             </div>
           </div>
 
-          <!-- 5. Autentifikatsiya & Ma'lumotlar Xavfsizligi -->
-          <div class="matrix-card">
-            <div class="matrix-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-            </div>
-            <h3 class="matrix-title">Autentifikatsiya & Himoya</h3>
-            <p class="matrix-desc">Foydalanuvchi ruxsatlarini boshqarish (RBAC), API xavfsizligi, parollarni xavfsiz xesh qilish va ma’lumotlar bazalarida ma’lumotlarni xavfsiz saqlash.</p>
-            <div class="matrix-tags">
-              <span class="cyber-tag">RBAC</span>
-              <span class="cyber-tag">API Security</span>
-              <span class="cyber-tag">Hashing</span>
-              <span class="cyber-tag">Sanitization</span>
+          <!-- Group 3: Cybersecurity -->
+          <div class="expertise-card">
+            <span class="card-number">03 / SECURITY</span>
+            <h3 class="card-title" data-i18n="exp3_title">Kiberxavfsizlik & Tizimlar</h3>
+            <p class="card-desc" data-i18n="exp3_desc">
+              Tarmoq protokollari (TCP/IP, DNS), Linux operatsion tizimi, Windows xavfsizlik jurnallari, SIEM asoslari va insidentlarni dastlabki tahlil qilish.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">InfoSec Fundamentals</span>
+              <span class="tech-tag">TCP/IP & DNS</span>
+              <span class="tech-tag">Linux (Ubuntu/Debian)</span>
+              <span class="tech-tag">Windows Event Logs</span>
+              <span class="tech-tag">SIEM Fundamentals</span>
+              <span class="tech-tag">Log Analysis</span>
+              <span class="tech-tag">MITRE ATT&CK Familiarity</span>
             </div>
           </div>
+        </div>
 
-          <!-- 6. Avtomatlashtirish & Skriptlar -->
-          <div class="matrix-card">
-            <div class="matrix-icon">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            </div>
-            <h3 class="matrix-title">Python Avtomatlashtirish</h3>
-            <p class="matrix-desc">Rutina xavfsizlik vazifalarini avtomatlashtirish, loglarni saralovchi Python skriptlar, Telegram bildirishnoma botlari va API integratsiyalari.</p>
-            <div class="matrix-tags">
-              <span class="cyber-tag">Python Scripting</span>
-              <span class="cyber-tag">Telethon</span>
-              <span class="cyber-tag">Cron Automation</span>
-            </div>
+        <!-- Databases & Developer Tooling Strip -->
+        <div class="tools-strip">
+          <div class="tools-strip-label">
+            <span class="tools-strip-title" data-i18n="tools_strip_title">Ma’lumotlar bazasi va muhit vositalari:</span>
+            <span class="tools-strip-sub" data-i18n="tools_strip_sub">Loyihalarni ishlab chiqish va qo‘llab-quvvatlash uchun ishlatiladigan vositalar</span>
+          </div>
+          <div class="tools-tags-group">
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">VS Code</span>
+            <span class="tech-tag">Linux CLI</span>
+            <span class="tech-tag">Git</span>
+            <span class="tech-tag">GitHub</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         AMALIY LOYIHALAR (PROJECTS SHOWCASE)
+         FEATURED PROJECTS SECTION
          ========================================================================== -->
-    <section class="section-block" id="projects">
+    <section class="section-wrapper subtle-bg" id="projects">
       <div class="container">
-        <div class="section-head">
-          <div class="section-tag" data-i18n="sec_proj_tag">AMALIY LOYIHALAR</div>
-          <h2 class="section-title gradient-text" data-i18n="sec_proj_title">Yaratilgan Tizimlar & Botlar</h2>
-          <p class="section-sub" data-i18n="sec_proj_sub">Python, avtomatlashtirish, xavfsizlik va web texnologiyalari asosidagi ishlar</p>
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="projects_eyebrow">AMALIY TAJRIBA</span>
+          <h2 class="section-title" data-i18n="projects_title">Tanlangan loyihalar.</h2>
+          <p class="section-lead" data-i18n="projects_lead">
+            Mening amaliy bilimlarim va muammolarni hal qilish uslubimni ifodalovchi dasturlar va tizimlar.
+          </p>
         </div>
 
-        <!-- Filter tabs -->
-        <div class="projects-filter">
-          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Barchasi</button>
-          <button class="filter-btn" data-filter="soc" data-i18n="filter_soc">Kiberxavfsizlik & SOC</button>
-          <button class="filter-btn" data-filter="bot" data-i18n="filter_bot">Python & AI Botlar</button>
-          <button class="filter-btn" data-filter="web" data-i18n="filter_web">Web & Ma’lumotlar Bazasi</button>
+        <!-- Category Filters -->
+        <div class="projects-filter-bar">
+          <button class="project-filter-btn active" data-filter="all" data-i18n="filter_all">Barchasi</button>
+          <button class="project-filter-btn" data-filter="bots" data-i18n="filter_bots">Python & Botlar</button>
+          <button class="project-filter-btn" data-filter="web" data-i18n="filter_web">Web & Ma’lumotlar bazasi</button>
+          <button class="project-filter-btn" data-filter="security" data-i18n="filter_security">Xavfsizlik & Tizimlar</button>
         </div>
 
-        <div class="projects-grid">
-          <!-- Project 1: Telegram AI Assistant -->
-          <div class="project-card" data-category="bot">
-            <div class="project-banner">
-              <span class="project-badge-top">SECURITY & AI</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="1.5"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM4.93 4.93a2 2 0 0 1 2.83 0l1.41 1.41a2 2 0 0 1-2.83 2.83L4.93 7.76a2 2 0 0 1 0-2.83zM2 12a2 2 0 0 1 2-2h2a2 2 0 0 1 0 4H4a2 2 0 0 1-2-2zm12 0a2 2 0 0 1 2-2h2a2 2 0 0 1 0 4h-2a2 2 0 0 1-2-2zm-3 7v3m-4-3v3m8-3v3M6 18h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2z"></path></svg>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Shaxsiy Telegram AI Yordamchi</h3>
-              <p class="project-desc">Cheklangan kirish (Access Control), avtomatik javoblar, suhbat tarixi va shaxsiy vazifalarni boshqarishga ega avtomatlashtirish yordamchisi.</p>
-              <div class="project-tech">
+        <div class="projects-collection">
+          <!-- Project 01: Personal Telegram AI Assistant -->
+          <article class="project-entry" data-category="bots">
+            <div class="project-content">
+              <div class="project-category-meta">
+                <span class="project-kicker">Python & AI Automation</span>
+                <span class="project-status-tag">Active Project</span>
+              </div>
+              <h3 class="project-heading">Shaxsiy Telegram AI Yordamchisi</h3>
+              <p class="project-summary">
+                Cheklangan kirish huquqlariga ega (whitelist RBAC), suhbatlar tarixini boshqaruvchi va shaxsiy vazifalarni avtomatlashtiruvchi Telegram assistenti.
+              </p>
+              <div class="project-problem-solution">
+                <strong>Muammo & Yechim:</strong> Takrorlanuvchi savollarga AI yordamida tezkor javob olish va unga faqat vakolatlangan Telegram hisoblarining ulanishini ta’minlash.
+              </div>
+              <div class="project-tech-stack">
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">Telethon</span>
                 <span class="tech-tag">AI API</span>
-                <span class="tech-tag">RBAC</span>
+                <span class="tech-tag">JSON Storage</span>
+                <span class="tech-tag">Asyncio</span>
               </div>
-              <div class="project-footer">
-                <button class="btn-card-details" data-project="ai_bot">Batafsil ko‘rish</button>
-                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              <div class="project-links-row">
+                <button class="project-btn btn-details" data-project-key="ai_assistant" data-i18n="btn_details">Batafsil tahlil</button>
+                <a href="https://github.com/orifxon05/Index.html" target="_blank" rel="noopener" class="project-btn" data-i18n="btn_github">
+                  GitHub
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
               </div>
             </div>
-          </div>
+            <div class="project-preview-frame">
+              <div class="project-blueprint">
+                <div class="blueprint-header">
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-title">telegram_assistant.py &bull; MTProto Client</span>
+                </div>
+                <div class="blueprint-body">
+                  <div><span class="blueprint-highlight"># Authentication &amp; RBAC Verification</span></div>
+                  <div>AUTHORIZED_IDS = [719823192, 945711750]</div>
+                  <div>async def on_incoming_message(event):</div>
+                  <div>&nbsp;&nbsp;sender_id = event.sender_id</div>
+                  <div>&nbsp;&nbsp;if sender_id not in AUTHORIZED_IDS:</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;logger.warn(f"Unauthorized access: {sender_id}")</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;return</div>
+                  <div>&nbsp;&nbsp;response = await call_ai_api(event.raw_text)</div>
+                  <div>&nbsp;&nbsp;await event.reply(response)</div>
+                </div>
+              </div>
+            </div>
+          </article>
 
-          <!-- Project 2: SOC Home-Lab -->
-          <div class="project-card" data-category="soc">
-            <div class="project-banner">
-              <span class="project-badge-top">SOC & BLUE TEAM</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">SOC Home-Lab Monitoring Tizimi</h3>
-              <p class="project-desc">Tizim va tarmoq loglarini yig‘ish, shubhali faollikni tahlil qilish va MITRE ATT&CK taktikalari bo‘yicha alertlarni saralash amaliyoti.</p>
-              <div class="project-tech">
-                <span class="tech-tag">SIEM</span>
-                <span class="tech-tag">Log Tahlili</span>
-                <span class="tech-tag">Linux</span>
-                <span class="tech-tag">Wireshark</span>
+          <!-- Project 02: Dormitory Duty Management Bot (Reversed layout) -->
+          <article class="project-entry reverse" data-category="bots">
+            <div class="project-content">
+              <div class="project-category-meta">
+                <span class="project-kicker">Telegram Bot & Scheduling</span>
+                <span class="project-status-tag">Deployed Solution</span>
               </div>
-              <div class="project-footer">
-                <button class="btn-card-details" data-project="soc_lab">Batafsil ko‘rish</button>
-                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              <h3 class="project-heading">Yotoqxona Navbatchilik Boti</h3>
+              <p class="project-summary">
+                Talabalar turar joyidagi navbatchilik jadvallarini avtomatik rotatsiya qiluvchi va mas’ul talabalarga o‘z vaqtida eslatma bildirishnomalarini yuboruvchi bot.
+              </p>
+              <div class="project-problem-solution">
+                <strong>Muammo & Yechim:</strong> Inson omili tufayli navbatchilik jadvallarining buzilishini bartaraf etib, har kuni ertalab avtomatik bildirishnoma tarqatish tizimi yo‘lga qo‘yildi.
               </div>
-            </div>
-          </div>
-
-          <!-- Project 3: Yotoqxona Navbatchilik Boti -->
-          <div class="project-card" data-category="bot">
-            <div class="project-banner">
-              <span class="project-badge-top">AUTOMATION</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Yotoqxona Navbatchilik Telegram Boti</h3>
-              <p class="project-desc">Yotoqxona navbatchilik jadvali va eslatma bildirishnomalarini avtomatlashtiruvchi, tartibni monitoring qiluvchi Python boti.</p>
-              <div class="project-tech">
+              <div class="project-tech-stack">
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">Telegram Bot API</span>
-                <span class="tech-tag">Cron</span>
+                <span class="tech-tag">Scheduling</span>
+                <span class="tech-tag">Data Persistence</span>
               </div>
-              <div class="project-footer">
-                <button class="btn-card-details" data-project="dorm_bot">Batafsil ko‘rish</button>
-                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              <div class="project-links-row">
+                <button class="project-btn btn-details" data-project-key="dormitory_bot" data-i18n="btn_details">Batafsil tahlil</button>
+                <a href="https://github.com/orifxon05/Index.html" target="_blank" rel="noopener" class="project-btn" data-i18n="btn_github">
+                  GitHub
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
               </div>
             </div>
-          </div>
+            <div class="project-preview-frame">
+              <div class="project-blueprint">
+                <div class="blueprint-header">
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-title">duty_scheduler.py &bull; Automated Rotator</span>
+                </div>
+                <div class="blueprint-body">
+                  <div><span class="blueprint-highlight"># Cyclical Schedule Engine</span></div>
+                  <div>class DutyManager:</div>
+                  <div>&nbsp;&nbsp;def get_next_duty_person(self):</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;index = (self.current_idx + 1) % len(self.students)</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;return self.students[index]</div>
+                  <div>&nbsp;&nbsp;async def notify_scheduled_duty(self):</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;person = self.get_next_duty_person()</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;await bot.send_message(person.chat_id, "Bugun sizning navbatingiz!")</div>
+                </div>
+              </div>
+            </div>
+          </article>
 
-          <!-- Project 4: Musiqa Saqlash Boti -->
-          <div class="project-card" data-category="bot">
-            <div class="project-banner">
-              <span class="project-badge-top">MEDIA STREAM</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="1.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Musiqa va Media Saqlash Boti</h3>
-              <p class="project-desc">Musiqa va video kontentini tezkor qidirish, yuklab olish va Telegram bulutida tartibli saqlash uchun ishlab chiqilgan ochiq kodli bot.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Telegram</span>
-                <span class="tech-tag">Cloud Storage</span>
+          <!-- Project 03: Warehouse & Retail Web Management -->
+          <article class="project-entry" data-category="web">
+            <div class="project-content">
+              <div class="project-category-meta">
+                <span class="project-kicker">Web & Databases</span>
+                <span class="project-status-tag">Functional Prototype</span>
               </div>
-              <div class="project-footer">
-                <button class="btn-card-details" data-project="music_bot">Batafsil ko‘rish</button>
-                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              <h3 class="project-heading">Ombor va Do‘kon Boshqaruv Tizimi</h3>
+              <p class="project-summary">
+                Mahsulotlar katalogi, ombor qoldig‘i, kirim-chiqim hisoboti va QR-kod orqali tovarlarni tezkor identifikatsiyalash web platformasi.
+              </p>
+              <div class="project-problem-solution">
+                <strong>Muammo & Yechim:</strong> Kichik savdo va omborlarda tovar hisobini qog‘ozda emas, zamonaviy ma’lumotlar bazasi orqali markazlashgan va himoyalangan tarzda boshqarish.
               </div>
-            </div>
-          </div>
-
-          <!-- Project 5: Ombor va do'kon web tizimlari -->
-          <div class="project-card" data-category="web">
-            <div class="project-banner">
-              <span class="project-badge-top">FULLSTACK WEB</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-amber)" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Ombor va Do‘kon Web Tizimlari</h3>
-              <p class="project-desc">Mahsulotlar katalogi, kategoriyalar, sotuvlar tahlili, QR-kod integratsiyasi va xavfsiz autentifikatsiyaga ega web boshqaruv tizimi.</p>
-              <div class="project-tech">
+              <div class="project-tech-stack">
                 <span class="tech-tag">PostgreSQL</span>
                 <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">QR Code</span>
-                <span class="tech-tag">Web UI</span>
+                <span class="tech-tag">QR Processing</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">Python / JS</span>
               </div>
-              <div class="project-footer">
-                <button class="btn-card-details" data-project="store_web">Batafsil ko‘rish</button>
-                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              <div class="project-links-row">
+                <button class="project-btn btn-details" data-project-key="warehouse_system" data-i18n="btn_details">Batafsil tahlil</button>
+                <a href="https://github.com/orifxon05/Index.html" target="_blank" rel="noopener" class="project-btn" data-i18n="btn_github">
+                  GitHub
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
               </div>
             </div>
-          </div>
+            <div class="project-preview-frame">
+              <div class="project-blueprint">
+                <div class="blueprint-header">
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-title">inventory_schema.sql &bull; Dual DB Model</span>
+                </div>
+                <div class="blueprint-body">
+                  <div><span class="blueprint-highlight">-- PostgreSQL Schema Definition</span></div>
+                  <div>CREATE TABLE products (</div>
+                  <div>&nbsp;&nbsp;id SERIAL PRIMARY KEY,</div>
+                  <div>&nbsp;&nbsp;sku VARCHAR(50) UNIQUE NOT NULL,</div>
+                  <div>&nbsp;&nbsp;name VARCHAR(255) NOT NULL,</div>
+                  <div>&nbsp;&nbsp;stock_quantity INT DEFAULT 0,</div>
+                  <div>&nbsp;&nbsp;qr_code_hash VARCHAR(128)</div>
+                  <div>);</div>
+                </div>
+              </div>
+            </div>
+          </article>
 
-          <!-- Project 6: Tug'ilgan kun tabriklash boti -->
-          <div class="project-card" data-category="bot">
-            <div class="project-banner">
-              <span class="project-badge-top">NOTIFICATION</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Tug‘ilgan Kun Tabriklash Boti</h3>
-              <p class="project-desc">Shaxsiylashtirilgan tabrik matnlari va eslatmalarni belgilangan vaqtda avtomatik jo‘natuvchi samaradorlik vositasi.</p>
-              <div class="project-tech">
+          <!-- Project 04: Birthday Greeting Automation Bot (Reversed layout) -->
+          <article class="project-entry reverse" data-category="bots">
+            <div class="project-content">
+              <div class="project-category-meta">
+                <span class="project-kicker">Automation & Calendar</span>
+                <span class="project-status-tag">Complete</span>
+              </div>
+              <h3 class="project-heading">Tug‘ilgan Kun Tabriklash Boti</h3>
+              <p class="project-summary">
+                Taqvim sanalarini kuzatib boruvchi, shaxsiylashtirilgan tabrik matnlari va media fayllarni belgilangan vaqtda jo‘natuvchi samaradorlik vositasi.
+              </p>
+              <div class="project-problem-solution">
+                <strong>Muammo & Yechim:</strong> Jamoa yoki yaqinlarning muhim sanalarini unutmaslik uchun avtomatik vaqt bo‘yicha tekshiruv mexanizmi va shaxsiy media biriktirish joriy qilingan.
+              </div>
+              <div class="project-tech-stack">
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">Telegram</span>
+                <span class="tech-tag">Telegram Bot API</span>
                 <span class="tech-tag">Automation</span>
+                <span class="tech-tag">Datetime Logic</span>
               </div>
-              <div class="project-footer">
-                <button class="btn-card-details" data-project="birthday_bot">Batafsil ko‘rish</button>
-                <a href="https://github.com/orifxon05" target="_blank" class="btn-card-link">GitHub <span>&rarr;</span></a>
+              <div class="project-links-row">
+                <button class="project-btn btn-details" data-project-key="birthday_bot" data-i18n="btn_details">Batafsil tahlil</button>
+                <a href="https://github.com/orifxon05/Index.html" target="_blank" rel="noopener" class="project-btn" data-i18n="btn_github">
+                  GitHub
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
               </div>
             </div>
-          </div>
+            <div class="project-preview-frame">
+              <div class="project-blueprint">
+                <div class="blueprint-header">
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-title">notifier.py &bull; Scheduled Dispatcher</span>
+                </div>
+                <div class="blueprint-body">
+                  <div><span class="blueprint-highlight"># Daily Heartbeat Dispatch Logic</span></div>
+                  <div>def check_and_send_greetings():</div>
+                  <div>&nbsp;&nbsp;today = datetime.date.today().strftime("%m-%d")</div>
+                  <div>&nbsp;&nbsp;matches = db.query(Celebration).filter_by(date=today).all()</div>
+                  <div>&nbsp;&nbsp;for item in matches:</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;dispatch_custom_greeting(item.user_id, item.template)</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 05: Media & Audio Storage Telegram Bot -->
+          <article class="project-entry" data-category="bots">
+            <div class="project-content">
+              <div class="project-category-meta">
+                <span class="project-kicker">Media & Cloud Storage</span>
+                <span class="project-status-tag">Portfolio Project</span>
+              </div>
+              <h3 class="project-heading">Musiqa va Media Saqlash Boti</h3>
+              <p class="project-summary">
+                Audio kontentlarni qidirish, yuklab olish va Telegram bulut infratuzilmasida tartibli katalog holida saqlashga mo‘ljallangan bot.
+              </p>
+              <div class="project-problem-solution">
+                <strong>Muammo & Yechim:</strong> Katta hajmdagi media fayllarni qurilmada emas, doimiy ochiq bulutli kanallarda xavfsiz kataloglash imkoniyatini taqdim etadi.
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Asyncio</span>
+                <span class="tech-tag">Media Streaming</span>
+                <span class="tech-tag">Telegram API</span>
+              </div>
+              <div class="project-links-row">
+                <button class="project-btn btn-details" data-project-key="media_storage_bot" data-i18n="btn_details">Batafsil tahlil</button>
+                <a href="https://github.com/orifxon05/Index.html" target="_blank" rel="noopener" class="project-btn" data-i18n="btn_github">
+                  GitHub
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-preview-frame">
+              <div class="project-blueprint">
+                <div class="blueprint-header">
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-title">media_stream.py &bull; Asynchronous Pipe</span>
+                </div>
+                <div class="blueprint-body">
+                  <div><span class="blueprint-highlight"># Chunk-based Stream Processor</span></div>
+                  <div>async def stream_media_file(file_id, chunk_size=1024*512):</div>
+                  <div>&nbsp;&nbsp;async for chunk in client.iter_download(file_id, chunk_size):</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;yield sanitize_payload(chunk)</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 06: Security & SIEM Home-Lab Environment (Reversed layout) -->
+          <article class="project-entry reverse" data-category="security">
+            <div class="project-content">
+              <div class="project-category-meta">
+                <span class="project-kicker">Security & Systems</span>
+                <span class="project-status-tag">Practical Lab</span>
+              </div>
+              <h3 class="project-heading">Xavfsizlik & SIEM Home-Lab Muhiti</h3>
+              <p class="project-summary">
+                Tizim va tarmoq loglarini tahlil qilish, Linux/Windows xavfsizlik jurnallarini o‘rganish va monitoring amaliyoti muhiti.
+              </p>
+              <div class="project-problem-solution">
+                <strong>Muammo & Yechim:</strong> Nazariy kiberxavfsizlik tushunchalarini real hodisalar (Event ID 4624/4625, tarmoq portlarini skanerlash) orqali amalda sinab ko‘rish.
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Linux (Ubuntu)</span>
+                <span class="tech-tag">Windows Event Logs</span>
+                <span class="tech-tag">Wireshark</span>
+                <span class="tech-tag">TCP/IP Analysis</span>
+              </div>
+              <div class="project-links-row">
+                <button class="project-btn btn-details" data-project-key="soc_homelab" data-i18n="btn_details">Batafsil tahlil</button>
+                <span class="project-coming-soon" data-i18n="label_coming_soon">Kod so‘rov bo‘yicha taqdim etiladi</span>
+              </div>
+            </div>
+            <div class="project-preview-frame">
+              <div class="project-blueprint">
+                <div class="blueprint-header">
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-dot"></span>
+                  <span class="blueprint-title">syslog_triage.sh &bull; Defensive Investigation</span>
+                </div>
+                <div class="blueprint-body">
+                  <div><span class="blueprint-highlight"># Authentication Failure Triage</span></div>
+                  <div>grep "Failed password" /var/log/auth.log | \</div>
+                  <div>&nbsp;&nbsp;awk '{print $(NF-3)}' | sort | uniq -c | sort -nr</div>
+                  <div><span class="blueprint-highlight"># Windows Event 4625: Failed Logon</span></div>
+                  <div>Get-WinEvent -FilterHashtable @{LogName='Security';Id=4625} -MaxEvents 10</div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         INTERACTIVE CYBER TERMINAL (CLI CONSOLE)
+         TECHNICAL JOURNEY (TIMELINE)
          ========================================================================== -->
-    <section class="section-block" id="terminal">
+    <section class="section-wrapper" id="journey">
       <div class="container">
-        <div class="section-head">
-          <div class="section-tag" data-i18n="sec_term_tag">INTERAKTIV BUYRUQLAR SATRI</div>
-          <h2 class="section-title gradient-text" data-i18n="sec_term_title">Cyber CLI Terminal Konsoli</h2>
-          <p class="section-sub" data-i18n="sec_term_sub">Tizimni buyruqlar orqali sinab ko‘ring yoki tezkor tugmalarni bosing</p>
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="journey_eyebrow">RIVOJLANISH BOSQICHLARI</span>
+          <h2 class="section-title" data-i18n="journey_title">Mening texnik yo‘lim.</h2>
+          <p class="section-lead" data-i18n="journey_lead">
+            Akademik ta’lim, mustaqil o‘rganish va amaliy loyihalar bilan to‘ldirilgan rivojlanish bosqichlari.
+          </p>
         </div>
 
-        <div class="terminal-card">
-          <!-- Terminal window top bar -->
-          <div class="terminal-topbar">
-            <div class="terminal-dots">
-              <span class="term-dot red"></span>
-              <span class="term-dot yellow"></span>
-              <span class="term-dot green"></span>
-            </div>
-            <div class="terminal-title">bash — visitor@soc-core: ~ (ssh-session)</div>
-            <div class="terminal-badge">INTERACTIVE_CLI</div>
-          </div>
-
-          <!-- Terminal content stream -->
-          <div class="terminal-body" id="terminal-body">
-            <div class="term-output-line text-cyan" id="term-welcome-msg">
-              Orifxon Ma'rufxonov xavfsizlik konsoliga xush kelibsiz. Mavjud buyruqlarni ko'rish uchun <span class="text-green">'help'</span> deb yozing.
-            </div>
-            <div class="term-output-line text-muted">
-              [Tizim tekshiruvi]: Himoyalangan xavfsizlik qatlami muvaffaqiyatli ishga tushirildi.
-            </div>
-          </div>
-
-          <!-- Prompt input -->
-          <div style="padding: 0 20px 14px; background: #06090f; border-top: 1px solid rgba(255,255,255,0.03);">
-            <div class="term-prompt-line">
-              <span class="term-prompt-user">visitor@soc-core</span>:<span class="term-prompt-path">~</span>$&nbsp;
-              <input type="text" id="term-input" class="term-input" placeholder="buyruq kiriting (masalan: help, whoami, skills)..." autocomplete="off" spellcheck="false">
-            </div>
-          </div>
-
-          <!-- Quick click chips -->
-          <div class="terminal-helpers">
-            <span>Tezkor buyruqlar:</span>
-            <button class="cmd-chip" data-cmd="help">help</button>
-            <button class="cmd-chip" data-cmd="whoami">whoami</button>
-            <button class="cmd-chip" data-cmd="about">about</button>
-            <button class="cmd-chip" data-cmd="skills">skills</button>
-            <button class="cmd-chip" data-cmd="projects">projects</button>
-            <button class="cmd-chip" data-cmd="mitre">mitre</button>
-            <button class="cmd-chip" data-cmd="scan">scan</button>
-            <button class="cmd-chip" data-cmd="cat cv.txt">cat cv.txt</button>
-            <button class="cmd-chip" data-cmd="sudo hire">sudo hire</button>
-            <button class="cmd-chip" data-cmd="clear">clear</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SKILLS & TECHNICAL ARSENAL
-         ========================================================================== -->
-    <section class="section-block" id="skills">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-tag" data-i18n="sec_skills_tag">TEXNIK QUROL-ASLAHA</div>
-          <h2 class="section-title gradient-text" data-i18n="sec_skills_title">Texnik Ko‘nikmalar & Stack</h2>
-          <p class="section-sub" data-i18n="sec_skills_sub">Dasturlash, ma’lumotlar bazasi, operatsion tizimlar va tillar</p>
-        </div>
-
-        <div class="skills-grid">
-          <!-- Kiberxavfsizlik & SOC -->
-          <div class="skill-category">
-            <h3 class="skill-cat-title">
-              <svg width="22" height="22" fill="none" stroke="var(--accent-green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              <span>Kiberxavfsizlik & SOC Monitoringi</span>
-            </h3>
-            <div class="skill-list">
-              <div class="skill-bar-wrap">
-                <div class="skill-info"><span>Tarmoq xavfsizligi (TCP/IP, DNS, Firewalls)</span><span class="text-green">85%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-info"><span>Linux & Windows xavfsizligi (Event Logs)</span><span class="text-green">80%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 80%;"></div></div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-info"><span>Log tahlili & SIEM asoslari</span><span class="text-green">75%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 75%;"></div></div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-info"><span>Incident Response & MITRE ATT&CK</span><span class="text-green">70%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 70%;"></div></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dasturlash & Vositalar -->
-          <div class="skill-category">
-            <h3 class="skill-cat-title">
-              <svg width="22" height="22" fill="none" stroke="var(--accent-cyan)" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-              <span>Dasturlash & Vositalar</span>
-            </h3>
-            <div class="skill-list">
-              <div class="skill-bar-wrap">
-                <div class="skill-info"><span>Python (Automation, Telethon, Async)</span><span class="text-cyan">90%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-info"><span>SQL / PostgreSQL / MongoDB</span><span class="text-cyan">78%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 78%;"></div></div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-info"><span>Git, GitHub & Version Control</span><span class="text-cyan">85%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-info"><span>C++ & Bash Scripting</span><span class="text-cyan">65%</span></div>
-                <div class="skill-track"><div class="skill-fill" style="width: 65%;"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Languages -->
-        <div class="languages-box">
-          <div class="lang-card">
-            <div class="lang-name">O‘zbek tili</div>
-            <div class="lang-level">Ona tili (Native)</div>
-          </div>
-          <div class="lang-card">
-            <div class="lang-name">Ingliz tili</div>
-            <div class="lang-level">Pre-Intermediate (A2-B1)</div>
-          </div>
-          <div class="lang-card">
-            <div class="lang-name">Turk tili</div>
-            <div class="lang-level">A2 (Boshlang‘ich)</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         EDUCATION & CAREER ROADMAP (TIMELINE)
-         ========================================================================== -->
-    <section class="section-block" id="timeline">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-tag" data-i18n="sec_time_tag">KARYERA & TA’LIM</div>
-          <h2 class="section-title gradient-text" data-i18n="sec_time_title">Ta’lim va Amaliyot Bosqichlari</h2>
-          <p class="section-sub" data-i18n="sec_time_sub">O‘sish yo‘nalishi va bosib o‘tilgan yo‘l</p>
-        </div>
-
-        <div class="timeline">
+        <div class="timeline-wrap">
           <!-- Step 1 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">2024 — HOZIRGACHA</div>
-              <h3 class="timeline-role">Bakalavr Talabasi — Axborot Xavfsizligi</h3>
-              <div class="timeline-place">O‘zbekiston xalqaro islomshunoslik akademiyasi (3-kurs)</div>
-              <p class="timeline-desc">Axborot xavfsizligi nazariyasi, kriptografiya, tarmoq xavfsizligi protokollari, himoyalangan dasturlash va operatsion tizimlar xavfsizligini chuqur o‘rganish.</p>
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date-tag">2024 — HOZIRGACHA</div>
+              <h3 class="timeline-title">Bakalavr Talabasi — Axborot Xavfsizligi</h3>
+              <div class="timeline-institution">O‘zbekiston xalqaro islomshunoslik akademiyasi (3-kurs)</div>
+              <p class="timeline-text">
+                Axborot xavfsizligi asoslari, kriptografiya, tarmoq protokollari (TCP/IP, DNS), operatsion tizimlar xavfsizligi va dasturlash poydevorini chuqur o‘rganish.
+              </p>
             </div>
           </div>
 
           <!-- Step 2 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">HOZIRGI VAQTDA</div>
-              <h3 class="timeline-role">Shaxsiy Kiberxavfsizlik & IT Amaliyoti</h3>
-              <div class="timeline-place">Mustaqil amaliyot | Toshkent</div>
-              <p class="timeline-desc">Python orqali avtomatlashtirish vositalari, Telegram AI assistentlari, ma'lumotlar bazasi loyihalari hamda SOC va SIEM tahlili bo‘yicha shaxsiy home-lab amaliyotlari.</p>
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date-tag">2024 — 2025</div>
+              <h3 class="timeline-title">Mustaqil Python Dasturlash & Botlar Yaratish</h3>
+              <div class="timeline-institution">Mustaqil Amaliyot & GitHub</div>
+              <p class="timeline-text">
+                Python tilining imkoniyatlarini amaliyotda sinash: Telegram Bot API, Telethon (MTProto), foydalanuvchilar sessiyalarini boshqarish va kundalik vazifalarni skriptlar orqali avtomatlashtirish.
+              </p>
             </div>
           </div>
 
           <!-- Step 3 -->
-          <div class="timeline-item">
-            <div class="timeline-dot" style="border-color: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan);"></div>
-            <div class="timeline-content">
-              <div class="timeline-date text-cyan">KELAJAKDAGI MAQSAD</div>
-              <h3 class="timeline-role">Junior SOC Analyst / Incident Responder</h3>
-              <div class="timeline-place">Professional Axborot Xavfsizligi Jamoasi</div>
-              <p class="timeline-desc">Real xavfsizlik operatsiyalarida (SOC) monitoring va insidentlarni bartaraf etishda qatnashish, jamoaviy mas'uliyat bilan ishlash va malakani muntazam oshirish.</p>
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date-tag">2025 — HOZIRGACHA</div>
+              <h3 class="timeline-title">AI API Integratsiyasi & Ma’lumotlar Bazasi</h3>
+              <div class="timeline-institution">Loyiha Arxitekturasi & Tadqiqot</div>
+              <p class="timeline-text">
+                Sun’iy intellekt API larini botlarga integratsiya qilish, PostgreSQL va MongoDB bilan ishlash, tovarlar hisobi uchun QR kodlar va role-based kirish huquqlarini (RBAC) amaliyotga tatbiq etish.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-node current">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date-tag" style="color: var(--accent-emerald);">KELAJAKDAGI MAQSAD</div>
+              <h3 class="timeline-title">Junior Python Dasturchi / Kiberxavfsizlik Amaliyoti</h3>
+              <div class="timeline-institution">Professional Jamoa Izlanmoqda</div>
+              <p class="timeline-text">
+                Tajribali muhandislardan o‘rganish, real dasturiy ta’minot yoki axborot xavfsizligi jarayonlarida ishtirok etish hamda jamoaga mas’uliyatli hissa qo‘shish.
+              </p>
             </div>
           </div>
         </div>
@@ -753,146 +696,186 @@
     </section>
 
     <!-- ==========================================================================
-         CONTACT & CONNECTION HUB
+         CYBERSECURITY SECTION (THOUGHTFUL EDITORIAL)
          ========================================================================== -->
-    <section class="section-block" id="contact">
+    <section class="section-wrapper subtle-bg" id="security">
       <div class="container">
-        <div class="section-head">
-          <div class="section-tag" data-i18n="sec_contact_tag">ALOQA MARKAZI</div>
-          <h2 class="section-title gradient-text" data-i18n="sec_contact_title">Men bilan bog‘laning</h2>
-          <p class="section-sub" data-i18n="sec_contact_sub">Amaliyot takliflari, loyihalar va savollar uchun doim ochiqman</p>
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="security_eyebrow">XAVFSIZLIK FALSAFASI</span>
+          <h2 class="section-title" data-i18n="security_title">Xavfsizlik — bu texnologiya haqidagi fikrlash tarzim.</h2>
+          <p class="section-lead" data-i18n="security_lead">
+            Kiberxavfsizlikni o‘rganish menga shunchaki kod yozishni emas, balki tizimlarning barqarorligi, kirish huquqlari va ma’lumotlar daxlsizligi haqida o‘ylashni o‘rgatadi.
+          </p>
         </div>
 
-        <div class="contact-grid">
-          <!-- Contact Direct Info -->
-          <div class="contact-info-list">
-            <!-- Phone -->
-            <div class="contact-card">
-              <div class="contact-item-left">
-                <div class="contact-icon">
-                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                </div>
-                <div>
-                  <div class="contact-label">Telefon Raqam</div>
-                  <a href="tel:+998945711750" class="contact-value">+998 94 571 17 50</a>
-                </div>
+        <div class="security-editorial-card">
+          <div class="security-editorial-text">
+            <p data-i18n="sec_p1">
+              Axborot xavfsizligi bo‘yicha olayotgan bilimlarim dasturlashga bo‘lgan yondashuvimni tubdan shakllantiradi. Men yaratayotgan har bir bot, API yoki web forma — dastlab himoyasiz nuqtalar nazoratidan o‘tadi.
+            </p>
+            <p data-i18n="sec_p2">
+              Foydalanuvchi ma’lumotlarini tekshirish (sanitization), parollarni xavfsiz xesh qilish, eng kam huquqlar printsipi (least privilege) va tarmoq trafigini to‘g‘ri tushunish dasturchi uchun zarur sifatlardir.
+            </p>
+          </div>
+
+          <div class="security-pillars-list">
+            <div class="pillar-item">
+              <div class="pillar-icon-box">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
               </div>
-              <button class="btn-copy" data-copy="+998945711750">Nusxa olish</button>
+              <div>
+                <h4 class="pillar-title" data-i18n="pillar1_title">Tarmoq protokollari tahlili</h4>
+                <p class="pillar-desc" data-i18n="pillar1_desc">TCP/IP, DNS, HTTP/HTTPS va portlar orqali uzatilayotgan ma’lumotlar tuzilishini tushunish.</p>
+              </div>
             </div>
 
+            <div class="pillar-item">
+              <div class="pillar-icon-box">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </div>
+              <div>
+                <h4 class="pillar-title" data-i18n="pillar2_title">Kirish huquqlarini cheklash (RBAC)</h4>
+                <p class="pillar-desc" data-i18n="pillar2_desc">Botlar va web tizimlarda faqat vakolatlangan foydalanuvchilar kirishini ta’minlash.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon-box">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <div>
+                <h4 class="pillar-title" data-i18n="pillar3_title">Loglar va hodisalar monitoringi</h4>
+                <p class="pillar-desc" data-i18n="pillar3_desc">Linux tizim jurnallari va Windows Event loglarini tahlil qilish, nosozlik va shubhali faollikni aniqlash.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section class="section-wrapper" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="contact_eyebrow">BOG‘LANISH</span>
+          <h2 class="section-title" data-i18n="contact_title">Muloqot uchun ochiqman.</h2>
+          <p class="section-lead" data-i18n="contact_lead">
+            Amaliyot takliflari, texnik savollar yoki qiziqarli loyihalar yuzasidan menga bemalol xabar yo‘llashingiz mumkin.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Direct Channels Column -->
+          <div class="contact-info-col">
             <!-- Email -->
-            <div class="contact-card">
-              <div class="contact-item-left">
-                <div class="contact-icon">
+            <div class="contact-direct-card">
+              <div class="contact-card-main">
+                <div class="contact-card-icon">
                   <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </div>
-                <div>
-                  <div class="contact-label">Email Manzil</div>
-                  <a href="mailto:orifxonmarufxonov24@gmail.com" class="contact-value">orifxonmarufxonov24@gmail.com</a>
+                <div class="contact-card-meta">
+                  <span class="contact-card-label" data-i18n="contact_email_label">Elektron pochta</span>
+                  <a href="mailto:orifxonmarufxonov24@gmail.com" class="contact-card-value">orifxonmarufxonov24@gmail.com</a>
                 </div>
               </div>
-              <button class="btn-copy" data-copy="orifxonmarufxonov24@gmail.com">Nusxa olish</button>
-            </div>
-
-            <!-- GitHub -->
-            <div class="contact-card">
-              <div class="contact-item-left">
-                <div class="contact-icon">
-                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                </div>
-                <div>
-                  <div class="contact-label">GitHub Portfolio</div>
-                  <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="contact-value">github.com/orifxon05</a>
-                </div>
-              </div>
-              <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="btn-copy">Ochish &rarr;</a>
+              <button class="btn-contact-action" data-clipboard="orifxonmarufxonov24@gmail.com" data-i18n="btn_copy">Nusxalash</button>
             </div>
 
             <!-- Telegram -->
-            <div class="contact-card">
-              <div class="contact-item-left">
-                <div class="contact-icon" style="background: rgba(0, 240, 255, 0.1); border-color: rgba(0, 240, 255, 0.25); color: var(--accent-cyan);">
+            <div class="contact-direct-card">
+              <div class="contact-card-main">
+                <div class="contact-card-icon" style="color: #0284c7;">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
                 </div>
-                <div>
-                  <div class="contact-label">Telegram Profil</div>
-                  <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="contact-value text-cyan">@Orifxon_05</a>
+                <div class="contact-card-meta">
+                  <span class="contact-card-label" data-i18n="contact_telegram_label">Telegram</span>
+                  <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="contact-card-value">@Orifxon_05</a>
                 </div>
               </div>
-              <div style="display: flex; gap: 8px;">
-                <button class="btn-copy" data-copy="@Orifxon_05">Nusxa</button>
-                <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="btn-copy" style="color: var(--accent-cyan); border-color: rgba(0, 240, 255, 0.3);">Yozish &rarr;</a>
-              </div>
+              <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="btn-contact-action" data-i18n="btn_chat">Yozish</a>
             </div>
 
             <!-- Instagram -->
-            <div class="contact-card">
-              <div class="contact-item-left">
-                <div class="contact-icon" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.25); color: var(--accent-purple);">
+            <div class="contact-direct-card">
+              <div class="contact-card-main">
+                <div class="contact-card-icon" style="color: #a855f7;">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </div>
-                <div>
-                  <div class="contact-label">Instagram</div>
-                  <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="contact-value text-purple">_sheeyh_9</a>
+                <div class="contact-card-meta">
+                  <span class="contact-card-label" data-i18n="contact_instagram_label">Instagram</span>
+                  <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="contact-card-value">_sheeyh_9</a>
                 </div>
               </div>
-              <div style="display: flex; gap: 8px;">
-                <button class="btn-copy" data-copy="_sheeyh_9">Nusxa</button>
-                <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="btn-copy" style="color: var(--accent-purple); border-color: rgba(168, 85, 247, 0.3);">Ochish &rarr;</a>
-              </div>
+              <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="btn-contact-action" data-i18n="btn_open">Ochish</a>
             </div>
 
-            <!-- CV Download banner -->
-            <div style="background: linear-gradient(135deg, rgba(0,255,157,0.1) 0%, rgba(0,240,255,0.05) 100%); border: 1px solid var(--border-cyber); border-radius: var(--radius-md); padding: 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
-              <div>
-                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-green); margin-bottom: 4px;">[DOCUMENT_PDF]</div>
-                <div style="font-weight: 700; font-size: 1rem;">Orifxon Marufxonov CV (PDF)</div>
-                <div style="font-size: 0.8rem; color: var(--text-dim);">To'liq rezyume nusxasini saqlab oling</div>
+            <!-- GitHub -->
+            <div class="contact-direct-card">
+              <div class="contact-card-main">
+                <div class="contact-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+                <div class="contact-card-meta">
+                  <span class="contact-card-label" data-i18n="contact_github_label">GitHub Profil</span>
+                  <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="contact-card-value">github.com/orifxon05</a>
+                </div>
               </div>
-              <a href="Orifxon_Marufxonov_CV.pdf" download="Orifxon_Marufxonov_CV.pdf" class="btn-primary" style="padding: 10px 18px; font-size: 0.82rem;">
-                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                <span>Yuklash</span>
-              </a>
+              <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="btn-contact-action" data-i18n="btn_open">Ochish</a>
+            </div>
+
+            <!-- Phone (if published) -->
+            <div class="contact-direct-card">
+              <div class="contact-card-main">
+                <div class="contact-card-icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div class="contact-card-meta">
+                  <span class="contact-card-label" data-i18n="contact_phone_label">Telefon</span>
+                  <a href="tel:+998945711750" class="contact-card-value">+998 94 571 17 50</a>
+                </div>
+              </div>
+              <button class="btn-contact-action" data-clipboard="+998945711750" data-i18n="btn_copy">Nusxalash</button>
             </div>
           </div>
 
-          <!-- Contact Form -->
-          <div class="contact-form-box">
-            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-              <svg width="20" height="20" fill="none" stroke="var(--accent-green)" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              <span>To‘g‘ridan-to‘g‘ri Xabar Yuborish</span>
-            </h3>
+          <!-- Honest Contact Form (Mailto client generator) -->
+          <div class="contact-form-container">
+            <h3 class="form-header-title" data-i18n="form_title">To‘g‘ridan-to‘g‘ri xabar tayyorlash</h3>
+            <p class="form-header-sub" data-i18n="form_sub">
+              Quyidagi shaklni to‘ldirib jo‘natsangiz, standart pochta mijozingiz avtomatik ochiladi.
+            </p>
 
-            <form id="contact-form">
-              <div class="form-group">
-                <label for="form-name" class="form-label" data-i18n="form_name">Ismingiz</label>
-                <input type="text" id="form-name" class="form-input" placeholder="Ali Valiyev" required>
+            <form id="contact-email-form">
+              <div class="form-field">
+                <label for="sender-name" class="field-label" data-i18n="label_name">Ismingiz</label>
+                <input type="text" id="sender-name" class="input-text" placeholder="Jasur Aliyev" required>
               </div>
 
-              <div class="form-group">
-                <label for="form-email" class="form-label" data-i18n="form_email">Email manzilingiz</label>
-                <input type="email" id="form-email" class="form-input" placeholder="ali@example.com" required>
+              <div class="form-field">
+                <label for="sender-email" class="field-label" data-i18n="label_email">Sizning elektron pochtangiz</label>
+                <input type="email" id="sender-email" class="input-text" placeholder="jasur@example.com" required>
               </div>
 
-              <div class="form-group">
-                <label for="form-subject" class="form-label" data-i18n="form_subject">Mavzu</label>
-                <input type="text" id="form-subject" class="form-input" placeholder="SOC Amaliyot Taklifi / Loyiha" required>
+              <div class="form-field">
+                <label for="sender-subject" class="field-label" data-i18n="label_subject">Xabar mavzusi</label>
+                <input type="text" id="sender-subject" class="input-text" placeholder="Amaliyot taklifi / Loyiha hamkorligi" required>
               </div>
 
-              <div class="form-group">
-                <label for="form-msg" class="form-label" data-i18n="form_msg">Xabar matni</label>
-                <textarea id="form-msg" class="form-textarea" placeholder="Assalomu alaykum Orifxon, bizning jamoada amaliyot o'tash bo'yicha..." required></textarea>
+              <div class="form-field">
+                <label for="sender-message" class="field-label" data-i18n="label_message">Xabar matni</label>
+                <textarea id="sender-message" class="input-textarea" placeholder="Assalomu alaykum Orifxon, sizning loyihalaringiz bilan tanishib chiqdim..." required></textarea>
               </div>
 
-              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-bottom: 12px;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                <span data-i18n="btn_send">Xabarni Yuborish</span>
+              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <span data-i18n="btn_submit_msg">Pochta orqali jo‘natish</span>
               </button>
 
-              <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="btn-secondary" style="width: 100%; justify-content: center; border-color: rgba(0, 240, 255, 0.3); color: var(--accent-cyan);">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-                <span>Telegram orqali tezkor yozish (@Orifxon_05)</span>
-              </a>
+              <div class="form-note" data-i18n="form_note">
+                Eslatma: Sayt tashqi soxta backendga ulanmagan; xabar to‘g‘ridan-to‘g‘ri sizning xavfsiz pochtangiz orqali jo‘natiladi.
+              </div>
             </form>
           </div>
         </div>
@@ -901,48 +884,39 @@
   </main>
 
   <!-- ==========================================================================
-       FOOTER
+       SITE FOOTER
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container footer-content">
       <div class="footer-left">
-        <span class="brand-dot"></span>
-        <span>© 2026 ORIFXON MA'RUFXONOV. <span data-i18n="footer_copy">Barcha huquqlar himoyalangan.</span></span>
+        <span class="footer-brand">Orifxon Ma'rufxonov</span>
+        <span class="footer-copy">
+          &copy; 2026 &bull; <span data-i18n="footer_role">Python Dasturchi & Axborot Xavfsizligi Talabasi</span>. <span data-i18n="footer_copy">Barcha huquqlar himoyalangan.</span>
+        </span>
       </div>
-      <div class="footer-socials" style="display: flex; gap: 16px; align-items: center;">
-        <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="footer-icon-link" title="Telegram" style="color: var(--accent-cyan); display: flex; align-items: center; gap: 6px; text-decoration: none;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-          <span>Telegram</span>
-        </a>
-        <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="footer-icon-link" title="Instagram" style="color: var(--accent-purple); display: flex; align-items: center; gap: 6px; text-decoration: none;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          <span>Instagram</span>
-        </a>
-        <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="footer-icon-link" title="GitHub" style="color: var(--text-main); display: flex; align-items: center; gap: 6px; text-decoration: none;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>GitHub</span>
-        </a>
-      </div>
-      <div class="footer-right">
-        <span data-i18n="footer_sec_note">Tizim: TLS 1.3 / X-Content-Type-Options: nosniff himoyalangan.</span>
-        <a href="#" class="back-to-top">
-          <span>Tepaga</span>
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+
+      <div class="footer-links">
+        <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+        <a href="https://t.me/Orifxon_05" target="_blank" rel="noopener" class="footer-link">Telegram</a>
+        <a href="https://instagram.com/_sheeyh_9" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+        <a href="#hero" class="back-top-btn">
+          <span data-i18n="footer_back_top">Yuqoriga qaytish</span>
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <!-- Modal for Project Details -->
-  <div class="modal-backdrop" id="project-modal">
-    <div class="modal-card">
-      <button class="modal-close" id="modal-close-btn">&times;</button>
-      <div id="modal-dynamic-content"></div>
+  <!-- Project Details Modal Shelf -->
+  <div class="modal-overlay" id="project-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-content-area">
+    <div class="modal-box">
+      <button class="modal-close-trigger" id="modal-close-trigger" aria-label="Close modal">&times;</button>
+      <div id="modal-content-area"></div>
     </div>
   </div>
 
-  <!-- Toast Notification Container -->
-  <div class="toast-container" id="toast-container"></div>
+  <!-- Toast Notification Shelf -->
+  <div class="toast-shelf" id="toast-shelf" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
