@@ -1,7 +1,7 @@
 /**
  * ORIFXON MA'RUFXONOV — PERSONAL DEVELOPER & SECURITY PORTFOLIO
- * Core Script: Internationalization (UZ/EN), Project Filter & Modals,
- * Clipboard Copy, Honest Form Handling, and Mobile Navigation.
+ * Core Script v2.0: Internationalization (UZ/EN), Fast Intent Chips,
+ * Dynamic Project Mockup Sync, Modals, Clipboard Toast, & Accessible Navigation.
  */
 
 (function () {
@@ -27,6 +27,8 @@
       // Hero
       hero_badge: 'Amaliyot takliflari uchun ochiq',
       hero_kicker: 'AXBOROT XAVFSIZLIGI TALABASI & PYTHON DASTURCHI',
+      hero_meta_edu: '🎓 3-kurs talabasi @ O‘XIA',
+      hero_meta_loc: '📍 Toshkent, O‘zbekiston',
       hero_name: "Salom, men Orifxon.",
       hero_headline: 'Python, sun’iy intellekt va zamonaviy texnologiyalar bilan amaliy yechimlar yarataman.',
       hero_bio: 'O‘zbekiston xalqaro islomshunoslik akademiyasi Axborot xavfsizligi yo‘nalishi talabasiman. Dasturiy ta’minot yaratish, aqlli avtomatlashtirish, backend texnologiyalari va kiberxavfsizlikka qiziqaman.',
@@ -100,7 +102,7 @@
       pillar3_title: 'Loglar va hodisalar monitoringi',
       pillar3_desc: 'Linux tizim jurnallari va Windows Event loglarini tahlil qilish, nosozlik va shubhali faollikni aniqlash.',
 
-      // Contact
+      // Contact & Recruiter Fast Intent Chips
       contact_eyebrow: 'BOG‘LANISH',
       contact_title: 'Muloqot uchun ochiqman.',
       contact_lead: 'Amaliyot takliflari, texnik savollar yoki qiziqarli loyihalar yuzasidan menga bemalol xabar yo‘llashingiz mumkin.',
@@ -114,6 +116,10 @@
       btn_chat: 'Yozish',
       form_title: 'To‘g‘ridan-to‘g‘ri xabar tayyorlash',
       form_sub: 'Quyidagi shaklni to‘ldirib jo‘natsangiz, standart pochta mijozingiz avtomatik ochiladi.',
+      chips_label: 'Tezkor mavzuni tanlash (Rekruterlar va hamkorlar uchun):',
+      chip_internship: '💼 Amaliyot / Ish taklifi',
+      chip_collab: '🤝 Loyiha hamkorligi',
+      chip_chat: '☕ Texnik savol / Suhbat',
       label_name: 'Ismingiz',
       label_email: 'Sizning elektron pochtangiz',
       label_subject: 'Xabar mavzusi',
@@ -145,6 +151,8 @@
       // Hero
       hero_badge: 'Open to Internship Opportunities',
       hero_kicker: 'INFORMATION SECURITY STUDENT & PYTHON DEVELOPER',
+      hero_meta_edu: '🎓 3rd-year student @ IIAU',
+      hero_meta_loc: '📍 Tashkent, Uzbekistan',
       hero_name: "Hello, I'm Orifxon.",
       hero_headline: 'Building practical solutions with Python, AI and modern technologies.',
       hero_bio: "I'm Orifxon, an Information Security student and aspiring Python developer interested in automation, AI-powered applications, backend development, and cybersecurity. I enjoy turning ideas into practical digital solutions and continuously improving my technical skills through hands-on projects.",
@@ -218,7 +226,7 @@
       pillar3_title: 'Logging & System Auditing',
       pillar3_desc: 'Analyzing Linux system journals and Windows event logs to detect errors and irregular patterns.',
 
-      // Contact
+      // Contact & Recruiter Fast Intent Chips
       contact_eyebrow: 'GET IN TOUCH',
       contact_title: 'Let’s start a conversation.',
       contact_lead: 'Always open to discussing internship opportunities, collaborative projects, or software engineering questions.',
@@ -232,6 +240,10 @@
       btn_chat: 'Message',
       form_title: 'Compose an Email Message',
       form_sub: 'Complete this form to generate a structured message in your default email application.',
+      chips_label: 'Fast Subject Selector (For recruiters & collaborators):',
+      chip_internship: '💼 Internship / Job Opportunity',
+      chip_collab: '🤝 Project Collaboration',
+      chip_chat: '☕ Technical Question / Coffee Chat',
       label_name: 'Your Name',
       label_email: 'Your Email Address',
       label_subject: 'Subject',
@@ -354,7 +366,7 @@
       contributionUz: 'Wireshark orqali paketlar tahlilini bajardim, Linux xavfsizlik devori (UFW) qoidalarini shakllantirdim va asosiy log tahlili bosqichlarini hujjatlashtirdim.',
       contributionEn: 'Conducted packet capture investigations with Wireshark, implemented Linux UFW rule sets, and documented event triage patterns.',
       tech: ['Linux (Ubuntu)', 'Windows Event Logs', 'Wireshark', 'TCP/IP Analysis'],
-      repo: null // Will show "Available upon request"
+      repo: null
     }
   };
 
@@ -380,7 +392,6 @@
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
 
-    // Update document language tag
     document.documentElement.lang = lang;
   }
 
@@ -469,7 +480,7 @@
             </div>
           </div>
 
-          <div style="display: flex; gap: 12px; align-items: center; pt-4; border-top: 1px solid var(--border-subtle); padding-top: 18px;">
+          <div style="display: flex; gap: 12px; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 18px;">
             ${proj.repo 
               ? `<a href="${proj.repo}" target="_blank" rel="noopener" class="btn-primary" style="font-size: 0.85rem; padding: 9px 18px;">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -484,27 +495,31 @@
         `;
 
         overlay.classList.add('active');
+        document.body.classList.add('scroll-locked');
 
         document.getElementById('modal-inner-close-btn')?.addEventListener('click', () => {
           overlay.classList.remove('active');
+          document.body.classList.remove('scroll-locked');
         });
       });
     });
 
     closeBtn?.addEventListener('click', () => {
       overlay.classList.remove('active');
+      document.body.classList.remove('scroll-locked');
     });
 
     overlay?.addEventListener('click', (e) => {
       if (e.target === overlay) {
         overlay.classList.remove('active');
+        document.body.classList.remove('scroll-locked');
       }
     });
 
-    // ESC key closes modal
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && overlay.classList.contains('active')) {
         overlay.classList.remove('active');
+        document.body.classList.remove('scroll-locked');
       }
     });
   }
@@ -564,9 +579,7 @@
       document.execCommand('copy');
       const prefix = currentLang === 'uz' ? i18n.uz.toast_copied : i18n.en.toast_copied;
       showToast(`${prefix}${text}`);
-    } catch (err) {
-      // Quiet fail
-    }
+    } catch (err) {}
     document.body.removeChild(textArea);
   }
 
@@ -575,8 +588,39 @@
   }
 
   // ==========================================================================
-  // 7. HONEST CONTACT FORM (MAILTO GENERATOR)
+  // 7. FAST INTENT CHIPS & CONTACT FORM
   // ==========================================================================
+  function setupFastIntentChips() {
+    const chips = document.querySelectorAll('.intent-chip');
+    const subjectInput = document.getElementById('sender-subject');
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('selected'));
+        chip.classList.add('selected');
+
+        const intentKey = chip.getAttribute('data-intent');
+        const isUz = currentLang === 'uz';
+
+        if (intentKey === 'internship') {
+          subjectInput.value = isUz 
+            ? 'Amaliyot / Ish taklifi bo‘yicha' 
+            : 'Internship / Job Opportunity Inquiry';
+        } else if (intentKey === 'collab') {
+          subjectInput.value = isUz 
+            ? 'Loyiha hamkorligi taklifi' 
+            : 'Project Collaboration Proposal';
+        } else if (intentKey === 'chat') {
+          subjectInput.value = isUz 
+            ? 'Texnik savol / Tanishuv suhbati' 
+            : 'Technical Question / Professional Discussion';
+        }
+
+        subjectInput.focus();
+      });
+    });
+  }
+
   function setupContactForm() {
     const form = document.getElementById('contact-email-form');
     if (!form) return;
@@ -606,33 +650,33 @@
   }
 
   // ==========================================================================
-  // 8. NAVIGATION & ACTIVE SECTION HIGHLIGHTING
+  // 8. NAVIGATION, ACTIVE SPY, & MOBILE SCROLL-LOCK
   // ==========================================================================
   function setupNavigation() {
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.getElementById('nav-links');
 
     mobileBtn?.addEventListener('click', () => {
-      navLinks?.classList.toggle('open');
+      const isOpen = navLinks?.classList.toggle('open');
+      document.body.classList.toggle('scroll-locked', isOpen);
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navLinks?.classList.remove('open');
+        document.body.classList.remove('scroll-locked');
       });
     });
 
-    // Scroll listener for subtle header border
     const siteNav = document.getElementById('site-nav');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 30) {
-        siteNav?.style.setProperty('box-shadow', '0 4px 16px -2px rgba(0, 0, 0, 0.04)');
+        siteNav?.style.setProperty('box-shadow', '0 4px 18px -2px rgba(20, 20, 22, 0.05)');
       } else {
         siteNav?.style.removeProperty('box-shadow');
       }
     }, { passive: true });
 
-    // Active link highlighting via IntersectionObserver
     const sections = document.querySelectorAll('section[id]');
     const navLinksArray = document.querySelectorAll('.nav-link');
 
@@ -663,9 +707,9 @@
     setupProjectFiltering();
     setupProjectModal();
     setupClipboardCopy();
+    setupFastIntentChips();
     setupContactForm();
 
-    // Language Toggle Buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const lang = btn.getAttribute('data-lang');

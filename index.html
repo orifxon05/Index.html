@@ -9,7 +9,7 @@
   <meta name="description" content="Personal portfolio of Orifxon Ma'rufxonov, an Information Security student interested in Python development, AI automation, backend technologies and cybersecurity.">
   <meta name="keywords" content="Orifxon Ma'rufxonov, Python Developer, AI Automation, Telegram Bots, Information Security, Cybersecurity, Tashkent, Uzbekistan">
   <meta name="author" content="Orifxon Ma'rufxonov">
-  <meta name="theme-color" content="#fbfbfa">
+  <meta name="theme-color" content="#faf9f6">
   <link rel="canonical" href="https://protfolio-orifxon-s-projects.vercel.app/">
 
   <!-- OpenGraph / Social Sharing -->
@@ -23,8 +23,8 @@
   <meta name="twitter:description" content="Building practical solutions with Python, AI and modern technologies.">
   <meta name="twitter:image" content="./orifxon.png">
 
-  <!-- Tasteful Monogram Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2318181b'/><text x='16' y='21' font-family='system-ui,-apple-system,sans-serif' font-size='14' font-weight='700' fill='%23ffffff' text-anchor='middle'>OM</text></svg>">
+  <!-- Monogram Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23141416'/><text x='16' y='21' font-family='system-ui,-apple-system,sans-serif' font-size='14' font-weight='700' fill='%23ffffff' text-anchor='middle'>OM</text></svg>">
 
   <!-- Google Fonts: Newsreader (Editorial Serif), Plus Jakarta Sans (Body), JetBrains Mono (Tech) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,10 +90,14 @@
       <div class="container hero-grid">
         <!-- Left Content -->
         <div class="hero-content">
-          <!-- Availability Badge -->
-          <div class="status-badge">
-            <span class="status-dot"></span>
-            <span data-i18n="hero_badge">Amaliyot takliflari uchun ochiq</span>
+          <!-- Availability & Context Bar -->
+          <div class="hero-meta-bar">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span data-i18n="hero_badge">Amaliyot takliflari uchun ochiq</span>
+            </div>
+            <span class="hero-meta-tag" data-i18n="hero_meta_edu">🎓 3-kurs talabasi @ O‘XIA</span>
+            <span class="hero-meta-tag" data-i18n="hero_meta_loc">📍 Toshkent, O‘zbekiston</span>
           </div>
 
           <span class="hero-kicker" data-i18n="hero_kicker">AXBOROT XAVFSIZLIGI TALABASI & PYTHON DASTURCHI</span>
@@ -361,24 +365,26 @@
                 </a>
               </div>
             </div>
+            <!-- Bespoke Artifact: Telegram AI Chat UI -->
             <div class="project-preview-frame">
-              <div class="project-blueprint">
-                <div class="blueprint-header">
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-title">telegram_assistant.py &bull; MTProto Client</span>
+              <div class="artifact-card">
+                <div class="artifact-bar">
+                  <span class="artifact-bar-title">Telegram Client &bull; Telethon</span>
+                  <span class="artifact-bar-badge">RBAC: Enforced</span>
                 </div>
-                <div class="blueprint-body">
-                  <div><span class="blueprint-highlight"># Authentication &amp; RBAC Verification</span></div>
-                  <div>AUTHORIZED_IDS = [719823192, 945711750]</div>
-                  <div>async def on_incoming_message(event):</div>
-                  <div>&nbsp;&nbsp;sender_id = event.sender_id</div>
-                  <div>&nbsp;&nbsp;if sender_id not in AUTHORIZED_IDS:</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;logger.warn(f"Unauthorized access: {sender_id}")</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;return</div>
-                  <div>&nbsp;&nbsp;response = await call_ai_api(event.raw_text)</div>
-                  <div>&nbsp;&nbsp;await event.reply(response)</div>
+                <div class="artifact-body">
+                  <div class="chat-bubble-row user">
+                    <div class="chat-bubble outgoing">Haftalik rejam bo‘yicha qisqacha xulosa bering.</div>
+                  </div>
+                  <div class="chat-bubble-row">
+                    <div class="chat-bubble incoming">
+                      <div>Ushbu haftada 3 ta Python botini optimallashtirish va tarmoq xavfsizligi lab tahlili rejalashtirilgan.</div>
+                      <div class="chat-auth-pill">
+                        <svg width="10" height="10" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span>Sender: Whitelisted (OM-Admin)</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -412,23 +418,35 @@
                 </a>
               </div>
             </div>
+            <!-- Bespoke Artifact: Duty Schedule Mockup -->
             <div class="project-preview-frame">
-              <div class="project-blueprint">
-                <div class="blueprint-header">
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-title">duty_scheduler.py &bull; Automated Rotator</span>
+              <div class="artifact-card">
+                <div class="artifact-bar">
+                  <span class="artifact-bar-title">Duty Rotation Engine</span>
+                  <span class="artifact-bar-badge">Daily 08:00 AM</span>
                 </div>
-                <div class="blueprint-body">
-                  <div><span class="blueprint-highlight"># Cyclical Schedule Engine</span></div>
-                  <div>class DutyManager:</div>
-                  <div>&nbsp;&nbsp;def get_next_duty_person(self):</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;index = (self.current_idx + 1) % len(self.students)</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;return self.students[index]</div>
-                  <div>&nbsp;&nbsp;async def notify_scheduled_duty(self):</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;person = self.get_next_duty_person()</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;await bot.send_message(person.chat_id, "Bugun sizning navbatingiz!")</div>
+                <div class="artifact-body">
+                  <div class="duty-grid-mockup">
+                    <div class="duty-slot">
+                      <div class="duty-day">Dushanba</div>
+                      <div class="duty-name">Jasur A.</div>
+                      <div class="duty-status" style="color:var(--text-muted);">Bajarildi</div>
+                    </div>
+                    <div class="duty-slot active">
+                      <div class="duty-day">Bugun</div>
+                      <div class="duty-name">Orifxon M.</div>
+                      <div class="duty-status">&bull; Faol navbatchi</div>
+                    </div>
+                    <div class="duty-slot">
+                      <div class="duty-day">Chorshanba</div>
+                      <div class="duty-name">Sardor K.</div>
+                      <div class="duty-status" style="color:var(--text-muted);">Navbatda</div>
+                    </div>
+                  </div>
+                  <div class="event-timeline-card" style="margin-top:4px;">
+                    <span class="event-time-badge">08:00 AM</span>
+                    <span class="event-details-text">Avtomatik eslatma xabari Telegram orqali yuborildi.</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -463,23 +481,32 @@
                 </a>
               </div>
             </div>
+            <!-- Bespoke Artifact: Inventory Dashboard Mockup -->
             <div class="project-preview-frame">
-              <div class="project-blueprint">
-                <div class="blueprint-header">
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-title">inventory_schema.sql &bull; Dual DB Model</span>
+              <div class="artifact-card">
+                <div class="artifact-bar">
+                  <span class="artifact-bar-title">Inventory Operations &bull; PostgreSQL</span>
+                  <span class="artifact-bar-badge">Dual-DB Sync</span>
                 </div>
-                <div class="blueprint-body">
-                  <div><span class="blueprint-highlight">-- PostgreSQL Schema Definition</span></div>
-                  <div>CREATE TABLE products (</div>
-                  <div>&nbsp;&nbsp;id SERIAL PRIMARY KEY,</div>
-                  <div>&nbsp;&nbsp;sku VARCHAR(50) UNIQUE NOT NULL,</div>
-                  <div>&nbsp;&nbsp;name VARCHAR(255) NOT NULL,</div>
-                  <div>&nbsp;&nbsp;stock_quantity INT DEFAULT 0,</div>
-                  <div>&nbsp;&nbsp;qr_code_hash VARCHAR(128)</div>
-                  <div>);</div>
+                <div class="artifact-body">
+                  <div class="inventory-stats-strip">
+                    <div class="inv-stat-box">
+                      <div class="inv-stat-label">Jami tovarlar</div>
+                      <div class="inv-stat-val">1,248 dona</div>
+                    </div>
+                    <div class="inv-stat-box">
+                      <div class="inv-stat-label">Ombor holati</div>
+                      <div class="inv-stat-val" style="color:var(--accent-emerald);">Yetarli (98%)</div>
+                    </div>
+                  </div>
+                  <div class="inv-row-preview">
+                    <span>SKU-8921 // Dell Monitor 27"</span>
+                    <span style="color:var(--accent-primary); font-weight:700;">QR: Validated</span>
+                  </div>
+                  <div class="inv-row-preview">
+                    <span>SKU-4033 // NVMe SSD 1TB</span>
+                    <span style="color:var(--accent-emerald); font-weight:700;">Qoldiq: 42 dona</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -513,21 +540,26 @@
                 </a>
               </div>
             </div>
+            <!-- Bespoke Artifact: Scheduled Notification Mockup -->
             <div class="project-preview-frame">
-              <div class="project-blueprint">
-                <div class="blueprint-header">
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-title">notifier.py &bull; Scheduled Dispatcher</span>
+              <div class="artifact-card">
+                <div class="artifact-bar">
+                  <span class="artifact-bar-title">Scheduler &bull; Cron Heartbeat</span>
+                  <span class="artifact-bar-badge">Zero Miss Rate</span>
                 </div>
-                <div class="blueprint-body">
-                  <div><span class="blueprint-highlight"># Daily Heartbeat Dispatch Logic</span></div>
-                  <div>def check_and_send_greetings():</div>
-                  <div>&nbsp;&nbsp;today = datetime.date.today().strftime("%m-%d")</div>
-                  <div>&nbsp;&nbsp;matches = db.query(Celebration).filter_by(date=today).all()</div>
-                  <div>&nbsp;&nbsp;for item in matches:</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;dispatch_custom_greeting(item.user_id, item.template)</div>
+                <div class="artifact-body">
+                  <div class="event-timeline-card">
+                    <span class="event-time-badge">09:00 AM</span>
+                    <div class="event-details-text">
+                      <strong>Taqvim tekshiruvi:</strong> Bugungi sana bilan mos tushgan 1 ta tabrik aniqlandi.
+                    </div>
+                  </div>
+                  <div class="event-timeline-card" style="border-left:2px solid var(--accent-emerald);">
+                    <span class="event-time-badge" style="color:var(--accent-emerald);">YUBORILDI</span>
+                    <div class="event-details-text">
+                      Shaxsiylashtirilgan multimedia tabriknomasi muvaffaqiyatli yetkazildi.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -561,19 +593,34 @@
                 </a>
               </div>
             </div>
+            <!-- Bespoke Artifact: Media Stream Player Mockup -->
             <div class="project-preview-frame">
-              <div class="project-blueprint">
-                <div class="blueprint-header">
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-title">media_stream.py &bull; Asynchronous Pipe</span>
+              <div class="artifact-card">
+                <div class="artifact-bar">
+                  <span class="artifact-bar-title">Cloud Stream Pipe &bull; Asyncio</span>
+                  <span class="artifact-bar-badge">Bitrate: 320 kbps</span>
                 </div>
-                <div class="blueprint-body">
-                  <div><span class="blueprint-highlight"># Chunk-based Stream Processor</span></div>
-                  <div>async def stream_media_file(file_id, chunk_size=1024*512):</div>
-                  <div>&nbsp;&nbsp;async for chunk in client.iter_download(file_id, chunk_size):</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;yield sanitize_payload(chunk)</div>
+                <div class="artifact-body">
+                  <div class="media-player-box">
+                    <div class="media-meta-row">
+                      <span style="font-weight:700;">audio_payload_04.mp3</span>
+                      <span style="color:var(--text-muted);">04:18 / 04:18</span>
+                    </div>
+                    <div class="waveform-strip">
+                      <div class="wave-bar" style="height:35%;"></div>
+                      <div class="wave-bar" style="height:70%;"></div>
+                      <div class="wave-bar" style="height:100%;"></div>
+                      <div class="wave-bar" style="height:85%;"></div>
+                      <div class="wave-bar" style="height:50%;"></div>
+                      <div class="wave-bar" style="height:90%;"></div>
+                      <div class="wave-bar" style="height:65%;"></div>
+                      <div class="wave-bar" style="height:40%;"></div>
+                    </div>
+                  </div>
+                  <div class="event-timeline-card">
+                    <span class="event-time-badge">SANITY</span>
+                    <span class="event-details-text">Fayl nomi va kengaytmasi xavfsizlik filtridan o‘tkazildi.</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -604,20 +651,28 @@
                 <span class="project-coming-soon" data-i18n="label_coming_soon">Kod so‘rov bo‘yicha taqdim etiladi</span>
               </div>
             </div>
+            <!-- Bespoke Artifact: Security Triage Mockup -->
             <div class="project-preview-frame">
-              <div class="project-blueprint">
-                <div class="blueprint-header">
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-dot"></span>
-                  <span class="blueprint-title">syslog_triage.sh &bull; Defensive Investigation</span>
+              <div class="artifact-card">
+                <div class="artifact-bar">
+                  <span class="artifact-bar-title">Defensive Log Triage &bull; Syslog</span>
+                  <span class="artifact-bar-badge">MITRE ATT&CK T1110</span>
                 </div>
-                <div class="blueprint-body">
-                  <div><span class="blueprint-highlight"># Authentication Failure Triage</span></div>
-                  <div>grep "Failed password" /var/log/auth.log | \</div>
-                  <div>&nbsp;&nbsp;awk '{print $(NF-3)}' | sort | uniq -c | sort -nr</div>
-                  <div><span class="blueprint-highlight"># Windows Event 4625: Failed Logon</span></div>
-                  <div>Get-WinEvent -FilterHashtable @{LogName='Security';Id=4625} -MaxEvents 10</div>
+                <div class="artifact-body">
+                  <div class="security-inspect-grid">
+                    <div class="inspect-line alert">
+                      <span>Event 4625: Failed Logon (Threshold > 5)</span>
+                      <span style="color:var(--accent-amber); font-weight:700;">TRIAGE</span>
+                    </div>
+                    <div class="inspect-line">
+                      <span>Wireshark: TCP SYN Stealth Sweep Detected</span>
+                      <span style="color:var(--accent-primary);">PORT 22/80</span>
+                    </div>
+                    <div class="inspect-line">
+                      <span>UFW Firewall: Auto-drop rule applied</span>
+                      <span style="color:var(--accent-emerald);">RESOLVED</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -644,7 +699,10 @@
           <div class="timeline-node">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-date-tag">2024 — HOZIRGACHA</div>
+              <div class="timeline-meta-row">
+                <span class="timeline-date-tag">2024 — HOZIRGACHA</span>
+                <span class="timeline-badge">Akademik ta’lim</span>
+              </div>
               <h3 class="timeline-title">Bakalavr Talabasi — Axborot Xavfsizligi</h3>
               <div class="timeline-institution">O‘zbekiston xalqaro islomshunoslik akademiyasi (3-kurs)</div>
               <p class="timeline-text">
@@ -657,7 +715,10 @@
           <div class="timeline-node">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-date-tag">2024 — 2025</div>
+              <div class="timeline-meta-row">
+                <span class="timeline-date-tag">2024 — 2025</span>
+                <span class="timeline-badge">Amaliyot &amp; Botlar</span>
+              </div>
               <h3 class="timeline-title">Mustaqil Python Dasturlash & Botlar Yaratish</h3>
               <div class="timeline-institution">Mustaqil Amaliyot & GitHub</div>
               <p class="timeline-text">
@@ -670,7 +731,10 @@
           <div class="timeline-node">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-date-tag">2025 — HOZIRGACHA</div>
+              <div class="timeline-meta-row">
+                <span class="timeline-date-tag">2025 — HOZIRGACHA</span>
+                <span class="timeline-badge">AI &amp; Backend</span>
+              </div>
               <h3 class="timeline-title">AI API Integratsiyasi & Ma’lumotlar Bazasi</h3>
               <div class="timeline-institution">Loyiha Arxitekturasi & Tadqiqot</div>
               <p class="timeline-text">
@@ -683,7 +747,10 @@
           <div class="timeline-node current">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-date-tag" style="color: var(--accent-emerald);">KELAJAKDAGI MAQSAD</div>
+              <div class="timeline-meta-row">
+                <span class="timeline-date-tag" style="color: var(--accent-emerald);">KELAJAKDAGI MAQSAD</span>
+                <span class="timeline-badge" style="color: var(--accent-emerald); border-color: var(--accent-emerald-border);">Karyera maqsadi</span>
+              </div>
               <h3 class="timeline-title">Junior Python Dasturchi / Kiberxavfsizlik Amaliyoti</h3>
               <div class="timeline-institution">Professional Jamoa Izlanmoqda</div>
               <p class="timeline-text">
@@ -754,7 +821,7 @@
     </section>
 
     <!-- ==========================================================================
-         CONTACT SECTION
+         CONTACT SECTION & RECRUITER FAST CHIPS
          ========================================================================== -->
     <section class="section-wrapper" id="contact">
       <div class="container">
@@ -825,7 +892,7 @@
               <a href="https://github.com/orifxon05" target="_blank" rel="noopener" class="btn-contact-action" data-i18n="btn_open">Ochish</a>
             </div>
 
-            <!-- Phone (if published) -->
+            <!-- Phone -->
             <div class="contact-direct-card">
               <div class="contact-card-main">
                 <div class="contact-card-icon">
@@ -840,12 +907,22 @@
             </div>
           </div>
 
-          <!-- Honest Contact Form (Mailto client generator) -->
+          <!-- Honest Contact Form & Fast Intent Chips -->
           <div class="contact-form-container">
             <h3 class="form-header-title" data-i18n="form_title">To‘g‘ridan-to‘g‘ri xabar tayyorlash</h3>
             <p class="form-header-sub" data-i18n="form_sub">
               Quyidagi shaklni to‘ldirib jo‘natsangiz, standart pochta mijozingiz avtomatik ochiladi.
             </p>
+
+            <!-- Fast Intent Chips for Recruiters -->
+            <div class="intent-chips-wrap">
+              <span class="intent-chips-label" data-i18n="chips_label">Tezkor mavzuni tanlash:</span>
+              <div class="intent-chips-list">
+                <button type="button" class="intent-chip" data-intent="internship" data-i18n="chip_internship">💼 Amaliyot / Ish taklifi</button>
+                <button type="button" class="intent-chip" data-intent="collab" data-i18n="chip_collab">🤝 Loyiha hamkorligi</button>
+                <button type="button" class="intent-chip" data-intent="chat" data-i18n="chip_chat">☕ Texnik savol / Suhbat</button>
+              </div>
+            </div>
 
             <form id="contact-email-form">
               <div class="form-field">

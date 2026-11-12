@@ -1,51 +1,56 @@
 /* ==========================================================================
    ORIFXON MA'RUFXONOV — PERSONAL DEVELOPER & SECURITY PORTFOLIO
-   Design System: Editorial, Human-Crafted, Sophisticated Minimalist
+   Design System: Editorial, Human-Crafted, Sophisticated Minimalist (v2.0)
    Typography: Newsreader (Editorial Serif) + Plus Jakarta Sans + JetBrains Mono
    ========================================================================== */
 
 :root {
   /* Surface & Background */
-  --bg-canvas: #fbfbfa;
+  --bg-canvas: #faf9f6;
   --bg-surface: #ffffff;
   --bg-surface-elevated: #ffffff;
-  --bg-subtle: #f4f4f2;
-  --bg-subtle-alt: #eaeae6;
-  --bg-dark: #121214;
-  --bg-dark-surface: #1a1a1e;
+  --bg-subtle: #f3f2ee;
+  --bg-subtle-alt: #eae8e1;
+  --bg-dark: #141416;
+  --bg-dark-surface: #1c1c20;
 
-  /* Typography Colors */
-  --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --text-muted: #71717a;
-  --text-subtle: #a1a1aa;
-  --text-inverse: #f4f4f5;
+  /* Typography Colors (Calibrated for WCAG AA Contrast) */
+  --text-primary: #141416;
+  --text-secondary: #4a4a52;
+  --text-muted: #666672;
+  --text-subtle: #8e8e99;
+  --text-inverse: #f8fafc;
   --text-inverse-muted: #a1a1aa;
 
   /* Accent Palette (Restrained, Professional) */
-  --accent-primary: #1d4ed8;       /* Deep editorial blue */
-  --accent-primary-hover: #1e40af;
+  --accent-primary: #1e40af;       /* Deep editorial blue */
+  --accent-primary-hover: #172554;
   --accent-subtle: #eff6ff;
   --accent-border: #bfdbfe;
 
-  --accent-emerald: #059669;       /* Availability / Active focus */
+  --accent-emerald: #047857;       /* Availability / Active focus */
   --accent-emerald-subtle: #ecfdf5;
   --accent-emerald-border: #a7f3d0;
 
-  --accent-amber: #d97706;
+  --accent-purple: #7e22ce;
+  --accent-purple-subtle: #faf5ff;
+  --accent-purple-border: #e9d5ff;
+
+  --accent-amber: #b45309;
   --accent-amber-subtle: #fffbeb;
+  --accent-amber-border: #fde68a;
 
   /* Borders & Dividers */
-  --border-hairline: #f0f0ee;
-  --border-subtle: #e4e4e7;
-  --border-strong: #d4d4d8;
+  --border-hairline: #eeece6;
+  --border-subtle: #e2dfd7;
+  --border-strong: #cac6bb;
   --border-dark: #27272a;
 
-  /* Shadows (Natural, Subtle) */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
-  --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.07), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
-  --shadow-portrait: 0 20px 40px -10px rgba(24, 24, 27, 0.08), 0 1px 3px rgba(24, 24, 27, 0.05);
+  /* Shadows (Natural, Subtle, Non-synthetic) */
+  --shadow-sm: 0 1px 3px 0 rgba(20, 20, 22, 0.04);
+  --shadow-md: 0 4px 14px -2px rgba(20, 20, 22, 0.06), 0 2px 6px -1px rgba(20, 20, 22, 0.03);
+  --shadow-lg: 0 14px 32px -4px rgba(20, 20, 22, 0.08), 0 4px 12px -2px rgba(20, 20, 22, 0.04);
+  --shadow-portrait: 0 20px 44px -12px rgba(20, 20, 22, 0.1), 0 1px 4px rgba(20, 20, 22, 0.05);
 
   /* Fonts */
   --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
@@ -89,6 +94,10 @@ body {
   position: relative;
 }
 
+body.scroll-locked {
+  overflow: hidden;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 9px;
@@ -105,10 +114,16 @@ body {
   background: var(--text-muted);
 }
 
-/* Selection */
+/* Accessible Selection & Focus */
 ::selection {
   background: #dbeafe;
   color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
 /* Container */
@@ -139,11 +154,11 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(251, 251, 250, 0.88);
+  background: rgba(250, 249, 246, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-subtle);
-  transition: padding var(--transition-smooth), border-color var(--transition-smooth);
+  transition: padding var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .nav-wrapper {
@@ -206,7 +221,7 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 30px;
   list-style: none;
 }
 
@@ -326,7 +341,15 @@ body {
   align-items: flex-start;
 }
 
-/* Availability Badge */
+/* Status Meta Bar */
+.hero-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -338,7 +361,6 @@ body {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--accent-emerald);
-  margin-bottom: 22px;
 }
 
 .status-dot {
@@ -354,19 +376,29 @@ body {
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 
+.hero-meta-tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
 .hero-kicker {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent-primary);
   margin-bottom: 12px;
 }
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+  font-size: clamp(2.8rem, 5.2vw, 4.2rem);
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -1.5px;
@@ -375,7 +407,7 @@ body {
 }
 
 .hero-headline {
-  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.22rem, 2.1vw, 1.5rem);
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.4px;
@@ -385,7 +417,7 @@ body {
 }
 
 .hero-bio {
-  font-size: 1.05rem;
+  font-size: 1.04rem;
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 580px;
@@ -845,7 +877,7 @@ body {
   border-color: var(--bg-dark);
 }
 
-/* Projects Layout: Alternating Editorial Rows & Cards */
+/* Projects Collection */
 .projects-collection {
   display: flex;
   flex-direction: column;
@@ -938,6 +970,7 @@ body {
   line-height: 1.6;
   color: var(--text-secondary);
   border: 1px solid var(--border-subtle);
+  width: 100%;
 }
 
 .project-problem-solution strong {
@@ -992,69 +1025,273 @@ body {
   font-style: italic;
 }
 
-/* Project Visual Frame */
+/* ==========================================================================
+   DOMAIN-SPECIFIC PROJECT VISUAL ARTIFACTS (BESPOKE UI MOCKUPS)
+   ========================================================================== */
 .project-preview-frame {
-  background: linear-gradient(135deg, var(--bg-subtle) 0%, #ecece8 100%);
+  background: linear-gradient(145deg, #f7f6f2 0%, #edeae1 100%);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 11;
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 20px;
 }
 
-.project-blueprint {
+.artifact-card {
   width: 100%;
   height: 100%;
-  border-radius: var(--radius-sm);
   background: #ffffff;
   border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.blueprint-header {
-  height: 28px;
+.artifact-bar {
+  height: 32px;
   background: var(--bg-subtle);
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
-  padding: 0 10px;
-  gap: 6px;
+  justify-content: space-between;
+  padding: 0 12px;
 }
 
-.blueprint-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--border-strong);
+.artifact-bar-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 600;
 }
 
-.blueprint-title {
-  margin-left: 6px;
+.artifact-bar-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent-primary);
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.artifact-body {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* 1. Chat Mockup (AI Assistant) */
+.chat-bubble-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.chat-bubble-row.user {
+  justify-content: flex-end;
+}
+
+.chat-bubble {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  max-width: 84%;
+}
+
+.chat-bubble.incoming {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  border-bottom-left-radius: 2px;
+}
+
+.chat-bubble.outgoing {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-auth-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent-emerald);
+  background: var(--accent-emerald-subtle);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-top: 4px;
+}
+
+/* 2. Calendar / Duty Schedule Mockup */
+.duty-grid-mockup {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.duty-slot {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.duty-slot.active {
+  background: var(--accent-emerald-subtle);
+  border-color: var(--accent-emerald-border);
+}
+
+.duty-day {
   font-family: var(--font-mono);
   font-size: 0.68rem;
   color: var(--text-muted);
+  text-transform: uppercase;
 }
 
-.blueprint-body {
-  padding: 16px;
+.duty-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.duty-status {
   font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent-emerald);
+  font-weight: 600;
+}
+
+/* 3. Inventory Dashboard Mockup */
+.inventory-stats-strip {
+  display: flex;
+  gap: 8px;
+}
+
+.inv-stat-box {
+  flex: 1;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+}
+
+.inv-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.inv-stat-val {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.inv-row-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+/* 4. Notification Timeline Mockup (Birthday Bot) */
+.event-timeline-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+}
+
+.event-time-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  background: #ffffff;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.event-details-text {
   font-size: 0.75rem;
   color: var(--text-secondary);
-  line-height: 1.6;
-  overflow: hidden;
-  flex-grow: 1;
 }
 
-.blueprint-highlight {
-  color: var(--accent-primary);
-  font-weight: 600;
+/* 5. Media Stream Player Mockup */
+.media-player-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.media-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.waveform-strip {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 24px;
+}
+
+.wave-bar {
+  flex: 1;
+  background: var(--accent-primary);
+  border-radius: 2px;
+  opacity: 0.75;
+}
+
+/* 6. Security Inspection Mockup (SOC Lab) */
+.security-inspect-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.inspect-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-subtle);
+  border-left: 2px solid var(--accent-primary);
+  padding: 5px 8px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.inspect-line.alert {
+  border-left-color: var(--accent-amber);
 }
 
 /* ==========================================================================
@@ -1130,6 +1367,14 @@ body {
   border-color: var(--border-strong);
 }
 
+.timeline-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
 .timeline-date-tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -1137,7 +1382,16 @@ body {
   letter-spacing: 1px;
   color: var(--accent-primary);
   text-transform: uppercase;
-  margin-bottom: 6px;
+}
+
+.timeline-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
 }
 
 .timeline-title {
@@ -1191,15 +1445,20 @@ body {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  padding: 14px;
+  padding: 16px;
   border-radius: var(--radius-md);
   background: var(--bg-subtle);
   border: 1px solid var(--border-subtle);
+  transition: border-color var(--transition-fast);
+}
+
+.pillar-item:hover {
+  border-color: var(--border-strong);
 }
 
 .pillar-icon-box {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-sm);
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -1214,7 +1473,7 @@ body {
   font-size: 0.92rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .pillar-desc {
@@ -1224,11 +1483,11 @@ body {
 }
 
 /* ==========================================================================
-   CONTACT SECTION
+   CONTACT SECTION & RECRUITER FAST CHIPS
    ========================================================================== */
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1fr 1.15fr;
   gap: 48px;
   align-items: start;
 }
@@ -1236,14 +1495,14 @@ body {
 .contact-info-col {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .contact-direct-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 20px 24px;
+  padding: 18px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1321,7 +1580,7 @@ body {
   color: var(--text-primary);
 }
 
-/* Contact Form Box */
+/* Contact Form Container & Fast Intent Chips */
 .contact-form-container {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -1340,7 +1599,54 @@ body {
 .form-header-sub {
   font-size: 0.9rem;
   color: var(--text-muted);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
+}
+
+/* Fast Subject Intent Chips for Recruiters */
+.intent-chips-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.intent-chips-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.intent-chips-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.intent-chip {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.intent-chip:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  background: #ffffff;
+}
+
+.intent-chip.selected {
+  background: var(--accent-subtle);
+  border-color: var(--accent-border);
+  color: var(--accent-primary);
+  font-weight: 600;
 }
 
 .form-field {
@@ -1371,12 +1677,12 @@ body {
   outline: none;
   background: #ffffff;
   border-color: var(--text-primary);
-  box-shadow: 0 0 0 3px rgba(24, 24, 27, 0.08);
+  box-shadow: 0 0 0 3px rgba(20, 20, 22, 0.08);
 }
 
 .input-textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 110px;
 }
 
 .form-note {
@@ -1592,29 +1898,39 @@ body {
     height: 64px;
   }
   .mobile-menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .nav-links {
     position: fixed;
     top: 64px;
     left: 0;
     right: 0;
-    background: var(--bg-surface);
-    border-bottom: 1px solid var(--border-subtle);
+    bottom: 0;
+    background: rgba(250, 249, 246, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     flex-direction: column;
-    padding: 24px;
-    gap: 18px;
+    padding: 32px 28px;
+    gap: 22px;
     align-items: flex-start;
     box-shadow: var(--shadow-lg);
-    transform: translateY(-130%);
+    transform: translateY(-120%);
     opacity: 0;
     pointer-events: none;
-    transition: var(--transition-smooth);
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    z-index: 99;
   }
   .nav-links.open {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+  .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 8px 0;
   }
   .hero {
     padding-top: 100px;
@@ -1634,6 +1950,12 @@ body {
   }
   .contact-form-container {
     padding: 24px;
+  }
+  .intent-chips-list {
+    flex-direction: column;
+  }
+  .intent-chip {
+    text-align: left;
   }
 }
 
