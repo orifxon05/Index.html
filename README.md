@@ -13,10 +13,10 @@ A premium, human-crafted personal portfolio website built with clean semantics, 
    - Focus on practical software development with Python, Telegram bots, AI API integrations, and database architectures, combined with an academic foundation in Information Security.
    - Avoids artificial percentages, exaggerated corporate claims, and generic AI buzzwords.
 
-2. **Editorial Minimalist Aesthetic**:
-   - Palette: Warm off-white canvas (`#fbfbfa`), crisp white surfaces, deep charcoal text (`#18181b`), and restrained editorial blue and emerald accents.
+2. **Midnight Blue Premium Editorial Aesthetic**:
+   - Palette: Deep Midnight Blue canvas (`#0B1220`), secondary section background (`#111C2E`), card surfaces (`#17243A`), elevated surfaces (`#1C2B42`), primary text (`#F1F5FC`), secondary text (`#A4B2C7`), vibrant accent blue (`#4D9FFF`), accent hover (`#78B7FF`), and crisp borders (`#263750` / `#24334A`).
    - Typography: Google Fonts **Newsreader** (classic editorial serif), **Plus Jakarta Sans** (clean contemporary body), and **JetBrains Mono** (technical annotations).
-   - Zero gratuitous neon glows, CRT scanlines, or fake terminal screens.
+   - Zero gratuitous neon glows, CRT scanlines, or fake terminal screens. Deep, calm, and highly readable.
 
 3. **Curated Practical Projects**:
    - **Personal Telegram AI Assistant**: Telethon MTProto client with role-based access control (RBAC) and LLM API integration.

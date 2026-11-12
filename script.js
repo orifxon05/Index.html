@@ -476,7 +476,7 @@
               ${isUz ? 'Ishlatilgan texnologiyalar:' : 'Technologies Applied:'}
             </div>
             <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-              ${proj.tech.map(t => `<span class="tech-tag" style="background:#fff;">${t}</span>`).join('')}
+              ${proj.tech.map(t => `<span class="tech-tag" style="background:var(--bg-secondary); border-color:var(--border-subtle);">${t}</span>`).join('')}
             </div>
           </div>
 
