@@ -27,7 +27,7 @@
       // Hero
       hero_badge: 'Amaliyot takliflari uchun ochiq',
       hero_kicker: 'AXBOROT XAVFSIZLIGI TALABASI & PYTHON DASTURCHI',
-      hero_meta_edu: '🎓 3-kurs talabasi @ O‘XIA',
+      hero_meta_edu: '🎓 3-kurs talabasi @ O‘zXIA',
       hero_meta_loc: '📍 Toshkent, O‘zbekiston',
       hero_name: "Salom, men Orifxon.",
       hero_headline: 'Python, sun’iy intellekt va zamonaviy texnologiyalar bilan amaliy yechimlar yarataman.',
